@@ -435,7 +435,6 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .legal h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--rubric); margin-top: 8px; }
 .legal p, .legal ul { margin: 0; max-width: 70ch; }
 .legal ul { padding-left: 1.2em; }
-.legal .todo { background: #ffe58a; padding: 0 4px; }
 .foot-base a { color: var(--muted); }
 .foot-base a:hover { color: var(--gold-hi); }
 

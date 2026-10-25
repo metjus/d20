@@ -25,4 +25,3 @@ fonts/              písma (SIL Open Font License)
 
 Formulár potrebuje PHP 7.4+ s rozšírením mbstring. Adresa `noreply@d20.sk` v `php/config.php` musí na hostingu existovať (schránka alebo alias), inak môžu e-maily padať do spamu.
 
-Na stránke `#sukromie` treba doplniť údaje prevádzkovateľa (v `js/i18n.js`, kľúč `pv.body`).
