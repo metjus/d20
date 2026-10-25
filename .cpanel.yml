@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html/
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp logo.png $DEPLOYPATH
+    - /bin/cp -R css js img fonts php $DEPLOYPATH

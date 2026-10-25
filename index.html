@@ -290,7 +290,58 @@
         </div>
       </div>
     </section>
+    <!-- PRIVACY -->
+    <section class="page wrap" data-page="sukromie" hidden>
+      <div class="head">
+        <p class="kicker"><svg class="sg"><use href="#sigil"/></svg><span data-i18n="pv.eyebrow"></span></p>
+        <h1 class="h1 gild" data-i18n="pv.h1"></h1>
+      </div>
+      <div class="leather book">
+        <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
+        <div class="folio parchment legal" data-i18n="pv.body"></div>
+      </div>
+    </section>
   </main>
+
+  <dialog class="ct" id="ct" aria-labelledby="ct-h">
+    <div class="leather ct-frame">
+      <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
+      <div class="parchment ct-sheet">
+        <button class="ct-x" type="button" id="ct-close" data-i18n-aria="ct.close">&times;</button>
+        <form id="ct-form" novalidate>
+          <h2 id="ct-h" data-i18n="ct.h"></h2>
+          <p class="ct-lede" data-i18n="ct.lede"></p>
+          <div class="ct-row">
+            <label class="ct-f"><span data-i18n="ct.name"></span><input class="input" id="ct-name" name="name" type="text" maxlength="80" autocomplete="name"></label>
+            <label class="ct-f"><span data-i18n="ct.email"></span><input class="input" id="ct-email" name="email" type="email" maxlength="160" autocomplete="email" required></label>
+          </div>
+          <fieldset class="ct-topic">
+            <legend data-i18n="ct.topic"></legend>
+            <label><input type="radio" name="topic" value="idea" checked><span data-i18n="ct.t.idea"></span></label>
+            <label><input type="radio" name="topic" value="bug"><span data-i18n="ct.t.bug"></span></label>
+            <label><input type="radio" name="topic" value="collab"><span data-i18n="ct.t.collab"></span></label>
+            <label><input type="radio" name="topic" value="other"><span data-i18n="ct.t.other"></span></label>
+          </fieldset>
+          <label class="ct-f"><span data-i18n="ct.msg"></span><textarea class="input" id="ct-msg" name="message" rows="6" maxlength="4000" required></textarea></label>
+          <div class="ct-hp" aria-hidden="true"><label>Web <input type="text" name="website" id="ct-web" tabindex="-1" autocomplete="off"></label></div>
+          <label class="ct-consent"><input type="checkbox" id="ct-ok" name="consent" value="1" required><span data-i18n="ct.consent"></span></label>
+          <p class="ct-err" id="ct-err" role="alert" hidden></p>
+          <button class="btn" type="submit" id="ct-send"><svg class="seal"><use href="#seal"/></svg><span data-i18n="ct.send"></span></button>
+        </form>
+        <div class="ct-done" id="ct-done" hidden tabindex="-1">
+          <svg class="ct-stamp" aria-hidden="true"><use href="#seal"/></svg>
+          <h2 data-i18n="ct.doneH"></h2>
+          <p data-i18n="ct.done"></p>
+          <button class="btn ghost" type="button" id="ct-again" data-i18n="ct.closeBtn"></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="cookie" id="cookie" role="region" data-i18n-aria="ck.aria" hidden>
+    <p data-i18n="ck.text"></p>
+    <div class="cookie-act"><a href="#sukromie" data-i18n="ck.more"></a><button class="btn ghost" type="button" id="ck-ok" data-i18n="ck.ok"></button></div>
+  </div>
 
   <footer>
     <div class="wrap">
@@ -303,10 +354,13 @@
         <div class="idea">
           <h3 data-i18n="foot.ideaH"></h3>
           <p data-i18n="foot.idea"></p>
-          <a class="btn ghost" id="foot-mail" href="mailto:hello@d20.sk"><svg class="ic" width="18" height="18"><use href="#i-quill"/></svg><span>hello@d20.sk</span></a>
+          <button class="btn ghost" type="button" id="ct-open"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span data-i18n="ct.open"></span></button>
         </div>
       </div>
-      <div class="foot-base"><span>&copy; <span id="yr">2026</span> d20.sk</span><p data-i18n="foot"></p></div>
+      <div class="foot-base">
+        <span>&copy; <span id="yr">2026</span> d20.sk · <a href="#sukromie" data-i18n="pv.link"></a></span>
+        <p data-i18n="foot"></p>
+      </div>
     </div>
   </footer>
 </div>

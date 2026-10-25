@@ -1,0 +1,4 @@
+# Only the form endpoint is reachable from the web.
+<FilesMatch "^(?!contact\.php$).*$">
+    Require all denied
+</FilesMatch>

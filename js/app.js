@@ -25,6 +25,7 @@ function abilHTML(scores, keyIdx) {
 
 // ---------- Router ----------
 var PAGES = ["domov", "navody", "postava", "pribeh", "kocky"];
+var HIDDEN_PAGES = ["sukromie"]; // reachable by link, not shown in the menu
 function buildMenus() {
   ["menu", "menu-m"].forEach(function (id) {
     var m = $(id); m.innerHTML = "";
@@ -36,7 +37,7 @@ function buildMenus() {
 }
 function route() {
   var h = (location.hash || "").replace("#", "");
-  var page = PAGES.indexOf(h) >= 0 ? h : "domov";
+  var page = PAGES.indexOf(h) >= 0 || HIDDEN_PAGES.indexOf(h) >= 0 ? h : "domov";
   document.querySelectorAll(".page").forEach(function (s) {
     var show = s.dataset.page === page;
     if (show && s.hidden) s.querySelectorAll(".rv").forEach(function (e) { e.classList.remove("rv", "in"); });
@@ -54,6 +55,7 @@ document.addEventListener("click", function (e) {
   if (a && e.clientX) warpAt = [e.clientX + "px", e.clientY + "px"];
 }, true);
 window.addEventListener("hashchange", function () {
+  if ($("ct").open) $("ct").close();
   var w = $("warp");
   if (!rvObs) { route(); window.scrollTo(0, 0); return; }
   w.style.setProperty("--wx", warpAt ? warpAt[0] : "50%"); w.style.setProperty("--wy", warpAt ? warpAt[1] : "50%"); warpAt = null;
@@ -404,6 +406,55 @@ function reveal() {
   });
 }
 (function () { var y = new Date().getFullYear(); $("yr").textContent = y > 2026 ? "2026–" + y : "2026"; })();
+
+// ---------- Contact form ----------
+(function contact() {
+  var dlg = $("ct"), form = $("ct-form"), err = $("ct-err"), send = $("ct-send"), done = $("ct-done"), openedAt = 0;
+  function showErr(code) { err.textContent = t("ct.e." + code); err.hidden = false; }
+  function open() {
+    form.hidden = false; done.hidden = true; err.hidden = true; openedAt = Date.now();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    $("ct-email").value ? $("ct-msg").focus() : $("ct-name").focus();
+  }
+  function close() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  $("ct-open").addEventListener("click", open);
+  $("ct-close").addEventListener("click", close);
+  $("ct-again").addEventListener("click", close);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    var email = $("ct-email").value.trim(), msg = $("ct-msg").value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { showErr("email"); $("ct-email").focus(); return; }
+    if (msg.length < 10) { showErr("message"); $("ct-msg").focus(); return; }
+    if (!$("ct-ok").checked) { showErr("consent"); $("ct-ok").focus(); return; }
+    var fd = new FormData(form);
+    fd.append("lang", LANG);
+    fd.append("elapsed", String(Date.now() - openedAt));
+    var label = send.querySelector("span");
+    send.disabled = true; send.setAttribute("aria-busy", "true"); label.textContent = t("ct.sending");
+    fetch("php/contact.php", { method: "POST", body: fd, headers: { Accept: "application/json" } })
+      .then(function (r) { return r.json().catch(function () { return { ok: false, error: "send" }; }); })
+      .then(function (res) {
+        if (!res.ok) { showErr(I["ct.e." + res.error] ? res.error : "send"); return; }
+        form.reset(); form.hidden = true; done.hidden = false; done.focus();
+      })
+      .catch(function () { showErr("send"); })
+      .then(function () { send.disabled = false; send.removeAttribute("aria-busy"); label.textContent = t("ct.send"); });
+  });
+})();
+
+// ---------- Cookie notice ----------
+(function cookieNotice() {
+  var seen = false;
+  try { seen = localStorage.getItem("d20-cookie-ok") === "1"; } catch (e) {}
+  if (seen) return;
+  $("cookie").hidden = false;
+  $("ck-ok").addEventListener("click", function () {
+    $("cookie").hidden = true;
+    try { localStorage.setItem("d20-cookie-ok", "1"); } catch (e) {}
+  });
+})();
 
 // ---------- Embers ----------
 (function embers() {
