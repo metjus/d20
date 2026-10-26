@@ -23,5 +23,5 @@ fonts/              písma (SIL Open Font License)
 
 `.cpanel.yml` pri „Deploy HEAD Commit“ skopíruje web do `~/public_html/`.
 
-Formulár potrebuje PHP 7.4+ s rozšírením mbstring. Adresa `noreply@d20.sk` v `php/config.php` musí na hostingu existovať (schránka alebo alias), inak môžu e-maily padať do spamu.
+Formulár potrebuje PHP 7.4+ s rozšírením mbstring. Správy odchádzajú z hello@d20.sk na hello@d20.sk; „Odpovedať“ v pošte ide priamo návštevníkovi (Reply-To).
 
