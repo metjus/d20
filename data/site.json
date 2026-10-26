@@ -1,0 +1,87 @@
+{
+  "url": "https://d20.sk",
+  "name": "d20.sk",
+  "operator": "Matúš Šturdík",
+  "menu": [
+    "domov",
+    "navody",
+    "postava",
+    "pribeh",
+    "kocky"
+  ],
+  "pages": {
+    "404": {
+      "url": {
+        "sk": "/404.php",
+        "en": "/404.php"
+      },
+      "type": "error",
+      "scripts": []
+    },
+    "domov": {
+      "url": {
+        "sk": "/",
+        "en": "/en/"
+      },
+      "type": "home",
+      "scripts": [
+        "data",
+        "home"
+      ]
+    },
+    "navody": {
+      "url": {
+        "sk": "/navody/",
+        "en": "/en/guides/"
+      },
+      "type": "article",
+      "scripts": [
+        "data",
+        "guides"
+      ]
+    },
+    "postava": {
+      "url": {
+        "sk": "/tvorba-postavy/",
+        "en": "/en/character-creator/"
+      },
+      "type": "app",
+      "scripts": [
+        "data",
+        "character"
+      ]
+    },
+    "pribeh": {
+      "url": {
+        "sk": "/tvorba-pribehu/",
+        "en": "/en/story-generator/"
+      },
+      "type": "app",
+      "scripts": [
+        "data",
+        "story"
+      ]
+    },
+    "kocky": {
+      "url": {
+        "sk": "/kocky/",
+        "en": "/en/dice-roller/"
+      },
+      "type": "app",
+      "scripts": [
+        "vendor/three.min",
+        "data",
+        "dice3d",
+        "dice"
+      ]
+    },
+    "sukromie": {
+      "url": {
+        "sk": "/ochrana-osobnych-udajov/",
+        "en": "/en/privacy/"
+      },
+      "type": "page",
+      "scripts": []
+    }
+  }
+}

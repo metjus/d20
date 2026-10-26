@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /php/
+Disallow: /inc/
+Disallow: /partials/
+Disallow: /pages/
 
 Sitemap: https://d20.sk/sitemap.xml

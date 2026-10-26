@@ -2,5 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html/
-    - /bin/cp index.html robots.txt sitemap.xml $DEPLOYPATH
-    - /bin/cp -R css js img fonts php $DEPLOYPATH
+    # The old single-page file would be served instead of index.php, so it goes.
+    - /bin/rm -f ${DEPLOYPATH}index.html
+    - /bin/cp index.php 404.php .htaccess robots.txt sitemap.xml $DEPLOYPATH
+    - /bin/cp -R css js img fonts php inc partials pages data en navody tvorba-postavy tvorba-pribehu kocky ochrana-osobnych-udajov $DEPLOYPATH
