@@ -77,6 +77,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
 <link rel="preload" href="/fonts/new-rocker-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/grenze-gotisch-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/fonts.css">
@@ -94,8 +95,8 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 
 <?php require __DIR__ . '/sprite.php'; ?>
 
-<div class="boot" aria-hidden="true"><div class="boot-c"><div class="boot-ring"></div><img src="/img/logo-300.webp" alt=""><b>d20.sk</b></div></div>
-<div class="warp" id="warp" aria-hidden="true"><div class="warp-c"><img src="/img/logo-300.webp" alt=""></div></div>
+<div class="boot" aria-hidden="true"><div class="boot-c"><div class="boot-ring"></div><img src="/img/logo-300.webp" srcset="/img/logo-176.webp 176w, /img/logo-300.webp 300w" sizes="150px" alt=""><b>d20.sk</b></div></div>
+<div class="warp" id="warp" aria-hidden="true"><div class="warp-c"><img src="/img/logo-176.webp" alt=""></div></div>
 <div class="shell">
 <?php require __DIR__ . '/header.php'; ?>
 

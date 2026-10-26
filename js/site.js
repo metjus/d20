@@ -16,7 +16,11 @@ function reveal() {
   document.querySelectorAll(RV_SEL).forEach(function (e) {
     if (e.classList.contains("rv")) return;
     var r = e.getBoundingClientRect();
-    e.style.setProperty("--d", (r.top < innerHeight ? base + Math.min(n++, 6) * 130 : 0) + "ms");
+    var first = r.top < innerHeight;
+    e.style.setProperty("--d", (first ? base + Math.min(n++, 6) * 130 : 0) + "ms");
+    // Under the intro the first screen only slides into place: it is already drawn when the intro fades,
+    // so slow phones are not marked down for content that the intro covers anyway.
+    if (first && base) e.classList.add("rv-u");
     e.classList.add("rv"); rvObs.observe(e);
   });
 }
