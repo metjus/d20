@@ -83,9 +83,10 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
 <link rel="preload" href="/fonts/new-rocker.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/alegreya-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<?= asset('/css/fonts.css') ?>">
 <link rel="stylesheet" href="<?= asset('/css/style.css') ?>">
-<script src="<?= asset('/js/boot.js') ?>"></script>
+<script src="<?= asset('/js/boot.js') ?>" async></script>
 <?php if ($graph): ?>
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => $graph], $json) ?></script>
 <?php endif; ?>

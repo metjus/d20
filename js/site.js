@@ -13,10 +13,11 @@ var rvBase = document.documentElement.classList.contains("no-intro") ? 0 : 1650;
 function reveal() {
   if (!rvObs) return;
   var n = 0, base = rvBase; rvBase = 0;
-  document.querySelectorAll(RV_SEL).forEach(function (e) {
-    if (e.classList.contains("rv")) return;
-    var r = e.getBoundingClientRect();
-    var first = r.top < innerHeight;
+  // Measure everything first and change classes after, so the browser lays the page out once, not once per element.
+  var els = [].filter.call(document.querySelectorAll(RV_SEL), function (e) { return !e.classList.contains("rv"); });
+  var tops = els.map(function (e) { return e.getBoundingClientRect().top; });
+  els.forEach(function (e, i) {
+    var first = tops[i] < innerHeight;
     e.style.setProperty("--d", (first ? base + Math.min(n++, 6) * 130 : 0) + "ms");
     // Under the intro the first screen only slides into place: it is already drawn when the intro fades,
     // so slow phones are not marked down for content that the intro covers anyway.
