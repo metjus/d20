@@ -97,7 +97,6 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <script src="/js/<?= $script ?>.js"></script>
 <?php endforeach; ?>
 <script src="/js/site.js"></script>
-<!-- Cloudflare Web Analytics: cookieless visit statistics -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a4364bdff4704985b782ef1f0c8e5ae7"}'></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4364bdff4704985b782ef1f0c8e5ae7"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
