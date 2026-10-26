@@ -466,7 +466,7 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .cookie { position: fixed; z-index: 120; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   max-width: 720px; margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 16px 18px;
   background: rgba(13,9,24,.94); border: 1px solid rgba(216,180,106,.45); border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,.55), 0 0 30px rgba(167,123,255,.18);
-  animation: ck-in .6s 2.4s cubic-bezier(.2,.7,.2,1) both; }
+  animation: ck-in .6s 1.6s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes ck-in { from { opacity: 0; translate: 0 30px; } to { opacity: 1; translate: 0 0; } }
 .cookie p { margin: 0; flex: 1 1 320px; color: var(--muted); font-size: var(--s--1); }
 .cookie-act { display: flex; align-items: center; gap: 16px; }
@@ -482,8 +482,9 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 
 /* Load + scroll animations */
 @keyframes drop-in { from { opacity: 0; translate: 0 -24px; } to { opacity: 1; translate: 0 0; } }
-@keyframes kindle { 0% { opacity: 0; scale: .6; rotate: -40deg; filter: brightness(2.2) drop-shadow(0 0 30px rgba(167,123,255,.9)); } 100% { opacity: 1; scale: 1; rotate: 0deg; } }
-@keyframes summon { from { opacity: 0; scale: .82; filter: blur(6px); } to { opacity: 1; scale: 1; filter: none; } }
+/* Load animations move only opacity, scale, rotation and position, which the graphics chip handles without redrawing the page. */
+@keyframes kindle { 0% { opacity: 0; scale: .6; rotate: -40deg; } 100% { opacity: 1; scale: 1; rotate: 0deg; } }
+@keyframes summon { from { opacity: 0; scale: .82; } to { opacity: 1; scale: 1; } }
 header.top { animation: drop-in .9s 1.55s cubic-bezier(.2,.7,.2,1) both; }
 header.top .brand img { animation: kindle 1.1s 1.7s cubic-bezier(.2,.7,.2,1) both; }
 .orb { animation: summon 1.6s 1.45s cubic-bezier(.2,.7,.2,1) both; }
@@ -501,8 +502,8 @@ header.top .brand img { animation: kindle 1.1s 1.7s cubic-bezier(.2,.7,.2,1) bot
   animation: intro-word .9s .55s ease both; }
 @keyframes intro-die { 0% { opacity: 0; scale: .2; rotate: -540deg; } 70% { opacity: 1; scale: 1.08; rotate: 10deg; } 100% { scale: 1; rotate: 0deg; } }
 @keyframes ring-in { from { opacity: 0; scale: .3; } to { opacity: 1; scale: 1; } }
-@keyframes intro-word { from { opacity: 0; translate: 0 12px; letter-spacing: .4em; } to { opacity: 1; translate: 0 0; letter-spacing: .08em; } }
-@keyframes intro-out { 0% { opacity: 1; } 100% { opacity: 0; visibility: hidden; scale: 1.06; } }
+@keyframes intro-word { from { opacity: 0; translate: 0 12px; scale: 1.3; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes intro-out { 0% { opacity: 1; } 100% { opacity: 0; scale: 1.06; } }
 .no-intro .boot { display: none; }
 .warping .warp { visibility: visible; clip-path: circle(150% at 50% 50%); }
 .warp { position: fixed; inset: 0; z-index: 150; pointer-events: none; visibility: hidden; display: grid; place-items: center;
@@ -518,6 +519,7 @@ header.top .brand img { animation: kindle 1.1s 1.7s cubic-bezier(.2,.7,.2,1) bot
 .warp.on .warp-c::before { animation: ring-in .6s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes warp-die { from { rotate: -270deg; scale: .4; } to { rotate: 0deg; scale: 1; } }
 .no-intro header.top, .no-intro header.top .brand img, .no-intro .orb { animation-delay: 0s; }
+.no-intro .cookie { animation-delay: .4s; }
 .js-rv .rv { opacity: 0; translate: 0 26px; transition: opacity .8s ease, translate .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
 .js-rv .rv.in { opacity: 1; translate: 0 0; }
 .js-rv .rv.rv-u { opacity: 1; }

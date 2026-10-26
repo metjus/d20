@@ -9,23 +9,38 @@ if (!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matche
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); rvObs.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -8% 0px" });
 }
-var rvBase = document.documentElement.classList.contains("no-intro") ? 0 : 1650;
+// The first screen is covered by the intro or by the portal while the page appears, so it can start hidden and play in.
+var rvCover = document.documentElement.classList.contains("warping") ? "warp" : document.documentElement.classList.contains("no-intro") ? "" : "intro";
+var rvBase = rvCover === "intro" ? 1650 : 0;
 function reveal() {
   if (!rvObs) return;
-  var n = 0, base = rvBase; rvBase = 0;
-  // Measure everything first and change classes after, so the browser lays the page out once, not once per element.
-  var els = [].filter.call(document.querySelectorAll(RV_SEL), function (e) { return !e.classList.contains("rv"); });
-  var tops = els.map(function (e) { return e.getBoundingClientRect().top; });
-  els.forEach(function (e, i) {
-    var first = tops[i] < innerHeight;
-    e.style.setProperty("--d", (first ? base + Math.min(n++, 6) * 130 : 0) + "ms");
-    // Under the intro the first screen only slides into place: it is already drawn when the intro fades,
-    // so slow phones are not marked down for content that the intro covers anyway.
-    if (first && base) e.classList.add("rv-u");
-    e.classList.add("rv"); rvObs.observe(e);
+  var n = 0, base = rvBase, cover = rvCover; rvBase = 0; rvCover = "";
+  // A first observer only sorts elements into the first screen and the rest. It answers once the browser has laid
+  // the page out on its own, so measuring never forces an extra layout.
+  var probe = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var el = e.target; probe.unobserve(el);
+      if (e.isIntersecting) {
+        // Nothing covers it: it is already on screen, so it stays as it is.
+        if (!cover) return;
+        el.style.setProperty("--d", base + Math.min(n++, 6) * 130 + "ms");
+        // Under the intro the first screen only slides into place: it is already drawn when the intro fades,
+        // so slow phones are not marked down for content that the intro covers anyway.
+        if (cover === "intro") el.classList.add("rv-u");
+      }
+      el.classList.add("rv"); rvObs.observe(el);
+    });
   });
+  document.querySelectorAll(RV_SEL).forEach(function (el) { if (!el.classList.contains("rv")) probe.observe(el); });
 }
 (function () { var y = new Date().getFullYear(); $("yr").textContent = y > 2026 ? "2026–" + y : "2026"; })();
+
+// ---------- Intro ----------
+// Once the intro has faded it leaves the page, so its spinning ring stops costing anything.
+(function intro() {
+  var b = document.querySelector(".boot");
+  if (b) b.addEventListener("animationend", function (e) { if (e.animationName === "intro-out") b.remove(); });
+})();
 
 // ---------- Page transitions ----------
 // An internal link opens a portal from the clicked spot, then the next page loads and the portal fades away.
@@ -112,7 +127,8 @@ function reveal() {
 (function embers() {
   var cv = $("embers"), ctx = cv.getContext("2d");
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var W, H2, P = [], dpr = Math.min(window.devicePixelRatio || 1, 2), last = 0;
+  // Soft glows look the same at one canvas pixel per screen pixel, and that is a third of the drawing on most phones.
+  var W, H2, P = [], dpr = 1, last = 0;
   // One soft glow per colour, drawn once and then stamped, instead of a new gradient for every ember on every frame.
   var SPR = {};
   ["255,190,110", "216,180,106", "167,123,255"].forEach(function (c) {
@@ -121,7 +137,7 @@ function reveal() {
     g.addColorStop(0, "rgba(" + c + ",1)"); g.addColorStop(1, "rgba(" + c + ",0)");
     x.fillStyle = g; x.fillRect(0, 0, 64, 64); SPR[c] = s;
   });
-  function size() { W = cv.clientWidth; H2 = cv.clientHeight; cv.width = W * dpr; cv.height = H2 * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  function size() { W = innerWidth; H2 = innerHeight; cv.width = W * dpr; cv.height = H2 * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   function spawn(y) {
     var c = Math.random(); c = c < .5 ? "255,190,110" : c < .8 ? "216,180,106" : "167,123,255";
     return { x: Math.random() * W, y: y == null ? H2 + 10 : y, r: .6 + Math.random() * 1.7, vy: .18 + Math.random() * .5, vx: (Math.random() - .5) * .2, ph: Math.random() * 6.28, c: c };
@@ -144,9 +160,10 @@ function reveal() {
     for (var i = 0, n = Math.round(Math.min(70, W / 18)); i < n; i++) P.push(spawn(Math.random() * H2));
     requestAnimationFrame(draw);
   }
-  // Sparks are decoration: start them once the page has loaded.
-  if (document.readyState === "complete") setTimeout(start, 300);
-  else window.addEventListener("load", function () { setTimeout(start, 300); });
+  // Sparks are decoration: start them once the page has loaded and the intro is over.
+  var wait = document.documentElement.classList.contains("no-intro") ? 300 : 2300;
+  if (document.readyState === "complete") setTimeout(start, wait);
+  else window.addEventListener("load", function () { setTimeout(start, wait); });
 })();
 
 reveal();
