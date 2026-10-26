@@ -39,8 +39,11 @@ $boot = ['lang' => $LANG, 'page' => $PAGE, 'urls' => [], 'I' => []];
 foreach (site()['pages'] as $key => $p) {
     $boot['urls'][$key] = $p['url'][$LANG];
 }
+// Only the text groups the scripts use; the rest is already in the HTML.
 foreach (array_keys(texts()) as $key) {
-    $boot['I'][$key] = t($key);
+    if (in_array(strtok($key, '.'), ['c', 'ct', 'd', 'hc', 'nav', 't'], true)) {
+        $boot['I'][$key] = t($key);
+    }
 }
 $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP;
 ?>
@@ -78,11 +81,11 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
-<link rel="preload" href="/fonts/new-rocker-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/grenze-gotisch-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/fonts.css">
-<link rel="stylesheet" href="/css/style.css">
-<script src="/js/boot.js"></script>
+<link rel="preload" href="/fonts/new-rocker.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="<?= asset('/css/fonts.css') ?>">
+<link rel="stylesheet" href="<?= asset('/css/style.css') ?>">
+<script src="<?= asset('/js/boot.js') ?>"></script>
 <?php if ($graph): ?>
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => $graph], $json) ?></script>
 <?php endif; ?>
@@ -95,8 +98,8 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 
 <?php require __DIR__ . '/sprite.php'; ?>
 
-<div class="boot" aria-hidden="true"><div class="boot-c"><div class="boot-ring"></div><img src="/img/logo-300.webp" srcset="/img/logo-176.webp 176w, /img/logo-300.webp 300w" sizes="150px" alt=""><b>d20.sk</b></div></div>
-<div class="warp" id="warp" aria-hidden="true"><div class="warp-c"><img src="/img/logo-176.webp" alt=""></div></div>
+<div class="boot" aria-hidden="true"><div class="boot-c"><div class="boot-ring"></div><img src="/img/logo-176.webp" srcset="/img/logo-176.webp 176w, /img/logo-352.webp 352w" sizes="150px" alt=""><b>d20.sk</b></div></div>
+<div class="warp" id="warp" aria-hidden="true"><div class="warp-c"><img src="/img/logo-176.webp" alt="" loading="lazy"></div></div>
 <div class="shell">
 <?php require __DIR__ . '/header.php'; ?>
 
@@ -108,11 +111,11 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 </div>
 
 <script id="d20-boot" type="application/json"><?= json_encode($boot, $json) ?></script>
-<script src="/js/core.js"></script>
+<script src="<?= asset('/js/core.js') ?>"></script>
 <?php foreach ($cfg['scripts'] as $script): ?>
-<script src="/js/<?= $script ?>.js"></script>
+<script src="<?= asset("/js/$script.js") ?>"></script>
 <?php endforeach; ?>
-<script src="/js/site.js"></script>
+<script src="<?= asset('/js/site.js') ?>"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4364bdff4704985b782ef1f0c8e5ae7"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

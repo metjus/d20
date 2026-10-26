@@ -33,6 +33,14 @@ function pair(array $pair): string
     return $pair[$LANG === 'en' ? 1 : 0];
 }
 
+// A site file's address with a short fingerprint of its content, so browsers can keep it for a year
+// and still fetch the new version the moment the file changes.
+function asset(string $path): string
+{
+    static $seen = [];
+    return $seen[$path] ??= $path . '?v=' . substr(md5_file(__DIR__ . '/..' . $path), 0, 8);
+}
+
 // Text for the current language, as HTML. {url:page} placeholders become that page's address.
 function t(string $key): string
 {
