@@ -59,10 +59,14 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="<?= $LANG === 'sk' ? 'sk_SK' : 'en_US' ?>">
 <meta property="og:locale:alternate" content="<?= $LANG === 'sk' ? 'en_US' : 'sk_SK' ?>">
+<meta property="og:image:alt" content="d20.sk">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0d0918">
-<link rel="icon" type="image/png" href="/img/favicon.png">
-<link rel="apple-touch-icon" href="/img/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/new-rocker-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/fonts.css">
 <link rel="stylesheet" href="/css/style.css">
