@@ -1,0 +1,62 @@
+[
+  {"k": ["Zadávateľ", "Quest giver"], "v": [
+    ["Vdova po banskom majstrovi", "The widow of a mine foreman"],
+    ["Starosta, ktorý niečo tají", "A mayor who is hiding something"],
+    ["Zranený kuriér kráľovskej pošty", "A wounded royal courier"],
+    ["Bylinkárka zo samoty pod lesom", "A herbalist from a lonely forest cottage"],
+    ["Trpasličí kováč s dlhom", "A dwarven smith deep in debt"],
+    ["Dieťa, ktoré vidí duchov", "A child who sees ghosts"],
+    ["Vyhnaný rytier bez erbu", "An exiled knight with no crest"],
+    ["Hovoriaci havran", "A talking raven"],
+    ["Kňažka zabudnutého boha", "A priestess of a forgotten god"],
+    ["Kupec, ktorého karavána zmizla", "A merchant whose caravan vanished"]
+  ]},
+  {"k": ["Úloha", "Task"], "v": [
+    ["nájsť stratenú dedičku", "find a missing heir"],
+    ["vrátiť ukradnutý zvon", "recover a stolen bell"],
+    ["doručiť zapečatený list", "deliver a sealed letter"],
+    ["prebudiť spiaceho ochrancu", "wake a sleeping guardian"],
+    ["zničiť prekliatu korunu", "destroy a cursed crown"],
+    ["vyslobodiť zajatcov", "free the prisoners"],
+    ["zmapovať zatopenú šachtu", "map a flooded mineshaft"],
+    ["zastaviť rituál pri splne", "stop a full-moon ritual"],
+    ["vystopovať beštiu, čo trhá ovce", "track the beast killing the sheep"],
+    ["získať slzu draka", "obtain a dragon's tear"]
+  ]},
+  {"k": ["Miesto", "Place"], "v": [
+    ["v opustenom banskom meste v horách", "in an abandoned mining town in the mountains"],
+    ["v zrúcanine hradu nad riekou", "in castle ruins above a river"],
+    ["v ľadovej jaskyni", "in an ice cave"],
+    ["na močiaroch, kde svietia bludičky", "in marshes lit by will-o'-wisps"],
+    ["v kláštore vytesanom do skaly", "in a monastery carved into rock"],
+    ["v podzemnom trpasličom meste", "in an underground dwarven city"],
+    ["na jarmoku, ktorý sa objaví len raz za sto rokov", "at a fair that appears once a century"],
+    ["v pralese, kde stromy šepkajú", "in a primeval forest where trees whisper"],
+    ["na lodi na rozbúrenom jazere", "on a ship on a storm-tossed lake"],
+    ["na tajchu, pod ktorým leží potopená dedina", "at a mountain reservoir hiding a sunken village"]
+  ]},
+  {"k": ["Zvrat", "Twist"], "v": [
+    ["Zadávateľ je v skutočnosti zloduch.", "The quest giver is the real villain."],
+    ["Príšera len chráni svoje mláďatá.", "The monster is only protecting its young."],
+    ["Iná družina má rovnakú úlohu.", "A rival party has the same job."],
+    ["Cieľ je mŕtvy už sto rokov.", "The target has been dead for a century."],
+    ["Jedna z postáv je s tým spojená.", "One of the characters is tied to it."],
+    ["Odmena je falošná.", "The reward is fake."],
+    ["Všetko je ilúzia mocného mága.", "It is all a powerful mage's illusion."],
+    ["Zloduch ponúkne lepší obchod.", "The villain offers a better deal."],
+    ["Nastane zatmenie a mágia zlyháva.", "An eclipse falls and magic falters."],
+    ["Dedinčania nechcú, aby sa to vyriešilo.", "The villagers don't want it solved."]
+  ]},
+  {"k": ["Odmena", "Reward"], "v": [
+    ["truhlica zlata", "a chest of gold"],
+    ["magický meč, ktorý si pamätá meno", "a magic sword that remembers names"],
+    ["šľachtický titul", "a noble title"],
+    ["mapa k ešte väčšiemu pokladu", "a map to an even greater treasure"],
+    ["priazeň lesnej víly", "the favour of a forest fey"],
+    ["vlastná krčma v meste", "their own tavern in town"],
+    ["odpoveď na jednu otázku od veštkyne", "one answer from an oracle"],
+    ["dračie vajce", "a dragon egg"],
+    ["prsteň s tromi želaniami (možno)", "a ring of three wishes (maybe)"],
+    ["večná vďaka a teplá polievka", "eternal gratitude and warm soup"]
+  ]}
+]

@@ -68,9 +68,7 @@
       },
       "type": "app",
       "scripts": [
-        "vendor/three.min",
         "data",
-        "dice3d",
         "dice"
       ]
     },

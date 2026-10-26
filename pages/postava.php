@@ -1,3 +1,16 @@
+<?php
+// The species and class buttons are part of the page, so nothing moves when the script starts.
+// Order and starting choice follow js/data.js (SPECIES, CLASSES) and js/character.js.
+$choices = function (string $box, string $data, array $order, string $chosen): void {
+    global $LANG;
+    $byId = array_column(content($data), 'name', 'id');
+    foreach ($order as $id) {
+        [$sk, $en] = $byId[$id];
+        $label = $LANG === 'en' || $sk === $en ? e($LANG === 'en' ? $en : $sk) : e($sk) . '<small>' . e($en) . '</small>';
+        echo '<button class="opt bi" type="button" id="' . $box . '-' . $id . '" data-id="' . $id . '" aria-pressed="' . ($id === $chosen ? 'true' : 'false') . '">' . $label . "</button>\n";
+    }
+};
+?>
 <section class="page wrap" data-page="postava">
   <div class="head">
     <h1 class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= t('c.eyebrow') ?></span></h1>
@@ -11,8 +24,12 @@
         <div class="field"><input class="input" id="c-name" type="text" maxlength="40" autocomplete="off">
           <button class="icon-btn" type="button" id="c-name-roll" aria-label="<?= attr('c.nameRoll') ?>"><svg><use href="#i-dice"/></svg></button></div>
       </div>
-      <div><span class="label"><?= t('c.species') ?></span><div class="opts" id="c-species"></div></div>
-      <div><span class="label"><?= t('c.class') ?></span><div class="opts" id="c-class"></div>
+      <div><span class="label"><?= t('c.species') ?></span><div class="opts" id="c-species">
+<?php $choices('c-species', 'species', ['human', 'elf', 'dwarf', 'halfling', 'gnome', 'dragonborn', 'tiefling', 'orc', 'goliath'], 'elf'); ?>
+      </div></div>
+      <div><span class="label"><?= t('c.class') ?></span><div class="opts" id="c-class">
+<?php $choices('c-class', 'classes', ['fighter', 'wizard', 'rogue', 'cleric', 'barbarian', 'bard', 'druid', 'monk', 'paladin', 'ranger', 'sorcerer', 'warlock'], 'wizard'); ?>
+      </div>
         <p class="note" style="margin-top:8px"><?= t('c.more') ?></p></div>
       <div><span class="label"><?= t('c.method') ?></span>
         <div class="opts" id="c-method">

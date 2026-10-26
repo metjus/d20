@@ -1,7 +1,14 @@
 "use strict";
 // Story builder: the tavern notice board.
 // ---------- Story ----------
-var T = TALE.map(function () { return { r: rnd(10), lock: false }; });
+// The table comes from data/tale.json through the page; each entry is [Slovak, English].
+var TALE = JSON.parse($("tale-data").textContent).map(function (tb) {
+  var o = function (p) { return { sk: p[0], en: p[1] }; };
+  return { k: o(tb.k), v: tb.v.map(o) };
+});
+// The first roll is already on the page; the script takes it over.
+var FIRST = ($("tale").dataset.r || "").split(",");
+var T = TALE.map(function (_, i) { return { r: +FIRST[i] || rnd(10), lock: false }; });
 function talePhrase() {
   var v = TALE.map(function (tb, i) { return L(tb.v[T[i].r - 1]); });
   if (LANG === "en") return v[0] + " asks the party to " + v[1] + " " + v[2] + ". " + v[3] + " The reward: " + v[4] + ".";

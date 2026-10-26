@@ -30,7 +30,7 @@
     </div>
     <div>
       <div class="altar" aria-live="polite">
-        <canvas id="dice3d" aria-label="<?= attr('d.stage') ?>" role="img"></canvas>
+        <canvas id="dice3d" aria-label="<?= attr('d.stage') ?>" role="img" data-src="<?= asset('/js/vendor/three.min.js') ?> <?= asset('/js/dice3d.js') ?>"></canvas>
         <div class="total" id="d-total" hidden></div>
         <p class="verdict" id="d-verdict"></p>
         <p class="breakdown" id="d-break"></p>

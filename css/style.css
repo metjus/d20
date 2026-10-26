@@ -23,9 +23,9 @@
   --text: #f0e9f6;
   --muted: #b5abca;
   --font-display: "Grenze Gotisch", Georgia, serif;
-  --font-book: "Alegreya", Georgia, "Times New Roman", serif;
-  --font-ui: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
-  --font-sc: "Alegreya Sans SC", "Alegreya Sans", system-ui, sans-serif;
+  --font-book: "Alegreya", "Alegreya Fallback", Georgia, "Times New Roman", serif;
+  --font-ui: "Alegreya Sans", "Alegreya Sans Fallback", "Segoe UI", system-ui, sans-serif;
+  --font-sc: "Alegreya Sans SC", "Alegreya Sans SC Fallback", "Alegreya Sans", system-ui, sans-serif;
   --s--1: .9rem;
   --s-0: 1.0625rem;
   --s-1: 1.3rem;

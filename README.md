@@ -31,24 +31,25 @@ pages/                      obsah jednotlivých stránok
 data/site.json              zoznam stránok, ich adresy a skripty
 data/texts.json             všetky texty SK/EN vrátane titulkov a popisov pre Google
 data/classes.json, species.json, glossary.json   obsah stránok Povolania, Rasy a Slovník
+data/presets.json, tale.json  časté hody na Kockách, lístky na nástenke Príbehu
 css/style.css, css/fonts.css
-js/boot.js                  v <head>: presmerovanie starých odkazov, prechodová animácia
+js/boot.js                  v <head>: presmerovanie starých odkazov, prechodová animácia (musí ostať blokujúci, nie async)
 js/core.js                  spoločné pomôcky, texty z PHP
 js/home.js, guides.js, character.js, story.js, dice.js   logika jednotlivých stránok
 js/site.js                  animácie, prechody, kontaktný formulár, cookie lišta
-js/data.js                  herné dáta: rasy, povolania, mená, príbehy, mapa
-js/dice3d.js, js/vendor/    3D kocky, three.js r128 (MIT)
+js/data.js                  herné dáta: rasy, povolania, mená, mapa
+js/dice3d.js, js/vendor/    3D kocky, three.js r128 (MIT); dice.js ich načíta až po prvom scrollovaní alebo dotyku
 php/contact.php, config.php kontaktný formulár
 img/                        logo (WebP), favicon, náhľady pre sociálne siete (og-sk.jpg, og-en.jpg)
-fonts/                      písma (SIL Open Font License)
+fonts/                      písma (SIL Open Font License), orezané na znaky angličtiny, slovenčiny a češtiny
 sitemap.xml, robots.txt
 ```
 
 Nová stránka: pridať záznam do `data/site.json`, obsah do `pages/`, vstupné súbory pre obe adresy, texty `seo.<stránka>.title/desc` do `data/texts.json` a riadok do `sitemap.xml`.
 
-## Nasadenie cez cPanel (Git Version Control)
+## Nasadenie
 
-`.cpanel.yml` pri „Deploy HEAD Commit“ skopíruje web do `~/public_html/` a zmaže starý `index.html`. Ak pribudne nový priečinok, treba ho doplniť do `.cpanel.yml`.
+Hosting Hostcreators nasadzuje automaticky: každý push do vetvy `main` sa nahrá do `/d20.sk/web/current/`. `.cpanel.yml` sa nepoužíva.
 
 Potrebné je PHP 7.4+ s mbstring a Apache s `.htaccess` (mod_rewrite, mod_expires). Priečinky `inc/`, `partials/`, `pages/` a `data/` nie sú zvonku dostupné.
 
