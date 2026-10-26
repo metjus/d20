@@ -48,7 +48,7 @@
         <p><?= t('foot.about') ?></p>
       </div>
       <div class="idea">
-        <h3><?= t('foot.ideaH') ?></h3>
+        <h2><?= t('foot.ideaH') ?></h2>
         <p><?= t('foot.idea') ?></p>
         <button class="btn ghost" type="button" id="ct-open"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('ct.open') ?></span></button>
       </div>

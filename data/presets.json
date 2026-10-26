@@ -1,0 +1,7 @@
+[
+  {"name": ["Útok", "Attack"], "s": 20, "c": 1, "m": 5},
+  {"name": ["Iniciatíva", "Initiative"], "s": 20, "c": 1, "m": 2},
+  {"name": ["Ohnivá guľa", "Fireball"], "s": 6, "c": 8, "m": 0},
+  {"name": ["Elixír liečenia", "Healing potion"], "s": 4, "c": 2, "m": 2},
+  {"name": ["Dlhý meč", "Longsword"], "s": 8, "c": 1, "m": 3}
+]

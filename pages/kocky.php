@@ -6,7 +6,11 @@
   </div>
   <div class="dice">
     <div class="ctrl leather">
-      <div><span class="label"><?= t('d.die') ?></span><div class="dpick" id="d-pick"></div></div>
+      <div><span class="label"><?= t('d.die') ?></span><div class="dpick" id="d-pick">
+<?php foreach ([4, 6, 8, 10, 12, 20, 100] as $n): ?>
+        <button class="opt" type="button" id="die-<?= $n ?>" data-s="<?= $n ?>" aria-pressed="<?= $n === 20 ? 'true' : 'false' ?>"><?= $n === 100 ? 'd%' : "d$n" ?></button>
+<?php endforeach; ?>
+      </div></div>
       <div class="row">
         <div><span class="label"><?= t('d.count') ?></span><div class="stepper"><button type="button" id="d-cm" aria-label="−1">−</button><output id="d-c">1</output><button type="button" id="d-cp" aria-label="+1">+</button></div></div>
         <div><span class="label"><?= t('d.mod') ?></span><div class="stepper"><button type="button" id="d-mm" aria-label="−1">−</button><output id="d-m">+0</output><button type="button" id="d-mp" aria-label="+1">+</button></div></div>
@@ -17,8 +21,12 @@
           <button class="opt" type="button" data-mode="adv" aria-pressed="false"><?= t('d.adv') ?></button>
           <button class="opt" type="button" data-mode="dis" aria-pressed="false"><?= t('d.dis') ?></button>
         </div></div>
-      <div><span class="label"><?= t('d.presets') ?></span><div class="presets" id="d-presets"></div></div>
-      <button class="btn wide" type="button" id="d-roll"><svg class="seal"><use href="#seal"/></svg><span id="d-roll-l"></span></button>
+      <div><span class="label"><?= t('d.presets') ?></span><div class="presets" id="d-presets">
+<?php foreach (content('presets') as $i => $p): ?>
+        <button class="opt" type="button" id="preset-<?= $i ?>" data-s="<?= $p['s'] ?>" data-c="<?= $p['c'] ?>" data-m="<?= $p['m'] ?>"><?= e(pair($p['name'])) ?><small><?= $p['c'] ?>d<?= $p['s'] ?><?= $p['m'] ? '+' . $p['m'] : '' ?></small></button>
+<?php endforeach; ?>
+      </div></div>
+      <button class="btn wide" type="button" id="d-roll"><svg class="seal"><use href="#seal"/></svg><span id="d-roll-l"><?= $LANG === 'en' ? 'Roll' : 'Hodiť' ?> 1d20</span></button>
     </div>
     <div>
       <div class="altar" aria-live="polite">

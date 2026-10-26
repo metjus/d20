@@ -77,11 +77,11 @@ function drawMap() {
   s += '<g class="fogbank b" filter="url(#fz)" opacity=".4"><ellipse cx="420" cy="20" rx="220" ry="45" fill="#f4ecd8"/><ellipse cx="10" cy="330" rx="70" ry="160" fill="#f4ecd8"/></g>';
   Object.keys(MAP).forEach(function (k) {
     var m = MAP[k];
-    s += '<a href="' + url(k) + '" class="loc" aria-label="' + esc(L(m.n)) + ', ' + esc(t(m.s)) + '"><g transform="translate(' + m.x + ' ' + m.y + ')">';
+    s += '<a href="' + url(k) + '" class="loc"><g transform="translate(' + m.x + ' ' + m.y + ')">';
     s += '<circle class="ring" r="58"/>' + ICONS[k];
     s += '<ellipse class="fog" cx="0" cy="-4" rx="66" ry="46" fill="#f2e9d2" opacity=".55" filter="url(#fz)"/>';
     s += '<text class="lbl" y="50" text-anchor="middle">' + esc(L(m.n)) + '</text>';
-    s += '<text class="sub" y="70" text-anchor="middle">' + esc(t(m.s).toUpperCase()) + '</text>';
+    s += '<text class="sub" y="70" text-anchor="middle">' + esc(t(m.s)) + '</text>';
     s += '</g></a>';
   });
   $("chart").innerHTML = s;

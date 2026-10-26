@@ -4,7 +4,7 @@
 var Dice3D = createDice3D();
 if (!Dice3D) { $("dice3d").hidden = true; $("d-total").hidden = false; }
 
-var D = { s: 20, c: 1, m: 0, mode: "normal" }, DIE = [4, 6, 8, 10, 12, 20, 100], hist = [], lastNat = null;
+var D = { s: 20, c: 1, m: 0, mode: "normal" }, hist = [], lastNat = null;
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function advOk() { return D.s === 20 && D.c === 1; }
 function dLabel() {
@@ -13,25 +13,19 @@ function dLabel() {
   return s;
 }
 function renderDiceUI() {
-  var p = $("d-pick"); p.innerHTML = "";
-  DIE.forEach(function (s) {
-    var b = el("button", "opt", s === 100 ? "d%" : "d" + s); b.type = "button"; b.id = "die-" + s;
-    b.setAttribute("aria-pressed", String(D.s === s));
-    b.addEventListener("click", function () { D.s = s; renderDiceUI(); }); p.appendChild(b);
-  });
+  document.querySelectorAll("#d-pick .opt").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.s === D.s)); });
   document.querySelectorAll("#d-mode .opt").forEach(function (b) {
     b.disabled = !(advOk() || b.dataset.mode === "normal");
     b.setAttribute("aria-pressed", String(b.dataset.mode === (advOk() ? D.mode : "normal")));
   });
   $("d-c").textContent = D.c; $("d-m").textContent = sign(D.m);
   $("d-roll-l").textContent = (LANG === "en" ? "Roll " : "Hodiť ") + dLabel();
-  var pr = $("d-presets"); pr.innerHTML = "";
-  PRESETS.forEach(function (x, i) {
-    var b = el("button", "opt", esc(L(x)) + "<small>" + x.c + "d" + x.s + (x.m ? sign(x.m) : "") + "</small>"); b.type = "button"; b.id = "preset-" + i;
-    b.addEventListener("click", function () { D.s = x.s; D.c = x.c; D.m = x.m; D.mode = "normal"; renderDiceUI(); doRoll(); });
-    pr.appendChild(b);
-  });
 }
+// The die and preset buttons come from the page itself; they only need their clicks.
+document.querySelectorAll("#d-pick .opt").forEach(function (b) { b.addEventListener("click", function () { D.s = +b.dataset.s; renderDiceUI(); }); });
+document.querySelectorAll("#d-presets .opt").forEach(function (b) {
+  b.addEventListener("click", function () { D.s = +b.dataset.s; D.c = +b.dataset.c; D.m = +b.dataset.m; D.mode = "normal"; renderDiceUI(); doRoll(); });
+});
 document.querySelectorAll("#d-mode .opt").forEach(function (b) { b.addEventListener("click", function () { D.mode = b.dataset.mode; renderDiceUI(); }); });
 $("d-cm").onclick = function () { D.c = clamp(D.c - 1, 1, 20); renderDiceUI(); };
 $("d-cp").onclick = function () { D.c = clamp(D.c + 1, 1, 20); renderDiceUI(); };

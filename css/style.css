@@ -188,7 +188,7 @@ p { margin: 0; }
 .loc:focus { outline: none; }
 .loc:focus-visible .ring { opacity: 1; stroke: var(--arcane); }
 .loc .lbl { font-family: var(--font-display); font-weight: 700; font-size: 26px; fill: var(--ink); paint-order: stroke; stroke: rgba(239,227,198,.85); stroke-width: 5px; }
-.loc .sub { font-family: var(--font-sc); font-weight: 700; font-size: 14px; letter-spacing: 2px; fill: var(--rubric); paint-order: stroke; stroke: rgba(239,227,198,.85); stroke-width: 4px; }
+.loc .sub { text-transform: uppercase; font-family: var(--font-sc); font-weight: 700; font-size: 14px; letter-spacing: 2px; fill: var(--rubric); paint-order: stroke; stroke: rgba(239,227,198,.85); stroke-width: 4px; }
 .fogbank { animation: drift 26s ease-in-out infinite alternate; }
 .fogbank.b { animation-duration: 34s; animation-direction: alternate-reverse; }
 @keyframes drift { from { transform: translateX(-30px); } to { transform: translateX(30px); } }
@@ -414,7 +414,7 @@ p { margin: 0; }
 /* Footer */
 footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .foot { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px 40px; color: var(--muted); padding-top: 32px; }
-.foot h3 { font-family: var(--font-sc); font-weight: 700; font-size: var(--s--1); letter-spacing: .14em; color: var(--gold); margin-bottom: 10px; }
+.foot h2 { font-family: var(--font-sc); font-weight: 700; font-size: var(--s--1); letter-spacing: .14em; color: var(--gold); margin-bottom: 10px; }
 .foot p { margin: 12px 0 0; max-width: 52ch; }
 .foot .idea p { margin: 0 0 16px; }
 .foot .idea .btn { font-size: var(--s--1); }

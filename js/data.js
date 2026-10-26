@@ -1,5 +1,5 @@
 "use strict";
-// Game data: abilities, species, classes, names, story tables, dice presets and map places.
+// Game data: abilities, species, classes, names, story tables and map places.
 // ---------- Data ----------
 var AB = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
 var ABL = { sk: ["SIL", "OBR", "ODL", "INT", "MÚD", "CHAR"], en: AB };
@@ -101,14 +101,6 @@ var TALE = [
     { sk: "dračie vajce", en: "a dragon egg" },
     { sk: "prsteň s tromi želaniami (možno)", en: "a ring of three wishes (maybe)" },
     { sk: "večná vďaka a teplá polievka", en: "eternal gratitude and warm soup" }] }
-];
-
-var PRESETS = [
-  { sk: "Útok", en: "Attack", s: 20, c: 1, m: 5 },
-  { sk: "Iniciatíva", en: "Initiative", s: 20, c: 1, m: 2 },
-  { sk: "Ohnivá guľa", en: "Fireball", s: 6, c: 8, m: 0 },
-  { sk: "Elixír liečenia", en: "Healing potion", s: 4, c: 2, m: 2 },
-  { sk: "Dlhý meč", en: "Longsword", s: 8, c: 1, m: 3 }
 ];
 
 var MAP = {

@@ -13,7 +13,7 @@
       <div class="halo"></div>
       <svg class="r1" viewBox="0 0 400 400" id="rune-outer" aria-hidden="true"></svg>
       <svg class="r2" viewBox="0 0 400 400" id="rune-inner" aria-hidden="true"></svg>
-      <a href="<?= url('kocky') ?>" aria-label="<?= attr('home.sigil') ?>"><img src="/img/logo-708.webp" alt="d20" width="354" height="351" fetchpriority="high"></a>
+      <a href="<?= url('kocky') ?>" aria-label="<?= attr('home.sigil') ?>"><img src="/img/logo-708.webp" srcset="/img/logo-300.webp 300w, /img/logo-708.webp 354w" sizes="(max-width: 880px) 190px, 340px" alt="d20" width="354" height="351" fetchpriority="high"></a>
     </div>
   </div>
 

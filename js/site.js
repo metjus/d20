@@ -107,27 +107,41 @@ function reveal() {
 (function embers() {
   var cv = $("embers"), ctx = cv.getContext("2d");
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var W, H2, P = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W, H2, P = [], dpr = Math.min(window.devicePixelRatio || 1, 2), last = 0;
+  // One soft glow per colour, drawn once and then stamped, instead of a new gradient for every ember on every frame.
+  var SPR = {};
+  ["255,190,110", "216,180,106", "167,123,255"].forEach(function (c) {
+    var s = document.createElement("canvas"); s.width = s.height = 64;
+    var x = s.getContext("2d"), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, "rgba(" + c + ",1)"); g.addColorStop(1, "rgba(" + c + ",0)");
+    x.fillStyle = g; x.fillRect(0, 0, 64, 64); SPR[c] = s;
+  });
   function size() { W = cv.clientWidth; H2 = cv.clientHeight; cv.width = W * dpr; cv.height = H2 * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   function spawn(y) {
     var c = Math.random(); c = c < .5 ? "255,190,110" : c < .8 ? "216,180,106" : "167,123,255";
     return { x: Math.random() * W, y: y == null ? H2 + 10 : y, r: .6 + Math.random() * 1.7, vy: .18 + Math.random() * .5, vx: (Math.random() - .5) * .2, ph: Math.random() * 6.28, c: c };
   }
-  size(); window.addEventListener("resize", size);
-  for (var i = 0, n = Math.round(Math.min(70, W / 18)); i < n; i++) P.push(spawn(Math.random() * H2));
-  function draw() {
+  function draw(now) {
+    // About 30 frames a second is plenty for slow drifting sparks.
+    if (!reduce) requestAnimationFrame(draw);
+    if (now - last < 32) return;
+    var k = last ? Math.min((now - last) / 16.7, 4) : 1; last = now;
     ctx.clearRect(0, 0, W, H2);
     P.forEach(function (p, i) {
-      if (!reduce) { p.y -= p.vy; p.ph += .02; p.x += p.vx + Math.sin(p.ph) * .15; }
+      if (!reduce) { p.y -= p.vy * k; p.ph += .02 * k; p.x += (p.vx + Math.sin(p.ph) * .15) * k; }
       if (p.y < -10) P[i] = spawn();
-      var a = .25 + .4 * (Math.sin(p.ph * 2) * .5 + .5);
-      var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-      g.addColorStop(0, "rgba(" + p.c + "," + a + ")"); g.addColorStop(1, "rgba(" + p.c + ",0)");
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4, 0, 6.283); ctx.fill();
+      ctx.globalAlpha = .25 + .4 * (Math.sin(p.ph * 2) * .5 + .5);
+      var d = p.r * 8; ctx.drawImage(SPR[p.c], p.x - d / 2, p.y - d / 2, d, d);
     });
-    if (!reduce) requestAnimationFrame(draw);
   }
-  draw();
+  function start() {
+    size(); window.addEventListener("resize", size);
+    for (var i = 0, n = Math.round(Math.min(70, W / 18)); i < n; i++) P.push(spawn(Math.random() * H2));
+    requestAnimationFrame(draw);
+  }
+  // Sparks are decoration: start them once the page has loaded.
+  if (document.readyState === "complete") setTimeout(start, 300);
+  else window.addEventListener("load", function () { setTimeout(start, 300); });
 })();
 
 reveal();
