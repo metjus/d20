@@ -33,7 +33,7 @@ data/texts.json             všetky texty SK/EN vrátane titulkov a popisov pre 
 data/classes.json, species.json, glossary.json   obsah stránok Povolania, Rasy a Slovník
 data/presets.json, tale.json  časté hody na Kockách, lístky na nástenke Príbehu
 css/style.css, css/fonts.css
-js/boot.js                  v <head>: presmerovanie starých odkazov, prechodová animácia (musí ostať blokujúci, nie async)
+js/boot.js                  v <head>: jazyk podľa prehliadača, presmerovanie starých odkazov, prechodová animácia (musí ostať blokujúci, nie async)
 js/core.js                  spoločné pomôcky, texty z PHP
 js/home.js, guides.js, character.js, story.js, dice.js   logika jednotlivých stránok
 js/site.js                  animácie, prechody, kontaktný formulár, cookie lišta
