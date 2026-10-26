@@ -12,7 +12,8 @@
           <button class="icon-btn" type="button" id="c-name-roll" aria-label="<?= attr('c.nameRoll') ?>"><svg><use href="#i-dice"/></svg></button></div>
       </div>
       <div><span class="label"><?= t('c.species') ?></span><div class="opts" id="c-species"></div></div>
-      <div><span class="label"><?= t('c.class') ?></span><div class="opts" id="c-class"></div></div>
+      <div><span class="label"><?= t('c.class') ?></span><div class="opts" id="c-class"></div>
+        <p class="note" style="margin-top:8px"><?= t('c.more') ?></p></div>
       <div><span class="label"><?= t('c.method') ?></span>
         <div class="opts" id="c-method">
           <button class="opt" type="button" data-m="roll" aria-pressed="true"><?= t('c.m1') ?></button>

@@ -53,6 +53,11 @@
         <button class="btn ghost" type="button" id="ct-open"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('ct.open') ?></span></button>
       </div>
     </div>
+    <nav class="foot-links" aria-label="<?= attr('foot.links') ?>">
+<?php foreach (['navody', 'povolania', 'rasy', 'slovnik', 'postava', 'pribeh', 'kocky'] as $p): ?>
+      <a href="<?= url($p) ?>"><?= t("nav.$p") ?></a>
+<?php endforeach; ?>
+    </nav>
     <div class="foot-base">
       <span>&copy; <span id="yr">2026</span> d20.sk · <a href="<?= url('sukromie') ?>"><?= t('pv.link') ?></a></span>
       <p><?= t('foot') ?></p>

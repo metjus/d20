@@ -19,6 +19,20 @@ function texts(): array
     return $texts ??= json_decode((string) file_get_contents(__DIR__ . '/../data/texts.json'), true);
 }
 
+// Content lists for the library pages: data/classes.json, species.json, glossary.json.
+function content(string $name): array
+{
+    static $cache = [];
+    return $cache[$name] ??= json_decode((string) file_get_contents(__DIR__ . "/../data/$name.json"), true);
+}
+
+// One value from a content pair [Slovak, English].
+function pair(array $pair): string
+{
+    global $LANG;
+    return $pair[$LANG === 'en' ? 1 : 0];
+}
+
 // Text for the current language, as HTML. {url:page} placeholders become that page's address.
 function t(string $key): string
 {

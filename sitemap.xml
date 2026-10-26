@@ -29,6 +29,48 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://d20.sk/povolania/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/povolania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/classes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/povolania/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/en/classes/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/povolania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/classes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/povolania/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/rasy/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/rasy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/species/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/rasy/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/en/species/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/rasy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/species/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/rasy/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/slovnik/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/slovnik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/slovnik/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/en/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/slovnik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/slovnik/"/>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://d20.sk/tvorba-postavy/</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/tvorba-postavy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/character-creator/"/>

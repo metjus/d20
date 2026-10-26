@@ -1,19 +1,6 @@
 "use strict";
-// Game data: glossary, abilities, species, classes, names, story tables, dice presets and map places.
+// Game data: abilities, species, classes, names, story tables, dice presets and map places.
 // ---------- Data ----------
-var GLOSS = [
-  { k: { sk: "DM", en: "DM" }, s: "Dungeon Master", d: { sk: "Rozprávač a rozhodca hry. Opisuje svet a hrá za všetkých okrem hráčov.", en: "The game's narrator and referee. Describes the world and plays everyone except the players." } },
-  { k: { sk: "d20", en: "d20" }, s: { sk: "kocka", en: "die" }, d: { sk: "Dvadsaťstenná kocka. „d“ znamená kocku, číslo počet stien. 2d6 sú dve šesťstenné kocky.", en: "A twenty-sided die. \"d\" means die and the number is its sides. 2d6 is two six-sided dice." } },
-  { k: { sk: "DC", en: "DC" }, s: "Difficulty Class", d: { sk: "Obtiažnosť úlohy. Ľahká je okolo 10, ťažká 20. Hod musí byť rovnaký alebo vyšší.", en: "How hard a task is. Easy is around 10, hard is 20. Your roll must meet or beat it." } },
-  { k: { sk: "Kritický úspech", en: "Critical hit" }, s: "natural 20", d: { sk: "Na kocke padne 20. Útok vtedy zasiahne vždy a kocky zranenia sa hádžu dvakrát.", en: "The die shows 20. The attack always hits and you roll the damage dice twice." } },
-  { k: { sk: "Výhoda a nevýhoda", en: "Advantage and disadvantage" }, s: "", d: { sk: "Hodíš dvoma d20. Pri výhode berieš vyšší výsledok, pri nevýhode nižší.", en: "Roll two d20s. Take the higher with advantage, the lower with disadvantage." } },
-  { k: { sk: "Iniciatíva", en: "Initiative" }, s: "", d: { sk: "Hod na začiatku boja, ktorý určí poradie, v akom sa postavy striedajú.", en: "A roll at the start of combat that sets the turn order." } },
-  { k: { sk: "Životy", en: "Hit points" }, s: "HP", d: { sk: "Keď klesnú na nulu, postava padá do bezvedomia a hádže záchranné hody proti smrti.", en: "At zero the character falls unconscious and makes death saving throws." } },
-  { k: { sk: "Kampaň a one-shot", en: "Campaign and one-shot" }, s: "", d: { sk: "Kampaň je dlhý príbeh na mnoho sedení. One-shot je samostatné dobrodružstvo na jeden večer.", en: "A campaign is a long story over many sessions. A one-shot is a single-evening adventure." } },
-  { k: { sk: "5e", en: "5e" }, s: { sk: "piata edícia", en: "fifth edition" }, d: { sk: "Súčasná verzia pravidiel DnD, ktorú dnes hrá väčšina skupín.", en: "The current version of the DnD rules, played by most groups today." } },
-  { k: { sk: "TTRPG", en: "TTRPG" }, s: { sk: "stolová hra na hrdinov", en: "tabletop RPG" }, d: { sk: "Celý žáner, do ktorého patrí DnD. Je najznámejšou, no zďaleka nie jedinou takou hrou.", en: "The genre DnD belongs to. It is the best known such game, but far from the only one." } }
-];
-
 var AB = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
 var ABL = { sk: ["SIL", "OBR", "ODL", "INT", "MÚD", "CHAR"], en: AB };
 var SPECIES = [

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "human", "name": ["Človek", "Human"], "size": ["stredná", "Medium"], "speed": 30,
+    "desc": ["Ľudia sú najrozšírenejší národ sveta. Žijú krátko, no o to ctižiadostivejšie, a hodia sa ku každému povolaniu.",
+             "Humans are the most widespread people in the world. Their lives are short but ambitious, and they suit any class."],
+    "traits": [
+      ["Vynaliezavý", "Resourceful", "Po každom dlhom odpočinku získa Hrdinskú inšpiráciu.", "Gains Heroic Inspiration after every long rest."],
+      ["Zručný", "Skillful", "Zdatnosť v jednej zručnosti podľa vlastného výberu.", "Proficiency in one skill of your choice."],
+      ["Všestranný", "Versatile", "Na začiatku si vyberie jeden talent pôvodu.", "Starts with an Origin feat of your choice."]
+    ]
+  },
+  {
+    "id": "elf", "name": ["Elf", "Elf"], "size": ["stredná", "Medium"], "speed": 30,
+    "desc": ["Elfovia žijú stáročia a nesú v sebe kúsok víľej mágie. Vnímajú svet ostrejšie ako ostatní a namiesto spánku upadajú do tranzu.",
+             "Elves live for centuries and carry a spark of fey magic. They perceive the world more keenly than others and trance instead of sleeping."],
+    "traits": [
+      ["Videnie v tme", "Darkvision", "Vidí v tme do vzdialenosti 18 m (60 stôp).", "Sees in darkness out to 60 feet."],
+      ["Víľí pôvod", "Fey Ancestry", "Výhoda na záchranné hody proti zmámeniu.", "Advantage on saving throws against being charmed."],
+      ["Tranz", "Trance", "Na dlhý odpočinok mu stačia štyri hodiny meditácie.", "Finishes a long rest with four hours of meditation."],
+      ["Elfí rod", "Elven Lineage", "Drow, vznešený elf alebo lesný elf, každý s vlastnými kúzlami.", "Drow, high elf or wood elf, each with its own spells."]
+    ]
+  },
+  {
+    "id": "dwarf", "name": ["Trpaslík", "Dwarf"], "size": ["stredná", "Medium"], "speed": 30,
+    "desc": ["Trpaslíci sú stavaní z kameňa a tvrdohlavosti. Svoje siene vytesali hlboko v horách a nezabúdajú na nič, ani na krivdy.",
+             "Dwarves are built of stone and stubbornness. They carved their halls deep in the mountains and forget nothing, grudges included."],
+    "traits": [
+      ["Videnie v tme", "Darkvision", "Vidí v tme do vzdialenosti 36 m (120 stôp).", "Sees in darkness out to 120 feet."],
+      ["Trpasličia odolnosť", "Dwarven Resilience", "Odolnosť voči jedu a výhoda proti otráveniu.", "Resistance to poison damage and advantage against being poisoned."],
+      ["Trpasličia húževnatosť", "Dwarven Toughness", "Maximum životov +1 za každú úroveň.", "Hit point maximum +1 for every level."],
+      ["Cit pre kameň", "Stonecunning", "Na chvíľu vycíti pohyb a skryté priestory v kameni.", "Briefly senses movement and hidden spaces through stone."]
+    ]
+  },
+  {
+    "id": "halfling", "name": ["Polovičník", "Halfling"], "size": ["malá", "Small"], "speed": 30,
+    "desc": ["Polovičníci sú malí, priateľskí a nenápadní. Majú radi pohodlie domova, no keď sa vydajú na cestu, šťastie ide s nimi.",
+             "Halflings are small, friendly and easy to overlook. They love the comforts of home, but when they take to the road, luck goes with them."],
+    "traits": [
+      ["Šťastie", "Luck", "Keď na d20 padne 1, môže hodiť znova a použije nový výsledok.", "When the d20 shows a 1, reroll it and use the new result."],
+      ["Statočný", "Brave", "Výhoda na záchranné hody proti vystrašeniu.", "Advantage on saving throws against being frightened."],
+      ["Polovičnícka obratnosť", "Halfling Nimbleness", "Prejde priestorom každého tvora väčšieho, ako je sám.", "Moves through the space of any creature larger than itself."],
+      ["Prirodzene nenápadný", "Naturally Stealthy", "Skryje sa aj za tvorom väčším, ako je sám.", "Can hide behind a creature larger than itself."]
+    ]
+  },
+  {
+    "id": "gnome", "name": ["Gnóm", "Gnome"], "size": ["malá", "Small"], "speed": 30,
+    "desc": ["Gnómovia sú zvedaví, vynaliezaví a plní energie. Majú talent na ilúzie, drobné mechanizmy aj rozhovory so zvieratami.",
+             "Gnomes are curious, inventive and full of energy, with a knack for illusions, small contraptions and talking to animals."],
+    "traits": [
+      ["Videnie v tme", "Darkvision", "Vidí v tme do vzdialenosti 18 m (60 stôp).", "Sees in darkness out to 60 feet."],
+      ["Gnómska prefíkanosť", "Gnomish Cunning", "Výhoda na záchranné hody na Inteligenciu, Múdrosť a Charizmu.", "Advantage on Intelligence, Wisdom and Charisma saving throws."],
+      ["Gnómsky rod", "Gnomish Lineage", "Lesný gnóm s ilúziami a rečou zvierat alebo skalný gnóm s mechanickými hračkami.", "Forest gnome with illusions and animal speech, or rock gnome with clockwork toys."]
+    ]
+  },
+  {
+    "id": "dragonborn", "name": ["Drakorodený", "Dragonborn"], "size": ["stredná", "Medium"], "speed": 30,
+    "desc": ["Drakorodení nesú v sebe dedičstvo drakov. Ich šupiny majú farbu dračieho predka a z hrdla dokážu vychrliť jeho živel.",
+             "Dragonborn carry the legacy of dragons. Their scales take the colour of a draconic ancestor, and they can breathe out its element."],
+    "traits": [
+      ["Dračí predok", "Draconic Ancestry", "Určuje živel: oheň, chlad, blesk, kyselinu alebo jed.", "Sets your element: fire, cold, lightning, acid or poison."],
+      ["Dračí dych", "Breath Weapon", "Vychrlí živel v kuželi alebo v línii.", "Exhales your element in a cone or a line."],
+      ["Odolnosť", "Damage Resistance", "Odolnosť voči zraneniu živlom svojho predka.", "Resistance to your ancestor's damage type."],
+      ["Dračí let", "Draconic Flight", "Od 5. úrovne si na chvíľu vyčarí krídla.", "From 5th level, sprouts spectral wings for a short time."]
+    ]
+  },
+  {
+    "id": "tiefling", "name": ["Tiefling", "Tiefling"], "size": ["stredná alebo malá", "Medium or Small"], "speed": 30,
+    "desc": ["Tieflingovia majú v krvi odkaz podsvetia. Prezradia ich rohy a často aj chvost, no ich osud je len v ich rukách.",
+             "Tieflings carry a legacy of the lower planes in their blood. Horns and often a tail give them away, but their fate is theirs alone."],
+    "traits": [
+      ["Videnie v tme", "Darkvision", "Vidí v tme do vzdialenosti 18 m (60 stôp).", "Sees in darkness out to 60 feet."],
+      ["Diabolský odkaz", "Fiendish Legacy", "Priepastný, chtonický alebo pekelný, s vlastnou odolnosťou a kúzlami.", "Abyssal, chthonic or infernal, each with its own resistance and spells."],
+      ["Nadpozemská prítomnosť", "Otherworldly Presence", "Ovláda trik Thaumaturgia na drobné zázraky.", "Knows the Thaumaturgy cantrip for minor wonders."]
+    ]
+  },
+  {
+    "id": "orc", "name": ["Ork", "Orc"], "size": ["stredná", "Medium"], "speed": 30,
+    "desc": ["Orkovia sú vytrvalí pútnici a bojovníci, ktorí sa nevzdávajú. Silou a vôľou prežijú aj tam, kde by iní padli.",
+             "Orcs are tireless wanderers and warriors who never give up. Strength and will carry them through where others would fall."],
+    "traits": [
+      ["Nával adrenalínu", "Adrenaline Rush", "Bonusovou akciou vyrazí vpred a získa dočasné životy.", "Dashes as a bonus action and gains temporary hit points."],
+      ["Videnie v tme", "Darkvision", "Vidí v tme do vzdialenosti 36 m (120 stôp).", "Sees in darkness out to 120 feet."],
+      ["Neúnavná vytrvalosť", "Relentless Endurance", "Keď klesne na 0 životov, raz za dlhý odpočinok ostane stáť s 1 životom.", "Once per long rest, drops to 1 hit point instead of 0."]
+    ]
+  },
+  {
+    "id": "goliath", "name": ["Goliáš", "Goliath"], "size": ["stredná", "Medium"], "speed": 35,
+    "desc": ["Goliáši sú vysokí horali s krvou obrov. Merajú sa s každou výzvou a predkovia im prepožičali silu búrky, ohňa či mrazu.",
+             "Goliaths are towering mountain folk with the blood of giants. They measure themselves against every challenge, and their ancestors lend them the power of storm, fire or frost."],
+    "traits": [
+      ["Obrí predok", "Giant Ancestry", "Schopnosť podľa druhu obra, napríklad hrom, oheň, mráz alebo kameň.", "A boon from a kind of giant, such as storm, fire, frost or stone."],
+      ["Obrovská postava", "Large Form", "Od 5. úrovne na chvíľu narastie do veľkej veľkosti.", "From 5th level, grows to Large size for a short time."],
+      ["Mohutná stavba", "Powerful Build", "Unesie viac a ľahšie sa vyslobodí zo zovretia.", "Carries more and breaks free of grapples more easily."]
+    ]
+  }
+]

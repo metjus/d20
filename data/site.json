@@ -36,7 +36,6 @@
       },
       "type": "article",
       "scripts": [
-        "data",
         "guides"
       ]
     },
@@ -82,6 +81,38 @@
       },
       "type": "page",
       "scripts": []
+    },
+    "povolania": {
+      "url": {
+        "sk": "/povolania/",
+        "en": "/en/classes/"
+      },
+      "type": "article",
+      "parent": "navody",
+      "scripts": []
+    },
+    "rasy": {
+      "url": {
+        "sk": "/rasy/",
+        "en": "/en/species/"
+      },
+      "type": "article",
+      "parent": "navody",
+      "scripts": []
+    },
+    "slovnik": {
+      "url": {
+        "sk": "/slovnik/",
+        "en": "/en/glossary/"
+      },
+      "type": "article",
+      "parent": "navody",
+      "scripts": []
     }
-  }
+  },
+  "library": [
+    "povolania",
+    "rasy",
+    "slovnik"
+  ]
 }

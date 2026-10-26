@@ -1,0 +1,86 @@
+[
+  {
+    "id": "barbarian", "name": ["Barbar", "Barbarian"], "hd": 12, "primary": [0], "saves": [0, 2], "diff": 1,
+    "role": ["Bojovník v prvej línii", "Front-line brawler"],
+    "desc": ["Barbar čerpá silu zo zúrivosti. Keď sa rozzúri, udrie tvrdšie a zbrane mu ublížia len napoly. Má najviac životov zo všetkých povolaní, takže vydrží aj to, čo by iných zložilo.",
+             "Barbarians draw power from rage. While raging they hit harder and shrug off half the damage from weapons. They have more hit points than any other class, so they can take what would drop anyone else."],
+    "fit": ["chceš byť v prvej línii a nechceš riešiť kúzla.", "you want to be on the front line without tracking spells."]
+  },
+  {
+    "id": "bard", "name": ["Bard", "Bard"], "hd": 8, "primary": [5], "saves": [1, 5], "diff": 2,
+    "role": ["Podpora a čarovanie", "Support caster"],
+    "desc": ["Bard tká mágiu z hudby, slov a príbehov. Povzbudzuje spojencov Bardskou inšpiráciou, ovláda kúzla na liečenie aj zmätenie nepriateľov a z väčšiny problémov sa dokáže vyrozprávať.",
+             "Bards weave magic from music, words and stories. They spur allies on with Bardic Inspiration, cast spells that heal or confuse, and can talk their way out of most trouble."],
+    "fit": ["rád hovoríš za svoju postavu a chceš pomáhať celej družine.", "you love speaking in character and helping the whole party."]
+  },
+  {
+    "id": "cleric", "name": ["Kňaz", "Cleric"], "hd": 8, "primary": [4], "saves": [4, 5], "diff": 2,
+    "role": ["Liečiteľ a ochranca", "Healer and protector"],
+    "desc": ["Kňaz dostáva kúzla od svojho božstva. Lieči, chráni a posilňuje spojencov, no v zbroji a so štítom obstojí aj v boji zblízka. Božskou mocou dokáže odohnať nemŕtvych.",
+             "Clerics receive their spells from a deity. They heal, shield and bolster allies, yet with armour and a shield they hold their own in melee. With divine power they can turn the undead."],
+    "fit": ["chceš družinu držať nažive a pritom nestáť bokom, keď sa bojuje.", "you want to keep the party alive without standing aside when the fighting starts."]
+  },
+  {
+    "id": "druid", "name": ["Druid", "Druid"], "hd": 8, "primary": [4], "saves": [3, 4], "diff": 3,
+    "role": ["Mág prírody", "Nature caster"],
+    "desc": ["Druid čerpá mágiu zo samotnej prírody. Privoláva blesky a popínavé liany, lieči a dokáže sa premeniť na zviera, od vlka po medveďa.",
+             "Druids draw magic from nature itself. They call down lightning and grasping vines, heal, and can take the shape of a beast, from a wolf to a bear."],
+    "fit": ["ťa láka divočina a chceš mať v rukáve vždy iný trik.", "the wild calls to you and you want a different trick up your sleeve every time."]
+  },
+  {
+    "id": "fighter", "name": ["Bojovník", "Fighter"], "hd": 10, "primary": [0, 1], "either": true, "saves": [0, 2], "diff": 1,
+    "role": ["Majster zbraní", "Weapon master"],
+    "desc": ["Bojovník ovláda všetky zbrane a brnenia. Druhým dychom si uprostred boja obnoví životy a Nával akcie mu dovolí v jednom ťahu urobiť dvakrát viac. Je to najspoľahlivejšia voľba na prvú hru.",
+             "Fighters master every weapon and every kind of armour. Second Wind restores hit points mid-fight, and Action Surge lets them do twice as much in a single turn. The most forgiving pick for a first game."],
+    "fit": ["chceš jednoduchú, no silnú postavu a pravidlá sa chceš učiť postupne.", "you want a simple but strong character and would rather learn the rules as you go."]
+  },
+  {
+    "id": "monk", "name": ["Mních", "Monk"], "hd": 8, "primary": [1, 4], "saves": [0, 1], "diff": 2,
+    "role": ["Rýchly bojovník holých rúk", "Swift unarmed fighter"],
+    "desc": ["Mních bojuje päsťami a kopmi s disciplínou rokov tréningu. Je rýchlejší ako ostatní, v jednom ťahu udrie viackrát a vďaka vnútornému sústredeniu uhýba úderom aj výbuchom.",
+             "Monks fight with fists and feet, honed by years of discipline. They move faster than anyone, strike several times a turn and use inner focus to dodge blows and blasts alike."],
+    "fit": ["ťa baví pohyblivý štýl boja bez zbrane a brnenia.", "you enjoy a mobile fighting style without weapons or armour."]
+  },
+  {
+    "id": "paladin", "name": ["Paladin", "Paladin"], "hd": 10, "primary": [0, 5], "saves": [4, 5], "diff": 1,
+    "role": ["Svätý rytier", "Holy knight"],
+    "desc": ["Paladin je rytier viazaný posvätnou prísahou. Nosí ťažkú zbroj, dotykom lieči rany a zásah zbraňou dokáže nabiť božskou silou na ničivý úder.",
+             "Paladins are knights bound by a sacred oath. They wear heavy armour, heal wounds with a touch and can charge a weapon hit with divine power for a devastating smite."],
+    "fit": ["chceš bojovať v prvej línii a mať pritom aj trochu mágie.", "you want to fight on the front line with a little magic on the side."]
+  },
+  {
+    "id": "ranger", "name": ["Hraničiar", "Ranger"], "hd": 10, "primary": [1, 4], "saves": [0, 1], "diff": 2,
+    "role": ["Stopár a lukostrelec", "Tracker and archer"],
+    "desc": ["Hraničiar je doma v divočine. Stopuje, prežije kdekoľvek, s lukom je smrtiaci a pomáha si kúzlami prírody, napríklad Znamením lovca, vďaka ktorému zasahuje svoju korisť tvrdšie.",
+             "Rangers are at home in the wild. They track, survive anywhere, are deadly with a bow and lean on nature magic such as Hunter's Mark to strike their quarry harder."],
+    "fit": ["chceš strieľať z diaľky a byť očami a ušami družiny.", "you want to shoot from range and be the eyes and ears of the party."]
+  },
+  {
+    "id": "rogue", "name": ["Zlodej", "Rogue"], "hd": 8, "primary": [1], "saves": [1, 3], "diff": 1,
+    "role": ["Zlodej a špecialista", "Sneak and specialist"],
+    "desc": ["Zlodej spolieha na šikovnosť, nie na hrubú silu. Odomyká zámky, zneškodňuje pasce a Zákerným útokom zasahuje tam, kde to bolí najviac. Vďaka Prefíkanej akcii sa v boji každý ťah stihne aj schovať alebo uniknúť.",
+             "Rogues rely on skill, not brute force. They pick locks, disarm traps and land a Sneak Attack where it hurts most. Cunning Action lets them hide or slip away every single turn."],
+    "fit": ["ťa baví vymýšľať, ako sa dostať tam, kam sa nemá.", "you like working out how to get where you shouldn't be."]
+  },
+  {
+    "id": "sorcerer", "name": ["Čarodej", "Sorcerer"], "hd": 6, "primary": [5], "saves": [2, 5], "diff": 3,
+    "role": ["Rodený čarodejník", "Innate caster"],
+    "desc": ["Čarodej sa s mágiou narodil, prúdi mu v krvi. Pozná menej kúziel ako mág, no pomocou metamágie ich ohýba: zošle ich na dva ciele, posilní ich alebo ich zošle potichu.",
+             "Sorcerers are born with magic in their blood. They know fewer spells than a wizard, but bend them with Metamagic: twinning them onto two targets, empowering them or casting them silently."],
+    "fit": ["chceš veľké kúzla a osobný príbeh o tom, odkiaľ sa tvoja moc vzala.", "you want big spells and a personal story about where your power came from."]
+  },
+  {
+    "id": "warlock", "name": ["Černokňažník", "Warlock"], "hd": 8, "primary": [5], "saves": [4, 5], "diff": 2,
+    "role": ["Čarodejník paktu", "Pact caster"],
+    "desc": ["Černokňažník uzavrel pakt s mocným patrónom, napríklad víľím pánom, démonom alebo niečím ešte starším. Má málo miest pre kúzla, no obnoví ich už po krátkom odpočinku a jeho Čarovný výboj patrí medzi najlepšie triky v hre.",
+             "Warlocks have struck a pact with a powerful patron: a fey lord, a fiend or something older still. They have few spell slots but regain them on a short rest, and their Eldritch Blast is one of the best cantrips in the game."],
+    "fit": ["ťa láka temné tajomstvo a dohoda, ktorá má svoju cenu.", "you are drawn to a dark secret and a bargain that comes at a price."]
+  },
+  {
+    "id": "wizard", "name": ["Mág", "Wizard"], "hd": 6, "primary": [3], "saves": [3, 4], "diff": 3,
+    "role": ["Učenec mágie", "Scholar of magic"],
+    "desc": ["Mág sa kúzla učí štúdiom a zapisuje ich do svojej knihy kúziel. Má najširší výber kúziel zo všetkých povolaní, no je krehký, takže musí v boji premýšľať, kde stojí.",
+             "Wizards learn spells through study and record them in a spellbook. They have the widest choice of spells of any class but are fragile, so they need to think about where they stand in a fight."],
+    "fit": ["rád plánuješ dopredu a chceš mať riešenie na každý problém.", "you like planning ahead and want an answer to every problem."]
+  }
+]

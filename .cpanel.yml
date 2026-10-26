@@ -5,4 +5,4 @@ deployment:
     # The old single-page file would be served instead of index.php, so it goes.
     - /bin/rm -f ${DEPLOYPATH}index.html
     - /bin/cp index.php 404.php .htaccess robots.txt sitemap.xml favicon.ico apple-touch-icon.png site.webmanifest $DEPLOYPATH
-    - /bin/cp -R css js img fonts php inc partials pages data en navody tvorba-postavy tvorba-pribehu kocky ochrana-osobnych-udajov $DEPLOYPATH
+    - /bin/cp -R css js img fonts php inc partials pages data en navody tvorba-postavy tvorba-pribehu kocky ochrana-osobnych-udajov povolania rasy slovnik $DEPLOYPATH

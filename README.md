@@ -13,6 +13,9 @@ Každá podstránka má vlastnú adresu v slovenčine aj angličtine (kvôli vyh
 | tvorba postavy | `/tvorba-postavy/` | `/en/character-creator/` |
 | tvorba príbehu | `/tvorba-pribehu/` | `/en/story-generator/` |
 | kocky | `/kocky/` | `/en/dice-roller/` |
+| povolania | `/povolania/` | `/en/classes/` |
+| rasy | `/rasy/` | `/en/species/` |
+| slovník | `/slovnik/` | `/en/glossary/` |
 | ochrana údajov | `/ochrana-osobnych-udajov/` | `/en/privacy/` |
 
 Staré odkazy typu `/#kocky` presmeruje `js/boot.js` na novú adresu.
@@ -27,6 +30,7 @@ partials/                   spoločné časti: layout (head, SEO), hlavička, p�
 pages/                      obsah jednotlivých stránok
 data/site.json              zoznam stránok, ich adresy a skripty
 data/texts.json             všetky texty SK/EN vrátane titulkov a popisov pre Google
+data/classes.json, species.json, glossary.json   obsah stránok Povolania, Rasy a Slovník
 css/style.css, css/fonts.css
 js/boot.js                  v <head>: presmerovanie starých odkazov, prechodová animácia
 js/core.js                  spoločné pomôcky, texty z PHP

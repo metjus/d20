@@ -13,15 +13,25 @@ if ($cfg['type'] === 'home') {
     $graph[] = ['@type' => 'WebSite', 'name' => site()['name'], 'url' => $here, 'inLanguage' => $LANG, 'description' => $desc,
                 'publisher' => ['@type' => 'Person', 'name' => site()['operator']]];
 } elseif ($indexed) {
-    $graph[] = ['@type' => 'BreadcrumbList', 'itemListElement' => [
-        ['@type' => 'ListItem', 'position' => 1, 'name' => $plain('crumb.home'), 'item' => abs_url('domov')],
-        ['@type' => 'ListItem', 'position' => 2, 'name' => $plain($PAGE === 'sukromie' ? 'pv.h1' : "nav.$PAGE"), 'item' => $here],
-    ]];
+    $trail = [[$plain('crumb.home'), abs_url('domov')]];
+    if (isset($cfg['parent'])) {
+        $trail[] = [$plain("nav.{$cfg['parent']}"), abs_url($cfg['parent'])];
+    }
+    $trail[] = [$plain($PAGE === 'sukromie' ? 'pv.h1' : "nav.$PAGE"), $here];
+    $graph[] = ['@type' => 'BreadcrumbList', 'itemListElement' => array_map(
+        fn ($i, $c) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $c[0], 'item' => $c[1]],
+        array_keys($trail), $trail
+    )];
     $graph[] = $cfg['type'] === 'app'
         ? ['@type' => 'WebApplication', 'name' => $title, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
         : ['@type' => 'WebPage', 'name' => $title, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+    if ($PAGE === 'slovnik') {
+        $graph[] = ['@type' => 'DefinedTermSet', 'name' => $plain('gl.h1'), 'url' => $here, 'inLanguage' => $LANG,
+                    'hasDefinedTerm' => array_map(fn ($g) => ['@type' => 'DefinedTerm', 'name' => pair($g['term']),
+                        'description' => pair($g['def']), 'url' => "$here#{$g['id']}"], content('glossary'))];
+    }
 }
 
 // What the page scripts need: language, page, addresses in this language and the texts.
