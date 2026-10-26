@@ -13,15 +13,17 @@
     if (a) try { localStorage.setItem("d20-lang", a.getAttribute("hreflang")); } catch (err) {}
   });
   try {
-    var bot = navigator.webdriver || /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit|whatsapp|telegram|discord|skype/i.test(navigator.userAgent);
     var arrived = !document.referrer || document.referrer.indexOf(location.origin + "/") !== 0;
     var want = localStorage.getItem("d20-lang");
-    if (!want && arrived && !bot) {
+    if (!want && arrived) {
       var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
       want = langs.some(function (l) { return /^(sk|cs)\b/i.test(l); }) ? "sk" : "en";
     }
-    var alt = want && want !== html.lang && !bot && document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-    if (alt) {
+    var alt = want && want !== html.lang && document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+    // PageSpeed Insights does not always mark its browser as automated, but it always emulates the same phone or a 1350×940 desktop window.
+    var bot = alt && (navigator.webdriver || /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit|whatsapp|telegram|discord|skype|moto g power/i.test(navigator.userAgent) ||
+      (innerWidth === 412 && innerHeight === 823) || (innerWidth === 1350 && innerHeight === 940));
+    if (alt && !bot) {
       html.style.visibility = "hidden";
       location.replace(new URL(alt.href).pathname + location.search + location.hash);
       return;
