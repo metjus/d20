@@ -27,7 +27,7 @@
         <p class="verdict" id="d-verdict"></p>
         <p class="breakdown" id="d-break"></p>
       </div>
-      <div class="slip parchment"><span class="label"><?= t('d.hist') ?></span><ul class="hist" id="d-hist"></ul></div>
+      <div class="slip parchment"><span class="label"><?= t('d.hist') ?></span><ul class="hist" id="d-hist" data-empty="<?= attr('d.histEmpty') ?>"></ul></div>
     </div>
   </div>
 </section>

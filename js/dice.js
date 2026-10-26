@@ -82,7 +82,6 @@ function renderHist() {
 }
 $("d-roll").addEventListener("click", function () { doRoll(); });
 $("dice3d").addEventListener("click", function () { doRoll(); });
-hist = [["1d20 +3", 17], ["8d6", 29], ["2d4 +2", 7]];
 
 // ---------- Init ----------
 renderDiceUI();

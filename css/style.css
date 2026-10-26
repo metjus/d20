@@ -367,6 +367,7 @@ p { margin: 0; }
 .hist { list-style: none; margin: 0; padding: 0; display: grid; font-family: var(--font-book); font-variant-numeric: tabular-nums; }
 .hist li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 1px solid rgba(93,71,51,.3); color: var(--ink-soft); }
 .hist li b { color: var(--ink); }
+.hist:empty::before { content: attr(data-empty); display: block; padding: 6px 0; border-top: 1px solid rgba(93,71,51,.3); color: var(--ink-soft); font-style: italic; }
 @media (max-width: 920px) { .tool, .dice { grid-template-columns: 1fr; } }
 
 /* Footer */

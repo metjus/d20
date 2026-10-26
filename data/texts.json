@@ -79,6 +79,7 @@
   "d.presets": ["Časté hody","Common rolls"],
   "d.stage": ["Hodiť","Roll"],
   "d.hist": ["Posledné hody","Recent rolls"],
+  "d.histEmpty": ["Zatiaľ žiadne hody.","No rolls yet."],
   "foot": ["Neoficiálny fanúšikovský web. Dungeons &amp; Dragons je ochranná známka spoločnosti Wizards of the Coast, s ktorou d20.sk nie je spojený. Karty Goblin a Ohnivá guľa vychádzajú zo SRD 5.1 (CC BY 4.0, Wizards of the Coast).","Unofficial fan site. Dungeons &amp; Dragons is a trademark of Wizards of the Coast, which d20.sk is not affiliated with. The Goblin and Fireball cards are based on the SRD 5.1 (CC BY 4.0, Wizards of the Coast)."],
   "map.kicker": ["Mapa kráľovstva","Map of the realm"],
   "map.h2": ["Kam sa vydáš, dobrodruh?","Where will you go, adventurer?"],
