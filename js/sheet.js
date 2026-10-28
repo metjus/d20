@@ -19,3 +19,6 @@ function recalc() {
 $("hs").addEventListener("input", recalc);
 $("hs").addEventListener("submit", function (e) { e.preventDefault(); });
 $("hs-print").addEventListener("click", function () { window.print(); });
+// Print shows the name as plain text, which wraps; an input would cut a long name off.
+$("hs-n").addEventListener("input", function (e) { $("hs-n-print").textContent = e.target.value; });
+$("hs-n-print").textContent = $("hs-n").value;

@@ -43,7 +43,7 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
   <form class="hs parchment" id="hs" autocomplete="off">
     <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
     <div class="hs-top">
-      <?= $field('hs-name', 'hs.name', $text('hs-n', $name, ' maxlength="40"')) ?>
+      <label class="hs-f hs-name"><span><?= t('hs.name') ?></span><?= $text('hs-n', $name, ' maxlength="40"') ?><b class="hs-print" id="hs-n-print" aria-hidden="true"><?= e($name) ?></b></label>
       <div class="hs-meta">
         <?= $field('', 'hs.class', $text('hs-cl', $cl ? pair($cl['name']) . ' 1' : '', ' list="hs-classes"')) ?>
         <?= $field('', 'hs.species', $text('hs-sp', $sp ? pair($sp['name']) : '', ' list="hs-species"')) ?>

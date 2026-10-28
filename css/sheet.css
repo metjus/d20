@@ -10,6 +10,7 @@
   font: 500 1.05rem/1.2 var(--font-book); color: var(--ink); background: transparent; }
 .hs-in:focus, .hs-ta:focus, .hs-sc:focus { outline: 2px solid var(--gold-deep); outline-offset: 1px; background-color: rgba(255,255,255,.4); }
 .hs-name .hs-in { font: 800 clamp(1.7rem, 3.4vw, 2.3rem)/1.05 var(--font-display); color: var(--rubric); }
+.hs-print { display: none; }
 .hs input[type="checkbox"] { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--rubric); cursor: pointer; }
 
 .hs-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -88,7 +89,8 @@
   .hs input[type="checkbox"] { width: 3mm; height: 3mm; accent-color: #000; }
   .hs-top { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2mm 4mm; }
   .hs-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5mm 3mm; }
-  .hs-name .hs-in { font-size: 18pt; }
+  .hs-name .hs-in { display: none; }
+  .hs-name .hs-print { display: block; min-height: 7mm; padding-bottom: .5mm; border-bottom: 1px solid #777; font: 800 16pt/1.1 var(--font-display); overflow-wrap: anywhere; }
   .hs-in { font-size: 9pt; padding: 1mm .5mm; }
   .hs-f > span, .hs-stat legend, .hs-box legend, .hs-line span { font-size: 6.5pt; }
   .hs-cols { grid-template-columns: 1.15fr 1fr 1fr; gap: 3mm; min-height: 212mm; }
