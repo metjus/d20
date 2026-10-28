@@ -30,7 +30,7 @@
     <div class="map-legend" id="map-legend"></div>
   </div>
 
-  <div class="section-title" style="margin-top:80px">
+  <div class="section-title far">
     <p class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= t('cards.kicker') ?></span></p>
     <h2 class="h2"><?= t('cards.h2') ?></h2>
   </div>
@@ -74,7 +74,7 @@
       <div class="abil" id="hc-abil"></div>
       <div class="taper"></div>
       <div class="sb"><p id="hc-lore"></p></div>
-      <div class="groll"><button class="chipbtn" type="button" id="hc-new"><?= t('hc.new') ?></button><a class="chipbtn" href="<?= url('postava') ?>" style="text-decoration:none"><?= t('hc.open') ?></a></div>
+      <div class="groll"><button class="chipbtn" type="button" id="hc-new"><?= t('hc.new') ?></button><a class="chipbtn" href="<?= url('postava') ?>"><?= t('hc.open') ?></a></div>
     </div></article>
   </div>
 </section>

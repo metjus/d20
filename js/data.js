@@ -49,7 +49,8 @@ var MAP = {
   navody: { x: 250, y: 168, n: { sk: "Knižnica mudrcov", en: "The Sages' Library" }, s: "nav.navody" },
   pribeh: { x: 440, y: 322, n: { sk: "Krčma U Zlatej kocky", en: "The Golden Die Inn" }, s: "nav.pribeh" },
   postava: { x: 720, y: 270, n: { sk: "Sieň hrdinov", en: "Hall of Heroes" }, s: "nav.postava" },
-  kocky: { x: 820, y: 420, n: { sk: "Veža osudu", en: "Tower of Fate" }, s: "nav.kocky" }
+  kocky: { x: 820, y: 420, n: { sk: "Veža osudu", en: "Tower of Fate" }, s: "nav.kocky" },
+  nastroje: { x: 420, y: 112, n: { sk: "Majstrova dielňa", en: "The Master's Workshop" }, s: "nav.nastroje" }
 };
 var MAPTXT = {
   sea: { sk: "More hmiel", en: "Sea of Mists" },

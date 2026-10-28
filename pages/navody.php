@@ -16,7 +16,7 @@
         <li class="chap"><div><h3><?= t('g.s5') ?></h3><p><?= t('g.s5p') ?></p><p><a href="<?= url('pribeh') ?>"><?= t('g.s5a') ?></a></p></div></li>
       </ol>
       <div class="fleuron"><svg><use href="#fleuron"/></svg></div>
-      <h2 class="h2" style="color:var(--rubric)"><?= t('lib.h') ?></h2>
+      <h2 class="h2 rubric"><?= t('lib.h') ?></h2>
       <ul class="shelf">
 <?php foreach (site()['library'] as $p): ?>
         <li><a href="<?= url($p) ?>"><b><?= t("nav.$p") ?></b><span><?= t("lib.$p") ?></span><em><?= t('lib.more') ?> ›</em></a></li>

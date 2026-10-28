@@ -13,7 +13,8 @@
         </div>
       </div>
       <nav class="menu-mobile" aria-label="Menu">
-<?php foreach (site()['menu'] as $p): ?>
+<?php // The logo already leads home, so the phone menu leaves Home out and the rest fit on one line.
+foreach (array_diff(site()['menu'], ['domov']) as $p): ?>
         <a href="<?= url($p) ?>"<?= $p === $PAGE ? ' aria-current="page"' : '' ?>><?= isset(texts()["navs.$p"]) ? t("navs.$p") : t("nav.$p") ?></a>
 <?php endforeach; ?>
       </nav>

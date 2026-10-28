@@ -30,15 +30,16 @@ $choices = function (string $box, string $data, array $order, string $chosen): v
       <div><span class="label"><?= t('c.class') ?></span><div class="opts" id="c-class">
 <?php $choices('c-class', 'classes', ['fighter', 'wizard', 'rogue', 'cleric', 'barbarian', 'bard', 'druid', 'monk', 'paladin', 'ranger', 'sorcerer', 'warlock'], 'wizard'); ?>
       </div>
-        <p class="note" style="margin-top:8px"><?= t('c.more') ?></p></div>
+        <p class="note tight"><?= t('c.more') ?></p></div>
       <div><span class="label"><?= t('c.method') ?></span>
         <div class="opts" id="c-method">
           <button class="opt" type="button" data-m="roll" aria-pressed="true"><?= t('c.m1') ?></button>
           <button class="opt" type="button" data-m="array" aria-pressed="false"><?= t('c.m2') ?></button>
         </div>
-        <p class="note" style="margin-top:8px"><?= t('c.mnote') ?></p>
+        <p class="note tight"><?= t('c.mnote') ?></p>
       </div>
       <button class="btn wide" type="button" id="c-roll"><svg class="seal"><use href="#seal"/></svg><span><?= t('c.reroll') ?></span></button>
+      <a class="btn ghost wide" id="c-sheet" href="<?= url('harok') ?>"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('c.sheet') ?></span></a>
     </div>
     <article class="sheet parchment" aria-live="polite">
       <svg class="brass tl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>

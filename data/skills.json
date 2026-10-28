@@ -1,0 +1,20 @@
+[
+  {"id": "acrobatics", "ab": 1, "name": ["Akrobacia", "Acrobatics"]},
+  {"id": "animal", "ab": 4, "name": ["Zaobchádzanie so zvieratami", "Animal Handling"]},
+  {"id": "arcana", "ab": 3, "name": ["Arkána", "Arcana"]},
+  {"id": "athletics", "ab": 0, "name": ["Atletika", "Athletics"]},
+  {"id": "deception", "ab": 5, "name": ["Klamanie", "Deception"]},
+  {"id": "history", "ab": 3, "name": ["História", "History"]},
+  {"id": "insight", "ab": 4, "name": ["Vhľad", "Insight"]},
+  {"id": "intimidation", "ab": 5, "name": ["Zastrašovanie", "Intimidation"]},
+  {"id": "investigation", "ab": 3, "name": ["Pátranie", "Investigation"]},
+  {"id": "medicine", "ab": 4, "name": ["Medicína", "Medicine"]},
+  {"id": "nature", "ab": 3, "name": ["Príroda", "Nature"]},
+  {"id": "perception", "ab": 4, "name": ["Vnímanie", "Perception"]},
+  {"id": "performance", "ab": 5, "name": ["Vystupovanie", "Performance"]},
+  {"id": "persuasion", "ab": 5, "name": ["Presviedčanie", "Persuasion"]},
+  {"id": "religion", "ab": 3, "name": ["Náboženstvo", "Religion"]},
+  {"id": "sleight", "ab": 1, "name": ["Šikovné prsty", "Sleight of Hand"]},
+  {"id": "stealth", "ab": 1, "name": ["Nenápadnosť", "Stealth"]},
+  {"id": "survival", "ab": 4, "name": ["Prežitie", "Survival"]}
+]

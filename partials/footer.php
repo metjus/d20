@@ -54,7 +54,7 @@
       </div>
     </div>
     <nav class="foot-links" aria-label="<?= attr('foot.links') ?>">
-<?php foreach (['navody', 'povolania', 'rasy', 'slovnik', 'postava', 'pribeh', 'kocky'] as $p): ?>
+<?php foreach (['navody', 'povolania', 'rasy', 'slovnik', 'postava', 'harok', 'kocky', 'pribeh', 'npc', 'krcma', 'poklad', 'nastroje'] as $p): ?>
       <a href="<?= url($p) ?>"><?= t("nav.$p") ?></a>
 <?php endforeach; ?>
     </nav>

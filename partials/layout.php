@@ -39,9 +39,10 @@ $boot = ['lang' => $LANG, 'page' => $PAGE, 'urls' => [], 'I' => []];
 foreach (site()['pages'] as $key => $p) {
     $boot['urls'][$key] = $p['url'][$LANG];
 }
-// Only the text groups the scripts use; the rest is already in the HTML.
+// Only the text groups the scripts use; the rest is already in the HTML. Pages can add their own groups in data/site.json.
+$groups = array_merge(['b', 'c', 'ct', 'd', 'hc', 'nav', 't'], $cfg['texts'] ?? []);
 foreach (array_keys(texts()) as $key) {
-    if (in_array(strtok($key, '.'), ['c', 'ct', 'd', 'hc', 'nav', 't'], true)) {
+    if (in_array(strtok($key, '.'), $groups, true)) {
         $boot['I'][$key] = t($key);
     }
 }
@@ -86,6 +87,9 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="preload" href="/fonts/alegreya-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<?= asset('/css/fonts.css') ?>">
 <link rel="stylesheet" href="<?= asset('/css/style.css') ?>">
+<?php foreach ($cfg['styles'] ?? [] as $style): ?>
+<link rel="stylesheet" href="<?= asset("/css/$style.css") ?>">
+<?php endforeach; ?>
 <script src="<?= asset('/js/boot.js') ?>"></script>
 <?php if ($graph): ?>
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => $graph], $json) ?></script>

@@ -34,3 +34,19 @@ function abilHTML(scores, keyIdx) {
 function roll4d6() { var r = [rnd(6), rnd(6), rnd(6), rnd(6)].sort(function (a, b) { return b - a; }); return r[0] + r[1] + r[2]; }
 function pool6() { return [0, 0, 0, 0, 0, 0].map(roll4d6).sort(function (a, b) { return b - a; }); }
 function assign(cl, pool) { var sc = [0, 0, 0, 0, 0, 0]; cl.o.forEach(function (ab, rank) { sc[ab] = pool[rank]; }); return sc; }
+
+// A button that copies text and says so for a moment.
+function copyButton(id, text) {
+  var b = $(id), label = b.querySelector("span"), was = label.textContent;
+  b.addEventListener("click", function () {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text()).then(function () {
+      label.textContent = t("b.copied");
+      setTimeout(function () { label.textContent = was; }, 1800);
+    });
+  });
+}
+// On a phone the result sits under the controls, so a roll brings it into view when it is out of sight.
+function bringIntoView(box) {
+  if (box.getBoundingClientRect().top > innerHeight * .7) box.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}

@@ -7,7 +7,8 @@
     "navody",
     "postava",
     "pribeh",
-    "kocky"
+    "kocky",
+    "nastroje"
   ],
   "pages": {
     "404": {
@@ -57,7 +58,7 @@
       },
       "type": "app",
       "scripts": [
-        "data",
+        "board",
         "story"
       ]
     },
@@ -106,11 +107,93 @@
       "type": "article",
       "parent": "navody",
       "scripts": []
+    },
+    "nastroje": {
+      "url": {
+        "sk": "/nastroje/",
+        "en": "/en/tools/"
+      },
+      "type": "article",
+      "scripts": []
+    },
+    "npc": {
+      "url": {
+        "sk": "/generator-npc/",
+        "en": "/en/npc-generator/"
+      },
+      "type": "app",
+      "parent": "nastroje",
+      "scripts": [
+        "board",
+        "npc"
+      ],
+      "texts": [
+        "npc"
+      ]
+    },
+    "krcma": {
+      "url": {
+        "sk": "/generator-krcmy/",
+        "en": "/en/tavern-generator/"
+      },
+      "type": "app",
+      "parent": "nastroje",
+      "scripts": [
+        "board",
+        "tavern"
+      ],
+      "texts": [
+        "tv"
+      ]
+    },
+    "poklad": {
+      "url": {
+        "sk": "/generator-pokladu/",
+        "en": "/en/loot-generator/"
+      },
+      "type": "app",
+      "parent": "nastroje",
+      "scripts": [
+        "loot"
+      ],
+      "texts": [
+        "lt"
+      ]
+    },
+    "harok": {
+      "url": {
+        "sk": "/harok-postavy/",
+        "en": "/en/character-sheet/"
+      },
+      "type": "app",
+      "parent": "nastroje",
+      "scripts": [
+        "sheet"
+      ],
+      "styles": [
+        "sheet"
+      ],
+      "texts": [
+        "hs"
+      ]
     }
   },
   "library": [
     "povolania",
     "rasy",
     "slovnik"
-  ]
+  ],
+  "tools": {
+    "players": [
+      "postava",
+      "harok",
+      "kocky"
+    ],
+    "dm": [
+      "npc",
+      "krcma",
+      "pribeh",
+      "poklad"
+    ]
+  }
 }

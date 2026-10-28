@@ -1,0 +1,115 @@
+/* Character sheet: a parchment form on screen, black ink on plain paper in print. Only the sheet page loads this file. */
+.hs-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-bottom: 30px; }
+.hs-bar .note { flex: 1 1 260px; }
+.hs { padding: clamp(18px, 3vw, 34px); display: grid; gap: 18px; color: var(--ink); color-scheme: light; }
+.hs-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 14px 22px; align-items: end; }
+.hs-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 14px; }
+.hs-f { display: grid; gap: 2px; min-width: 0; }
+.hs-f > span, .hs-stat legend { font: 700 .72rem/1.15 var(--font-sc); letter-spacing: .08em; color: var(--rubric); }
+.hs-in { width: 100%; min-width: 0; padding: 5px 2px; border: 0; border-bottom: 1px solid rgba(93,71,51,.55); border-radius: 0;
+  font: 500 1.05rem/1.2 var(--font-book); color: var(--ink); background: transparent; }
+.hs-in:focus, .hs-ta:focus, .hs-sc:focus { outline: 2px solid var(--gold-deep); outline-offset: 1px; background-color: rgba(255,255,255,.4); }
+.hs-name .hs-in { font: 800 clamp(1.7rem, 3.4vw, 2.3rem)/1.05 var(--font-display); color: var(--rubric); }
+.hs input[type="checkbox"] { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--rubric); cursor: pointer; }
+
+.hs-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.hs-col { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.hs-col:first-child { display: grid; grid-template-columns: 92px minmax(0, 1fr); align-items: start; }
+
+/* Ability scores: the modifier large, the score in a small box under it */
+.hs-abil { display: grid; gap: 10px; }
+.hs-ab { display: grid; justify-items: center; gap: 4px; padding: 8px 4px 10px; text-align: center;
+  border: 1.5px solid rgba(125,32,21,.55); border-radius: 10px; background: rgba(255,255,255,.18); }
+.hs-ab span { font: 700 .68rem/1.1 var(--font-sc); letter-spacing: .04em; color: var(--rubric); }
+.hs-ab small { display: block; font-size: .62rem; color: var(--ink-soft); }
+.hs-ab output { min-height: 2rem; font: 800 2rem/1 var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.hs-sc { width: 48px; padding: 4px 0; text-align: center; font: 700 1rem/1.2 var(--font-sc); color: var(--ink);
+  background: var(--parch); border: 1px solid rgba(125,32,21,.55); border-radius: 999px; }
+
+.hs-list { display: grid; gap: 10px; align-content: start; }
+.hs-line { display: flex; align-items: center; gap: 10px; min-height: 28px; }
+.hs-line span { font: 700 .78rem/1.2 var(--font-sc); letter-spacing: .06em; color: var(--rubric); }
+.hs-num, .hs-big { width: 52px; flex: none; text-align: center; border: 1.5px solid rgba(125,32,21,.55); border-radius: 6px; }
+.hs-num { font: 700 1.1rem/1.2 var(--font-sc); }
+.hs-big { padding: 5px 0; min-height: 36px; font: 800 1.5rem/1 var(--font-display); color: var(--ink); }
+
+/* Boxed groups; the legend sits on the frame like on a printed sheet */
+.hs-box { margin: 0; min-width: 0; padding: 6px 10px 10px; display: grid; gap: 2px; border: 1.5px solid rgba(125,32,21,.45); border-radius: 6px; background: rgba(255,255,255,.12); }
+.hs-box legend { padding: 0 6px; font: 700 .78rem/1 var(--font-sc); letter-spacing: .1em; color: var(--rubric); }
+.hs-chk { display: grid; grid-template-columns: 18px 32px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 26px;
+  font: 400 .95rem/1.2 var(--font-book); color: var(--ink); }
+.hs-chk output { min-height: 1.2em; padding-bottom: 1px; text-align: right; border-bottom: 1px solid rgba(93,71,51,.45);
+  font: 700 .9rem/1.2 var(--font-sc); font-variant-numeric: tabular-nums; }
+.hs-chk small { font: 500 .62rem/1 var(--font-sc); letter-spacing: .06em; color: var(--ink-soft); }
+
+/* Combat column */
+.hs-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.hs-duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 8px; }
+.hs-stat { margin: 0; padding: 8px 8px 6px; text-align: center; align-content: start; border: 1.5px solid rgba(125,32,21,.45); border-radius: 6px; background: rgba(255,255,255,.12); }
+.hs-stat legend { float: left; width: 100%; padding: 0; }
+.hs-stat .hs-in, .hs-stat output { min-height: 2.1rem; padding: 2px; text-align: center; border: 0; font: 800 1.5rem/1.25 var(--font-display); color: var(--ink); }
+.hs-death { display: grid; gap: 8px; }
+.hs-death div { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.hs-death span { min-width: 5.6em; text-align: right; font: 500 .72rem/1 var(--font-sc); color: var(--ink-soft); }
+.hs-box .hs-trio { margin-bottom: 4px; }
+.hs-atk { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, .8fr) minmax(0, 1.6fr); gap: 8px; }
+.hs-atk-h span { font: 700 .66rem/1.2 var(--font-sc); letter-spacing: .06em; color: var(--ink-soft); padding-top: 4px; }
+.hs-grow { flex: 1 1 auto; display: flex; flex-direction: column; }
+.hs-ta { width: 100%; flex: 1 1 auto; padding: 0 2px; border: 0; resize: vertical; font: 400 1rem/1.5rem var(--font-book); color: var(--ink);
+  background: linear-gradient(transparent calc(100% - 1px), rgba(93,71,51,.3) 0) 0 0 / 100% 1.5rem local; }
+.hs-coins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
+.hs-coins label { display: grid; gap: 2px; text-align: center; }
+.hs-coins span { font: 700 .72rem/1 var(--font-sc); letter-spacing: .06em; color: var(--rubric); }
+.hs-coins .hs-in { text-align: center; border: 1px solid rgba(125,32,21,.45); border-radius: 4px; }
+.hs-foot { text-align: center; font: 500 .78rem/1.3 var(--font-sc); letter-spacing: .08em; color: var(--ink-soft); }
+.hs-how { margin-top: 56px; }
+
+@media (max-width: 1020px) { .hs-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hs-col:last-child { grid-column: 1 / -1; } }
+@media (max-width: 720px) {
+  .hs-top, .hs-cols { grid-template-columns: minmax(0, 1fr); }
+  .hs-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hs-col:first-child { grid-template-columns: 84px minmax(0, 1fr); }
+  .hs-bar .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+/* Print: only the sheet, black ink on white, on one page. */
+@media print {
+  @page { margin: 9mm; }
+  html, body { background: #fff !important; }
+  body { font-size: 8.5pt; }
+  .sky, .candle, #embers, .boot, .warp, header.top, footer, .cookie, .head, .hs-bar, .hs-how, .brass, datalist { display: none !important; }
+  .page { padding: 0; }
+  .wrap { max-width: none; padding: 0; }
+  .page > * { content-visibility: visible; }
+  .hs { gap: 3mm; padding: 0; color: #000; background: #fff; box-shadow: none; border-radius: 0; }
+  .hs *, .hs *::marker { color: #000 !important; }
+  .hs-in, .hs-ta, .hs-sc, .hs-chk output { border-color: #777; }
+  .hs-box, .hs-stat, .hs-ab, .hs-num, .hs-big, .hs-coins .hs-in, .hs-sc { border-color: #000; background: #fff; }
+  .hs input[type="checkbox"] { width: 3mm; height: 3mm; accent-color: #000; }
+  .hs-top { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2mm 4mm; }
+  .hs-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5mm 3mm; }
+  .hs-name .hs-in { font-size: 18pt; }
+  .hs-in { font-size: 9pt; padding: 1mm .5mm; }
+  .hs-f > span, .hs-stat legend, .hs-box legend, .hs-line span { font-size: 6.5pt; }
+  .hs-cols { grid-template-columns: 1.15fr 1fr 1fr; gap: 3mm; min-height: 212mm; }
+  .hs-col { gap: 2.5mm; }
+  .hs-col:first-child { grid-template-columns: 19mm minmax(0, 1fr); gap: 2.5mm; }
+  .hs-col:last-child { grid-column: auto; }
+  .hs-abil { gap: 2mm; }
+  .hs-ab { padding: 1.5mm 1mm; border-radius: 2mm; gap: .5mm; }
+  .hs-ab span { font-size: 6pt; }
+  .hs-ab output { min-height: 0; font-size: 16pt; }
+  .hs-sc { width: 10mm; font-size: 8pt; padding: .5mm 0; }
+  .hs-list { gap: 2mm; }
+  .hs-line { min-height: 0; gap: 2mm; }
+  .hs-num, .hs-big { width: 10mm; font-size: 10pt; min-height: 0; padding: .5mm 0; }
+  .hs-box { padding: 1mm 2mm 1.5mm; gap: 0; }
+  .hs-chk { min-height: 0; gap: 1.5mm; grid-template-columns: 3mm 6mm minmax(0, 1fr); font-size: 8pt; line-height: 1.25; }
+  .hs-chk output { font-size: 7.5pt; }
+  .hs-stat { padding: 1mm; }
+  .hs-stat .hs-in, .hs-stat output { min-height: 0; font-size: 13pt; padding: 0; }
+  .hs-death span { font-size: 6.5pt; }
+  .hs-atk { gap: 1.5mm; }
+  .hs-ta { resize: none; font-size: 8.5pt; line-height: 4.4mm; background-image: linear-gradient(transparent calc(100% - .2mm), #bbb 0); background-size: 100% 4.4mm; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hs-foot { font-size: 6.5pt; }
+}

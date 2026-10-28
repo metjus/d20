@@ -26,6 +26,24 @@ function content(string $name): array
     return $cache[$name] ??= json_decode((string) file_get_contents(__DIR__ . "/../data/$name.json"), true);
 }
 
+// One random entry of a list.
+function pick(array $list)
+{
+    return $list[random_int(0, count($list) - 1)];
+}
+
+// The first roll of a board: one die per table, as big as the table (story, NPC and tavern generators).
+function roll_tables(array $tables): array
+{
+    return array_map(fn (array $tb): int => random_int(1, count($tb['v'])), $tables);
+}
+
+// A sentence with a capital first letter, Slovak letters included.
+function cap(string $s): string
+{
+    return mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1);
+}
+
 // One value from a content pair [Slovak, English].
 function pair(array $pair): string
 {

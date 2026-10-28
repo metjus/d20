@@ -32,8 +32,16 @@ function renderSheet() {
   });
   $("s-sp").innerHTML = "<b>" + esc(bi(sp)) + ".</b> " + (LANG === "en" ? sp.den : sp.dsk);
   $("s-cl").innerHTML = "<b>" + esc(bi(cl)) + ".</b> " + (LANG === "en" ? cl.den : cl.dsk);
+  sheetLink(sc);
 }
-$("c-name").addEventListener("input", function (e) { C.name = e.target.value; C.own = true; $("s-name").textContent = C.name || "—"; });
+// The printable sheet (pages/harok.php) fills itself in from the address.
+function sheetLink(sc) {
+  $("c-sheet").href = url("harok") + "?n=" + encodeURIComponent(C.name) + "&sp=" + C.species + "&cl=" + C.cls + "&s=" + sc.join(",");
+}
+$("c-name").addEventListener("input", function (e) {
+  C.name = e.target.value; C.own = true; $("s-name").textContent = C.name || "—";
+  sheetLink(assign(findBy(CLASSES, C.cls), C.pool));
+});
 $("c-name-roll").addEventListener("click", function () { newName(); renderSheet(); });
 document.querySelectorAll("#c-method .opt").forEach(function (b) { b.addEventListener("click", function () { C.method = b.dataset.m; newPool(); renderCharOpts(); renderSheet(); }); });
 $("c-roll").addEventListener("click", function () { newPool(); renderSheet(); });
