@@ -11,7 +11,7 @@
       <h2 class="h2 rubric"><?= t("to.$group") ?></h2>
       <ul class="shelf tools">
 <?php foreach ($pages as $p): ?>
-        <li><a href="<?= url($p) ?>"><b><?= t("nav.$p") ?></b><span><?= t("tool.$p") ?></span><em><?= t('to.open') ?> ›</em></a></li>
+        <li><a href="<?= url($p) ?>"><b><?= isset(texts()["tool.$p.h"]) ? t("tool.$p.h") : t("nav.$p") ?></b><span><?= t("tool.$p") ?></span><em><?= t('to.open') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
 <?php endforeach; ?>
