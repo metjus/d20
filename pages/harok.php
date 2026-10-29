@@ -9,7 +9,8 @@ $name    = mb_substr(trim((string) ($_GET['n'] ?? '')), 0, 40);
 $scores  = array_map('intval', explode(',', (string) ($_GET['s'] ?? '')));
 $scores  = count($scores) === 6 && min($scores) >= 1 && max($scores) <= 30 ? $scores : null;
 $filled  = $sp || $cl || $scores;
-$prof    = $filled ? 2 : null;
+$level   = $filled ? 1 : null;
+$prof    = $level ? 2 + intdiv($level - 1, 4) : null;
 $ABBR    = $LANG === 'en' ? ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'] : ['SIL', 'OBR', 'ODL', 'INT', 'MÚD', 'CHAR'];
 
 $mod   = fn (int $i): ?int => $scores ? intdiv($scores[$i] - 10 + 20, 2) - 10 : null;
@@ -45,7 +46,7 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
     <div class="hs-top">
       <label class="hs-f hs-name"><span><?= t('hs.name') ?></span><?= $text('hs-n', $name, ' maxlength="40"') ?><b class="hs-print" id="hs-n-print" aria-hidden="true"><?= e($name) ?></b></label>
       <div class="hs-meta">
-        <?= $field('', 'hs.class', $text('hs-cl', $cl ? pair($cl['name']) . ' 1' : '', ' list="hs-classes"')) ?>
+        <?= $field('', 'hs.class', $text('hs-cl', $cl ? pair($cl['name']) : '', ' list="hs-classes"')) ?>
         <?= $field('', 'hs.species', $text('hs-sp', $sp ? pair($sp['name']) : '', ' list="hs-species"')) ?>
         <?= $field('', 'hs.bg', $text('hs-bg')) ?>
         <?= $field('', 'hs.align', $text('hs-al')) ?>
@@ -62,7 +63,8 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
 <?php endforeach; ?>
         </div>
         <div class="hs-list">
-          <label class="hs-line"><input class="hs-in hs-num" id="hs-prof" type="text" inputmode="numeric" maxlength="3" placeholder="+2" value="<?= $sgn($prof) ?>"><span><?= t('hs.prof') ?></span></label>
+          <label class="hs-line"><input class="hs-in hs-num" id="hs-lv" type="text" inputmode="numeric" maxlength="2" value="<?= $level ?? '' ?>"><span><?= t('hs.level') ?></span></label>
+          <div class="hs-line"><output class="hs-num" id="hs-prof" title="<?= attr('hs.prof.how') ?>"><?= $sgn($prof) ?></output><span><?= t('hs.prof') ?></span></div>
           <label class="hs-line"><input type="checkbox" id="hs-insp"><span><?= t('hs.insp') ?></span></label>
           <fieldset class="hs-box"><legend><?= t('hs.saves') ?></legend>
 <?php foreach (range(0, 5) as $i): $on = in_array($i, $saves, true); ?>
