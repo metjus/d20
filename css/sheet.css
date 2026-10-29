@@ -32,6 +32,7 @@
 .hs-line span { font: 700 .78rem/1.2 var(--font-sc); letter-spacing: .06em; color: var(--rubric); }
 .hs-num, .hs-big { width: 52px; flex: none; text-align: center; border: 1.5px solid rgba(125,32,21,.55); border-radius: 6px; }
 .hs-num { font: 700 1.1rem/1.2 var(--font-sc); }
+output.hs-num { padding: 4px 0; min-height: 30px; color: var(--ink); }
 .hs-big { padding: 5px 0; min-height: 36px; font: 800 1.5rem/1 var(--font-display); color: var(--ink); }
 
 /* Boxed groups; the legend sits on the frame like on a printed sheet */
@@ -92,6 +93,7 @@
   .hs-name .hs-in { display: none; }
   .hs-name .hs-print { display: block; min-height: 7mm; padding-bottom: .5mm; border-bottom: 1px solid #777; font: 800 16pt/1.1 var(--font-display); overflow-wrap: anywhere; }
   .hs-in { font-size: 9pt; padding: 1mm .5mm; }
+  .hs-in:focus { outline: 0; background: none; }
   .hs-f > span, .hs-stat legend, .hs-box legend, .hs-line span { font-size: 6.5pt; }
   .hs-cols { grid-template-columns: 1.15fr 1fr 1fr; gap: 3mm; min-height: 212mm; }
   .hs-col { gap: 2.5mm; }
