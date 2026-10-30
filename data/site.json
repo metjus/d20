@@ -176,6 +176,23 @@
       "texts": [
         "hs"
       ]
+    },
+    "suboj": {
+      "url": {
+        "sk": "/tracker-suboja/",
+        "en": "/en/combat-tracker/"
+      },
+      "type": "app",
+      "parent": "nastroje",
+      "scripts": [
+        "combat"
+      ],
+      "styles": [
+        "combat"
+      ],
+      "texts": [
+        "cb"
+      ]
     }
   },
   "library": [
@@ -190,6 +207,7 @@
       "kocky"
     ],
     "dm": [
+      "suboj",
       "npc",
       "krcma",
       "pribeh",

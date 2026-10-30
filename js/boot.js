@@ -29,6 +29,11 @@
       return;
     }
   } catch (e) {}
+  // The combat tracker hides its sample-fight notice and the dice tray before the first paint, so its page doesn't jump.
+  try {
+    if (localStorage.getItem("d20-combat")) html.classList.add("cb-own");
+    if (localStorage.getItem("d20-combat-dice") === "off") html.classList.add("cb-nodice");
+  } catch (e) {}
   // The big intro plays once per visit. Arriving through a portal shows the portal closing instead.
   try {
     if (sessionStorage.getItem("d20-boot")) html.classList.add("no-intro"); else sessionStorage.setItem("d20-boot", "1");

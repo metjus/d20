@@ -1,0 +1,43 @@
+{
+  "conditions": [
+    {"id": "conc", "n": ["Sústredenie", "Concentration"],
+     "d": ["Udržiava kúzlo. Po každom zranení hodí záchranu Odolnosťou, inak kúzlo skončí. Končí aj v stave Ochromený.", "Is keeping a spell going. After any damage they make a Constitution save or the spell ends. It also ends if they become Incapacitated."]},
+    {"id": "blinded", "n": ["Oslepený", "Blinded"],
+     "d": ["Nevidí. Útočí s nevýhodou a útoky proti nemu majú výhodu.", "Can't see. Their attacks have disadvantage and attacks against them have advantage."]},
+    {"id": "charmed", "n": ["Očarený", "Charmed"],
+     "d": ["Nemôže zaútočiť na toho, kto ho očaril. Ten má výhodu pri rozhovore s ním.", "Can't attack the charmer, who has advantage on social checks against them."]},
+    {"id": "deafened", "n": ["Ohlušený", "Deafened"],
+     "d": ["Nepočuje a automaticky zlyhá v overeniach, ktoré potrebujú sluch.", "Can't hear and automatically fails any check that relies on hearing."]},
+    {"id": "frightened", "n": ["Vystrašený", "Frightened"],
+     "d": ["Kým vidí zdroj strachu, útočí aj overuje s nevýhodou a nemôže sa k nemu dobrovoľne priblížiť.", "While the source of fear is in sight, they have disadvantage on checks and attacks and can't willingly move closer to it."]},
+    {"id": "grappled", "n": ["Zachytený", "Grappled"],
+     "d": ["Rýchlosť 0. Na iných než na toho, kto ho drží, útočí s nevýhodou.", "Speed 0. Attacks against anyone other than the grappler have disadvantage."]},
+    {"id": "incap", "n": ["Ochromený", "Incapacitated"],
+     "d": ["Nemôže robiť akcie, bonusové akcie ani reakcie, nehovorí a stráca sústredenie.", "Can't take actions, bonus actions or reactions, can't speak, and loses concentration."]},
+    {"id": "invisible", "n": ["Neviditeľný", "Invisible"],
+     "d": ["Nedá sa vidieť. Útočí s výhodou a útoky proti nemu majú nevýhodu.", "Can't be seen. Their attacks have advantage and attacks against them have disadvantage."]},
+    {"id": "paralyzed", "n": ["Paralyzovaný", "Paralyzed"],
+     "d": ["Ochromený, rýchlosť 0, automaticky zlyhá v záchranách na Silu a Obratnosť. Útoky proti nemu majú výhodu a zásah zblízka je kritický.", "Incapacitated, speed 0, automatically fails Strength and Dexterity saves. Attacks against them have advantage and a hit from within 5 feet is a critical hit."]},
+    {"id": "petrified", "n": ["Skamenený", "Petrified"],
+     "d": ["Premenený na kameň: ochromený, rýchlosť 0, zlyhá v záchranách na Silu a Obratnosť a má odolnosť proti všetkému zraneniu.", "Turned to stone: Incapacitated, speed 0, fails Strength and Dexterity saves, and has resistance to all damage."]},
+    {"id": "poisoned", "n": ["Otrávený", "Poisoned"],
+     "d": ["Útoky a overenia schopností hádže s nevýhodou.", "Has disadvantage on attack rolls and ability checks."]},
+    {"id": "prone", "n": ["Zvalený", "Prone"],
+     "d": ["Leží na zemi, môže sa len plaziť alebo vstať. Útočí s nevýhodou, útoky zblízka proti nemu majú výhodu, zďaleka nevýhodu.", "Lying on the ground, can only crawl or stand up. Their attacks have disadvantage; attacks from within 5 feet have advantage, from farther away disadvantage."]},
+    {"id": "restrained", "n": ["Spútaný", "Restrained"],
+     "d": ["Rýchlosť 0. Útočí s nevýhodou, útoky proti nemu majú výhodu a záchrany na Obratnosť hádže s nevýhodou.", "Speed 0. Their attacks have disadvantage, attacks against them have advantage, and Dexterity saves have disadvantage."]},
+    {"id": "stunned", "n": ["Omráčený", "Stunned"],
+     "d": ["Ochromený, automaticky zlyhá v záchranách na Silu a Obratnosť a útoky proti nemu majú výhodu.", "Incapacitated, automatically fails Strength and Dexterity saves, and attacks against them have advantage."]},
+    {"id": "unconscious", "n": ["V bezvedomí", "Unconscious"],
+     "d": ["Ochromený, leží, rýchlosť 0, zlyhá v záchranách na Silu a Obratnosť. Útoky proti nemu majú výhodu a zásah zblízka je kritický.", "Incapacitated and prone, speed 0, fails Strength and Dexterity saves. Attacks against them have advantage and a hit from within 5 feet is a critical hit."]}
+  ],
+  "sample": [
+    {"n": ["Borin Železnobrad", "Borin Ironbeard"], "s": ["Trpaslík · Bojovník (Fighter)", "Dwarf · Fighter"], "k": "hero", "hp": 44, "max": 44, "ac": 18, "b": 1, "i": 12},
+    {"n": ["Lyra Ostrozraká", "Lyra Keeneye"], "s": ["Elf · Hraničiar (Ranger)", "Elf · Ranger"], "k": "hero", "hp": 27, "max": 31, "ac": 15, "b": 3, "i": 19},
+    {"n": ["Kaelis Tieňoruký", "Kaelis Shadowhand"], "s": ["Človek · Mág (Wizard)", "Human · Wizard"], "k": "hero", "hp": 22, "max": 22, "ac": 12, "b": 2, "i": 15, "tmp": 5, "c": ["conc"]},
+    {"n": ["Mira Medovka", "Mira Honeybrook"], "s": ["Polovičník · Kňaz (Cleric)", "Halfling · Cleric"], "k": "hero", "hp": 9, "max": 30, "ac": 16, "b": 0, "i": 8},
+    {"n": ["Goblin Ostrozub", "Goblin Sharptooth"], "s": ["Goblin (Goblin Warrior)", "Goblin Warrior"], "k": "foe", "hp": 10, "max": 10, "ac": 15, "b": 2, "i": 17},
+    {"n": ["Goblin Krivonos", "Goblin Crooknose"], "s": ["Goblin (Goblin Warrior)", "Goblin Warrior"], "k": "foe", "hp": 3, "max": 10, "ac": 15, "b": 2, "i": 6, "c": ["poisoned"]},
+    {"n": ["Zlobor Hrdlorez", "Throatcutter the Ogre"], "s": ["Zlobor (Ogre)", "Ogre"], "k": "foe", "hp": 68, "max": 68, "ac": 11, "b": -1, "i": 10}
+  ]
+}

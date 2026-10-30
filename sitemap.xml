@@ -173,27 +173,41 @@
     <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/nastroje/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/tools/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/nastroje/"/>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://d20.sk/en/tools/</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/nastroje/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/tools/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/nastroje/"/>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://d20.sk/ochrana-osobnych-udajov/</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/ochrana-osobnych-udajov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/ochrana-osobnych-udajov/"/>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://d20.sk/en/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/ochrana-osobnych-udajov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/ochrana-osobnych-udajov/"/>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/tracker-suboja/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/tracker-suboja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/combat-tracker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/tracker-suboja/"/>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://d20.sk/en/combat-tracker/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://d20.sk/tracker-suboja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://d20.sk/en/combat-tracker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://d20.sk/tracker-suboja/"/>
+    <lastmod>2026-10-30</lastmod>
   </url>
 </urlset>
