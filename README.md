@@ -1,6 +1,6 @@
 # d20.sk
 
-Slovenský web o Dungeons & Dragons: návody pre začiatočníkov, tvorba postavy, hárok postavy na tlač, generátory príbehov, NPC, krčiem a pokladov a 3D kocky. SK/EN.
+Slovenský web o Dungeons & Dragons: návody pre začiatočníkov, tvorba postavy, hárok postavy na tlač, tracker súboja, generátory príbehov, NPC, krčiem a pokladov a 3D kocky. SK/EN.
 
 Každá podstránka má vlastnú adresu v slovenčine aj angličtine (kvôli vyhľadávačom). PHP poskladá HTML na serveri, JavaScript potom pridá interaktivitu.
 
@@ -18,6 +18,7 @@ Každá podstránka má vlastnú adresu v slovenčine aj angličtine (kvôli vyh
 | generátor krčmy | `/generator-krcmy/` | `/en/tavern-generator/` |
 | generátor pokladu | `/generator-pokladu/` | `/en/loot-generator/` |
 | hárok postavy | `/harok-postavy/` | `/en/character-sheet/` |
+| tracker súboja | `/tracker-suboja/` | `/en/combat-tracker/` |
 | povolania | `/povolania/` | `/en/classes/` |
 | rasy | `/rasy/` | `/en/species/` |
 | slovník | `/slovnik/` | `/en/glossary/` |
@@ -40,13 +41,16 @@ data/presets.json, tale.json  časté hody na Kockách, lístky na nástenke Pr�
 data/npc.json, tavern.json   mená a tabuľky generátora NPC a krčmy (krčmár berie mená a povahy z npc.json)
 data/loot.json              poklady podľa úrovne, drahokamy, umelecké predmety, kuriozity a 79 magických predmetov zo SRD 5.1
 data/skills.json            zručnosti na hárku postavy
+data/combat.json            stavy (conditions) zo SRD 5.2 s vysvetlením a ukážkový súboj pre tracker
 css/style.css, css/fonts.css
 css/sheet.css               hárok postavy na obrazovke aj pre tlač (načíta ho len stránka hárku)
+css/combat.css              tracker súboja (načíta ho len jeho stránka)
 js/boot.js                  v <head>: jazyk podľa prehliadača, presmerovanie starých odkazov, prechodová animácia (musí ostať blokujúci, nie async)
 js/core.js                  spoločné pomôcky, texty z PHP
 js/home.js, guides.js, character.js, story.js, dice.js   logika jednotlivých stránok
 js/board.js                 nástenka s lístkami a zámkami (Príbeh, NPC, Krčma); prvý hod robí PHP, tabuľky číta zo stránky
 js/npc.js, tavern.js, loot.js, sheet.js   generátory NPC, krčmy a pokladu, výpočty na hárku postavy
+js/combat.js                tracker súboja: poradie, životy, stavy, záchrany proti smrti; súboj sa ukladá v localStorage (d20-combat)
 js/site.js                  animácie, prechody, kontaktný formulár, cookie lišta
 js/data.js                  herné dáta: rasy, povolania, mená, mapa
 js/dice3d.js, js/vendor/    3D kocky, three.js r128 (MIT); dice.js ich načíta až po prvom scrollovaní alebo dotyku
