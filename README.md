@@ -59,6 +59,7 @@ img/                        logo (WebP), favicon, náhľady pre sociálne siete 
 fonts/                      písma (SIL Open Font License), orezané na znaky angličtiny, slovenčiny a češtiny
 sitemap.php                 /sitemap.xml (prepis v .htaccess): všetky stránky z data/site.json s hreflang; lastmod = "updated" stránky, rovnaký dátum ide do dateModified v JSON-LD
 partials/related.php        blok „Môže sa ti hodiť“ pod nástrojmi, odkazy podľa "related" v data/site.json
+data/articles.json          návod a časté otázky pod nástrojmi (partials/article.php); otázky idú aj do JSON-LD ako FAQPage
 robots.txt
 ```
 

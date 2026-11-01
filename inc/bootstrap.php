@@ -67,7 +67,21 @@ function t(string $key): string
     if ($pair === null) {
         return $key;
     }
-    return (string) preg_replace_callback('/\{url:([a-z0-9]+)\}/', fn ($m) => url($m[1]), $pair[$LANG === 'en' ? 1 : 0]);
+    return links($pair[$LANG === 'en' ? 1 : 0]);
+}
+
+// {url:page} placeholders in a text become that page's address in the current language.
+function links(string $s): string
+{
+    return (string) preg_replace_callback('/\{url:([a-z0-9]+)\}/', fn ($m) => url($m[1]), $s);
+}
+
+// The guide text and questions under a tool (data/articles.json), or null when the page has none.
+function article(string $page): ?array
+{
+    static $all = null;
+    $all ??= json_decode((string) file_get_contents(__DIR__ . '/../data/articles.json'), true);
+    return $all[$page] ?? null;
 }
 
 // The same text as plain words, safe inside an attribute.

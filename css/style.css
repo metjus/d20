@@ -434,7 +434,7 @@ select.input { width: 100%; min-height: 48px; cursor: pointer; appearance: none;
 .h2.rubric { color: var(--rubric); }
 .shelf.tools { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .shelf.tools a { grid-template-rows: auto 1fr auto; }
-.page.related { padding-top: 0; }
+.page.related, .page.article { padding-top: 0; }
 .note.tight { margin-top: 8px; }
 @media (max-width: 920px) { .tool.inn .tale-side { order: -1; } }
 @media (max-width: 520px) { .who { padding: 14px 16px; } .rtable { padding: 16px 16px 14px; } .rolls, .items { margin-top: 56px; } }
@@ -526,8 +526,10 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 /* Privacy page */
 .legal { color: var(--ink); font-family: var(--font-book); font-size: 1.05rem; line-height: 1.65; }
 .legal h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--rubric); margin-top: 8px; }
-.legal p, .legal ul { margin: 0; max-width: 70ch; }
-.legal ul { padding-left: 1.2em; }
+.legal p, .legal ul, .legal ol { margin: 0; max-width: 70ch; }
+.legal ul, .legal ol { padding-left: 1.2em; }
+.legal h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); margin: 8px 0 -16px; }
+.legal li + li { margin-top: 6px; }
 .foot-base a { color: var(--muted); }
 .foot-base a:hover { color: var(--gold-hi); }
 
