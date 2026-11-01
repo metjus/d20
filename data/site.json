@@ -106,6 +106,15 @@
       "scripts": [],
       "updated": "2026-11-01"
     },
+    "projekt": {
+      "url": {
+        "sk": "/o-projekte/",
+        "en": "/en/about/"
+      },
+      "type": "about",
+      "scripts": [],
+      "updated": "2026-11-01"
+    },
     "povolania": {
       "url": {
         "sk": "/povolania/",

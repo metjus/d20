@@ -29,7 +29,7 @@ if ($cfg['type'] === 'home') {
         ? ['@type' => 'WebApplication', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
-        : ['@type' => 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
     if ($updated) {
         // The same date as <lastmod> in the sitemap (sitemap.php), both from data/site.json.
         $node['dateModified'] = $updated;

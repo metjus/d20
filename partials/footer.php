@@ -54,7 +54,7 @@
 <?php endforeach; ?>
     </nav>
     <div class="foot-base">
-      <span>&copy; <span id="yr">2026</span> d20.sk · <a href="<?= url('sukromie') ?>"><?= t('pv.link') ?></a></span>
+      <span>&copy; <span id="yr">2026</span> d20.sk · <a href="<?= url('projekt') ?>"><?= t('nav.projekt') ?></a> · <a href="<?= url('sukromie') ?>"><?= t('pv.link') ?></a></span>
       <p><?= t('foot') ?></p>
     </div>
   </div>

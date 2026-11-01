@@ -84,7 +84,8 @@ function reveal() {
     $("ct-email").value ? $("ct-msg").focus() : $("ct-name").focus();
   }
   function close() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
-  $("ct-open").addEventListener("click", open);
+  // The footer button, plus any button marked data-ct-open (the About page has one).
+  document.querySelectorAll("#ct-open, [data-ct-open]").forEach(function (b) { b.addEventListener("click", open); });
   $("ct-close").addEventListener("click", close);
   $("ct-again").addEventListener("click", close);
   dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
