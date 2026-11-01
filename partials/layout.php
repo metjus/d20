@@ -35,6 +35,14 @@ if ($cfg['type'] === 'home') {
         $node['dateModified'] = $updated;
     }
     $graph[] = $node;
+    // The questions shown on the page (partials/article.php), word for word.
+    if ($art = article($PAGE)) {
+        $graph[] = ['@type' => 'FAQPage', 'url' => $here, 'inLanguage' => $LANG, 'mainEntity' => array_map(
+            fn ($f) => ['@type' => 'Question', 'name' => pair($f['q']),
+                        'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags(links(pair($f['a'])))]],
+            $art['faq']
+        )];
+    }
     if ($PAGE === 'slovnik') {
         $graph[] = ['@type' => 'DefinedTermSet', 'name' => $plain('gl.h1'), 'url' => $here, 'inLanguage' => $LANG,
                     'hasDefinedTerm' => array_map(fn ($g) => ['@type' => 'DefinedTerm', 'name' => pair($g['term']),
@@ -118,6 +126,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 
   <main>
 <?php require __DIR__ . '/../pages/' . $PAGE . '.php'; ?>
+<?php require __DIR__ . '/article.php'; ?>
 <?php require __DIR__ . '/related.php'; ?>
   </main>
 

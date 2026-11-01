@@ -246,6 +246,7 @@
   "to.players": ["Pre hráčov","For players"],
   "to.dm": ["Pre Dungeon Mastera","For the Dungeon Master"],
   "to.open": ["Otvoriť","Open"],
+  "faq.h": ["Časté otázky","Frequently asked questions"],
   "rel.h": ["Môže sa ti hodiť","You might also need"],
   "to.more": ["Chýba ti tu nejaký nástroj? Napíš nám na <a href=\"mailto:hello@d20.sk\">hello@d20.sk</a> a pridáme ho.","Missing a tool? Write to <a href=\"mailto:hello@d20.sk\">hello@d20.sk</a> and we'll add it."],
   "tool.postava": ["Druh, povolanie a vlastnosti hodené kockou. Hrdina 1. úrovne za minútu.","Species, class and rolled abilities. A level 1 hero in a minute."],

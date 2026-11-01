@@ -1,0 +1,166 @@
+{
+ "kocky": {
+  "body": [
+   "<h2>Aké kocky sa používajú v DnD</h2>\n<p>Klasická sada na Dungeons &amp; Dragons má sedem kociek. Písmeno d znamená kocku (z anglického <i>die</i>) a číslo za ním počet stien.</p>\n<ul>\n<li><b>d4</b>: štvorstenná kocka v tvare pyramídy. Zranenie dýky alebo liečivý elixír, ktorý vylieči 2d4+2 životov.</li>\n<li><b>d6</b>: obyčajná kocka. Zranenie krátkeho meča aj mnohých kúziel. Ohnivá guľa (Fireball) zraňuje za 8d6.</li>\n<li><b>d8</b>: zranenie dlhého meča (longsword) a kocka životov (Hit Die) napríklad pre kňaza, barda alebo zlodeja.</li>\n<li><b>d10</b>: zranenie ťažkej kuše a kocka životov bojovníka, paladina a hraničiara.</li>\n<li><b>d12</b>: zranenie veľkej sekery (greataxe) a kocka životov barbara.</li>\n<li><b>d20</b>: najdôležitejšia kocka. Hádžeš ňou vždy, keď sa rozhoduje, či sa niečo podarí: pri útoku, overení vlastnosti (ability check) aj záchrannom hode (saving throw).</li>\n<li><b>d%</b> (d100): dve desaťstenné kocky. Jedna ukazuje desiatky (00 až 90), druhá jednotky (0 až 9). Používa sa pri náhodných tabuľkách, napríklad keď sa hľadá magický predmet.</li>\n</ul>\n<h2>Ako čítať zápis 2d6+3</h2>\n<p>Číslo pred d hovorí, koľko kociek hodíš, a číslo za d, aké kocky to sú. Bonus na konci pripočítaš k súčtu. Zápis 2d6+3 teda znamená: hoď dvoma šesťstennými kockami, sčítaj ich a pridaj 3. Výsledok bude od 5 do 15.</p>\n<p>Bonus väčšinou pochádza z modifikátora vlastnosti, napríklad zo Sily pri údere mečom. Pri útoku sa k nemu pridáva aj bonus zdatnosti (proficiency bonus). Na kockách hore si nastavíš počet aj bonus a súčet sa spočíta sám.</p>\n<h2>Výhoda a nevýhoda</h2>\n<p>Keď má tvoja postava navrch, napríklad útočí na nepriateľa, ktorý ju nevidí, hádže s výhodou (advantage). Hodíš dvoma d20 a platí vyššie číslo. Pri nevýhode (disadvantage), napríklad keď strieľaš na cieľ, ktorý nevidíš, platí nižšie číslo.</p>\n<p>Výhoda a nevýhoda sa nesčítavajú. Aj keď máš tri dôvody na výhodu, hádžeš len dvoma kockami. A keď máš výhodu aj nevýhodu naraz, navzájom sa zrušia a hádžeš normálne jednou d20. Týka sa to len d20, nie kociek zranenia. Ďalšie pojmy nájdeš v <a href=\"{url:slovnik}\">slovníku</a>.</p>",
+   "<h2>Which dice DnD uses</h2>\n<p>A standard Dungeons &amp; Dragons set has seven dice. The letter d stands for die and the number after it for how many sides it has.</p>\n<ul>\n<li><b>d4</b>: the pyramid-shaped four-sided die. Dagger damage, or a healing potion that restores 2d4+2 hit points.</li>\n<li><b>d6</b>: the ordinary die. Shortsword damage and many spells. Fireball deals 8d6.</li>\n<li><b>d8</b>: longsword damage and the Hit Die of, for example, the cleric, bard and rogue.</li>\n<li><b>d10</b>: heavy crossbow damage and the Hit Die of the fighter, paladin and ranger.</li>\n<li><b>d12</b>: greataxe damage and the barbarian's Hit Die.</li>\n<li><b>d20</b>: the most important die. You roll it whenever the question is whether something works: attack rolls, ability checks and saving throws.</li>\n<li><b>d%</b> (d100): two ten-sided dice. One gives the tens (00 to 90), the other the ones (0 to 9). It is used for random tables, for example when looking for a magic item.</li>\n</ul>\n<h2>How to read 2d6+3</h2>\n<p>The number before the d says how many dice you roll, the number after it which dice. The bonus at the end is added to the total. So 2d6+3 means: roll two six-sided dice, add them up and add 3. The result is between 5 and 15.</p>\n<p>The bonus usually comes from an ability modifier, such as Strength for a sword blow. Attack rolls also add your proficiency bonus. Set the number of dice and the bonus above and the total is worked out for you.</p>\n<h2>Advantage and disadvantage</h2>\n<p>When your character has the upper hand, for example attacking an enemy who can't see them, they roll with advantage. You roll two d20s and keep the higher. With disadvantage, for example shooting at a target you can't see, you keep the lower.</p>\n<p>Advantage and disadvantage don't stack. Even with three reasons for advantage you still roll just two dice. And if you have both advantage and disadvantage, they cancel out and you roll one d20 as normal. This only applies to the d20, never to damage dice. More terms are in the <a href=\"{url:slovnik}\">glossary</a>.</p>"
+  ],
+  "faq": [
+   {
+    "q": [
+     "Koľko kociek potrebujem na DnD?",
+     "How many dice do I need for DnD?"
+    ],
+    "a": [
+     "Na začiatok stačí jedna sada siedmich kociek pre každého hráča, alebo aj jedna spoločná pre celý stôl. Neskôr sa hodí pár d6 navyše, lebo niektoré kúzla a útoky hádžu veľa šestiek naraz. Kým si sadu kúpiš, poslúžia kocky na tejto stránke.",
+     "To start, one set of seven dice per player is enough, or even one shared set for the table. Later a few extra d6s come in handy, because some spells and attacks roll many sixes at once. Until you buy a set, the dice on this page will do."
+    ]
+   },
+   {
+    "q": [
+     "Čo znamená kritický zásah?",
+     "What is a critical hit?"
+    ],
+    "a": [
+     "Keď ti pri útoku padne na d20 dvadsiatka (prirodzená 20), útok zasiahne vždy, nech má cieľ akékoľvek obranné číslo. Kocky zranenia hodíš dvakrát a bonus pripočítaš len raz. Prirodzená jednotka pri útoku naopak vždy minie.",
+     "When your attack roll shows a 20 on the d20 (a natural 20), the attack hits no matter the target's Armor Class. You roll the damage dice twice and add the bonus only once. A natural 1 on an attack roll always misses."
+    ]
+   },
+   {
+    "q": [
+     "Je online hod férový?",
+     "Is an online roll fair?"
+    ],
+    "a": [
+     "Áno. Výsledok určuje generátor náhodných čísel v tvojom prehliadači (crypto.getRandomValues), ten istý, ktorý sa používa pri šifrovaní. Každé číslo na kocke má rovnakú šancu. 3D animácia len ukáže výsledok a nič sa neposiela na server.",
+     "Yes. The result comes from your browser's random number generator (crypto.getRandomValues), the same one used for encryption. Every face has the same chance. The 3D animation only shows the result, and nothing is sent to a server."
+    ]
+   },
+   {
+    "q": [
+     "Ako sa hádže d100?",
+     "How do you roll a d100?"
+    ],
+    "a": [
+     "Hodíš dvoma d10. Jedna určuje desiatky, druhá jednotky, takže 70 a 3 je 73. Keď padne 00 a 0, výsledok je 100. Tu stačí vybrať d% a hodiť.",
+     "Roll two d10s. One gives the tens and the other the ones, so 70 and 3 is 73. A roll of 00 and 0 counts as 100. Here you just pick d% and roll."
+    ]
+   },
+   {
+    "q": [
+     "Kedy sa hádže d20 a kedy iné kocky?",
+     "When do you roll a d20 and when other dice?"
+    ],
+    "a": [
+     "d20 rozhoduje, či sa niečo podarí: zásah, overenie vlastnosti alebo záchranný hod. Ostatné kocky určujú, koľko: koľko zranenia spôsobíš, koľko životov vyliečiš alebo koľko životov má postava pri postupe na vyššiu úroveň.",
+     "The d20 decides whether something works: a hit, an ability check or a saving throw. The other dice decide how much: how much damage you deal, how many hit points you heal or how many hit points your character gains on levelling up."
+    ]
+   }
+  ]
+ },
+ "postava": {
+  "body": [
+   "<h2>Tvorba postavy v 6 krokoch</h2>\n<ol>\n<li><b>Vyber povolanie (class).</b> Určuje, čo tvoja postava vie: bojovník bojuje, mág čaruje, zlodej sa zakráda. Na prvú hru sú najjednoduchšie bojovník, barbar, zlodej a paladin. Pozri si <a href=\"{url:povolania}\">všetky povolania</a>.</li>\n<li><b>Vyber druh (species).</b> Človek, elf, trpaslík alebo tiefling. Druh dá postave pár schopností, napríklad videnie v tme, ale nezamyká ju do žiadneho povolania. Pomôže <a href=\"{url:rasy}\">prehľad rás</a>.</li>\n<li><b>Vyber pôvod (background).</b> Čím sa postava živila pred dobrodružstvom: vojak, akolyta, zločinec. Podľa pravidiel z roku 2024 (SRD 5.2) pôvod pridá +2 a +1 alebo trikrát +1 k vlastnostiam, dve zručnosti a jeden talent (feat).</li>\n<li><b>Urči vlastnosti (ability scores).</b> Šesť čísel: Sila, Obratnosť, Odolnosť, Inteligencia, Múdrosť a Charizma. Ako ich rozdeliť, nájdeš nižšie.</li>\n<li><b>Dopočítaj životy a výbavu.</b> Na 1. úrovni máš toľko životov, koľko je maximum na tvojej kocke životov, plus modifikátor Odolnosti. Bojovník s Odolnosťou 14 má 10 + 2 = 12 životov. Výbavu dostaneš od povolania a pôvodu, alebo si namiesto nej vezmeš zlato a nakúpiš.</li>\n<li><b>Daj jej meno a príbeh.</b> Stačia dve či tri vety: odkiaľ je, čo chce a čoho sa bojí. DM to rád využije v hre. Hotovú postavu si prepíš do <a href=\"{url:harok}\">hárku postavy</a> a vytlač.</li>\n</ol>\n<p>Generátor hore urobí za teba povolanie, druh, vlastnosti aj životy. Pôvod a výbavu si doplň podľa pravidiel alebo s DM.</p>\n<h2>Ako rozdeliť vlastnosti</h2>\n<p>Hodnota vlastnosti sa mení na modifikátor, ktorý pripočítavaš k hodom: 8 až 9 je −1, 10 až 11 je +0, 12 až 13 je +1, 14 až 15 je +2 a 16 až 17 je +3. Na začiatku máš tri možnosti:</p>\n<ul>\n<li><b>Štandardné pole (standard array):</b> čísla 15, 14, 13, 12, 10 a 8 rozdelíš medzi šesť vlastností. Je to najrýchlejšie a všetky postavy v družine sú rovnako silné.</li>\n<li><b>Hod 4d6:</b> hodíš štyrmi d6, najnižšiu škrtneš a zvyšné tri sčítaš. Zopakuješ to šesťkrát. Výsledky môžu vyjsť vyššie aj nižšie než štandardné pole, preto sa na tom dohodni s DM.</li>\n<li><b>Nákup bodov (point buy):</b> máš 27 bodov a každú vlastnosť si kúpiš od 8 do 15 podľa tabuľky v pravidlách. Dáva najviac kontroly.</li>\n</ul>\n<p>Najvyššie číslo daj do hlavnej vlastnosti povolania: Sila pre bojovníka a barbara, Obratnosť pre zlodeja a mnícha, Inteligencia pre mága, Múdrosť pre kňaza a druida, Charizma pre barda, čarodeja a černokňažníka. Druhé najvyššie zvyčajne patrí Odolnosti, lebo pridáva životy. Nakoniec pripočítaš bonusy z pôvodu.</p>",
+   "<h2>Making a character in 6 steps</h2>\n<ol>\n<li><b>Choose a class.</b> It decides what your character can do: fighters fight, wizards cast spells, rogues sneak. For a first game the fighter, barbarian, rogue and paladin are the easiest. See <a href=\"{url:povolania}\">all classes</a>.</li>\n<li><b>Choose a species.</b> Human, elf, dwarf or tiefling. Your species gives a few traits, such as darkvision, but never locks you into a class. The <a href=\"{url:rasy}\">species overview</a> helps.</li>\n<li><b>Choose a background.</b> What your character did before adventuring: soldier, acolyte, criminal. Under the 2024 rules (SRD 5.2) a background adds +2 and +1, or +1 three times, to your abilities, plus two skills and one feat.</li>\n<li><b>Set your ability scores.</b> Six numbers: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. How to assign them is below.</li>\n<li><b>Work out hit points and gear.</b> At level 1 you have the maximum of your Hit Die plus your Constitution modifier. A fighter with Constitution 14 has 10 + 2 = 12 hit points. Gear comes from your class and background, or you take gold instead and go shopping.</li>\n<li><b>Give them a name and a story.</b> Two or three sentences are enough: where they come from, what they want and what they fear. Your DM will happily use it. Copy the finished character onto the <a href=\"{url:harok}\">character sheet</a> and print it.</li>\n</ol>\n<p>The generator above handles class, species, abilities and hit points for you. Add the background and gear by the rules or with your DM.</p>\n<h2>How to assign ability scores</h2>\n<p>Each score turns into a modifier you add to rolls: 8 to 9 is −1, 10 to 11 is +0, 12 to 13 is +1, 14 to 15 is +2 and 16 to 17 is +3. You have three options to start:</p>\n<ul>\n<li><b>Standard array:</b> split the numbers 15, 14, 13, 12, 10 and 8 among the six abilities. It is the quickest, and every character in the party is equally strong.</li>\n<li><b>Roll 4d6:</b> roll four d6, drop the lowest and add the other three. Do it six times. Results can come out higher or lower than the standard array, so agree on it with your DM.</li>\n<li><b>Point buy:</b> you have 27 points and buy each ability from 8 to 15 using the table in the rules. It gives the most control.</li>\n</ul>\n<p>Put your highest number in your class's main ability: Strength for the fighter and barbarian, Dexterity for the rogue and monk, Intelligence for the wizard, Wisdom for the cleric and druid, Charisma for the bard, sorcerer and warlock. The second highest usually goes to Constitution, since it adds hit points. Finally, add the bonuses from your background.</p>"
+  ],
+  "faq": [
+   {
+    "q": [
+     "Ktoré povolanie je najlepšie pre začiatočníka?",
+     "Which class is best for a beginner?"
+    ],
+    "a": [
+     "Bojovník, barbar, zlodej a paladin. Majú silné a jednoduché schopnosti a málo vecí na sledovanie. Ak chceš čarovať, skús kňaza: vie liečiť aj bojovať a jeho kúzla sú prehľadné.",
+     "The fighter, barbarian, rogue and paladin. They have strong, simple features and little to keep track of. If you want to cast spells, try the cleric: they heal as well as fight, and their spells are easy to follow."
+    ]
+   },
+   {
+    "q": [
+     "Koľko trvá vytvoriť postavu?",
+     "How long does it take to make a character?"
+    ],
+    "a": [
+     "S generátorom minútu. Ručne a prvýkrát, s pravidlami po ruke, pokojne hodinu. Na prvú hru ti DM často dá hotovú postavu, takže tvorbu si môžeš nechať na neskôr.",
+     "With the generator, a minute. By hand for the first time, with the rules open, easily an hour. For a first game the DM often hands out ready-made characters, so you can leave this for later."
+    ]
+   },
+   {
+    "q": [
+     "Je lepšie hádzať, alebo použiť štandardné pole?",
+     "Should I roll or use the standard array?"
+    ],
+    "a": [
+     "Štandardné pole je férové a rýchle, všetci v družine začínajú rovnako. Hod 4d6 je zábavnejší, ale môže vyjsť veľmi silná aj slabá postava. O spôsobe rozhoduje DM, tak sa ho pred hrou opýtaj.",
+     "The standard array is fair and fast, and everyone in the party starts equal. Rolling 4d6 is more fun but can give a very strong or a weak character. The DM decides which method the table uses, so ask before the game."
+    ]
+   },
+   {
+    "q": [
+     "Musí sa druh hodiť k povolaniu?",
+     "Does my species have to match my class?"
+    ],
+    "a": [
+     "Nemusí. Podľa pravidiel z roku 2024 druh nedáva bonusy k vlastnostiam, tie prichádzajú z pôvodu. Trpasličí mág alebo polovičný barbar sú úplne v poriadku a často z nich býva zaujímavá postava.",
+     "No. Under the 2024 rules your species gives no ability bonuses; those come from your background. A dwarf wizard or a halfling barbarian is perfectly fine and often makes an interesting character."
+    ]
+   }
+  ]
+ },
+ "navody": {
+  "body": [
+   "<h2>Čo je Dungeons &amp; Dragons</h2>\n<p>Dungeons &amp; Dragons je hra na hrdinov pri stole (tabletop RPG). Jeden hráč je Dungeon Master (DM): opisuje svet a hrá všetkých, koho postavy stretnú. Ostatní hrajú každý jednu postavu a rozhodujú, čo urobí.</p>\n<p>Nikto nevyhráva ani neprehráva. Cieľom je spolu vytvoriť príbeh, ktorý nikto nenapísal vopred. Pravidlá a kocky prídu na rad vtedy, keď výsledok nie je istý.</p>\n<h2>Ako vyzerá jedno sedenie</h2>\n<p>Hra je rozhovor, ktorý sa stále opakuje v troch krokoch:</p>\n<ol>\n<li><b>DM opíše situáciu.</b> „Stojíte pred zrúteným mostom, pod vami hučí rieka a na druhej strane sa v hmle hýbe niečo veľké.“</li>\n<li><b>Hráči povedia, čo robia.</b> Jeden chce preskočiť, druhý hľadá iný prechod, tretí volá do hmly.</li>\n<li><b>DM povie, čo sa stane.</b> Keď je výsledok neistý, požiada o hod. Väčšinou d20 a bonus postavy proti obtiažnosti (DC).</li>\n</ol>\n<p>Jedno sedenie trvá zvyčajne tri až štyri hodiny. Kampaň, teda dlhší príbeh s tými istými postavami, môže trvať mesiace. Na začiatok je najlepšia jednorazová hra (one-shot).</p>\n<h2>Tri piliere hry</h2>\n<ul>\n<li><b>Prieskum (exploration):</b> cestovanie, hľadanie stôp, pasce a hádanky.</li>\n<li><b>Rozhovor (social interaction):</b> vyjednávanie s kráľom, vypočúvanie väzňa, zjednávanie na trhu.</li>\n<li><b>Boj (combat):</b> stretnutie s príšerami a nepriateľmi, kde rozhoduje taktika a kocky.</li>\n</ul>\n<p>Dobrá hra strieda všetky tri. Ak ťa niečo baví viac, povedz to DM, prispôsobí sa.</p>\n<h2>Prvý boj krok za krokom</h2>\n<ol>\n<li><b>Iniciatíva:</b> každý hodí d20 a pripočíta Obratnosť. Kto má viac, ide skôr.</li>\n<li><b>Tvoj ťah:</b> môžeš sa pohnúť o svoju rýchlosť (zvyčajne 30 stôp, asi 9 metrov) a urobiť jednu akciu, napríklad zaútočiť alebo zoslať kúzlo. Niektoré schopnosti dajú aj bonusovú akciu.</li>\n<li><b>Útok:</b> hodíš d20 a pripočítaš bonus. Ak je súčet rovnaký alebo vyšší ako obranné číslo (Armor Class) cieľa, zasiahol si a hádžeš zranenie.</li>\n<li><b>Nula životov:</b> postava padne do bezvedomia a v ďalších ťahoch hádže hody proti smrti. Tri úspechy ju stabilizujú, tri neúspechy znamenajú smrť. Kamarát ju môže zachrániť liečením.</li>\n</ol>\n<p>Poradie, životy a stavy za DM ustráži <a href=\"{url:suboj}\">tracker súboja</a>.</p>\n<h2>Rady na prvé sedenie</h2>\n<ul>\n<li>Pravidlá netreba vedieť naspamäť. Stačí poznať svoju postavu, zvyšok vysvetlí DM.</li>\n<li>Pýtaj sa. „Čo vidím?“ a „Môžem skúsiť…?“ sú najlepšie otázky v hre.</li>\n<li>Maj pri sebe <a href=\"{url:harok}\">hárok postavy</a>, ceruzku a kocky.</li>\n<li>Hraj postavu, nie čísla. Aj zlý hod môže viesť k najlepšej scéne večera.</li>\n<li>Nechaj priestor aj ostatným. DnD je tímová hra.</li>\n</ul>",
+   "<h2>What Dungeons &amp; Dragons is</h2>\n<p>Dungeons &amp; Dragons is a tabletop role-playing game (TTRPG). One player is the Dungeon Master (DM): they describe the world and play everyone the characters meet. The others each play one character and decide what it does.</p>\n<p>Nobody wins or loses. The goal is to build a story together that nobody wrote in advance. The rules and dice come in when the outcome is uncertain.</p>\n<h2>What a session looks like</h2>\n<p>The game is a conversation that keeps repeating three steps:</p>\n<ol>\n<li><b>The DM describes the scene.</b> \"You stand before a collapsed bridge, a river roars below, and something large moves in the mist on the far side.\"</li>\n<li><b>The players say what they do.</b> One wants to jump, another looks for another way across, a third calls into the mist.</li>\n<li><b>The DM says what happens.</b> When the outcome is uncertain, they ask for a roll. Usually a d20 plus the character's bonus against a difficulty (DC).</li>\n</ol>\n<p>A session usually lasts three to four hours. A campaign, a longer story with the same characters, can run for months. A one-shot is the best way to start.</p>\n<h2>The three pillars of play</h2>\n<ul>\n<li><b>Exploration:</b> travel, tracking, traps and puzzles.</li>\n<li><b>Social interaction:</b> negotiating with a king, questioning a prisoner, haggling at the market.</li>\n<li><b>Combat:</b> fights with monsters and foes, decided by tactics and dice.</li>\n</ul>\n<p>A good game mixes all three. If you enjoy one more than the others, tell your DM and they will adjust.</p>\n<h2>Your first fight, step by step</h2>\n<ol>\n<li><b>Initiative:</b> everyone rolls a d20 and adds Dexterity. Higher goes first.</li>\n<li><b>Your turn:</b> you can move up to your speed (usually 30 feet, about 9 metres) and take one action, such as an attack or a spell. Some features also give you a bonus action.</li>\n<li><b>Attacking:</b> roll a d20 and add your bonus. If the total meets or beats the target's Armor Class, you hit and roll damage.</li>\n<li><b>Zero hit points:</b> your character falls unconscious and makes death saving throws on later turns. Three successes stabilise them, three failures mean death. A friend can save them with healing.</li>\n</ol>\n<p>The <a href=\"{url:suboj}\">combat tracker</a> keeps the order, hit points and conditions for the DM.</p>\n<h2>Tips for your first session</h2>\n<ul>\n<li>You don't need to memorise the rules. Know your character; the DM explains the rest.</li>\n<li>Ask questions. \"What do I see?\" and \"Can I try…?\" are the best questions in the game.</li>\n<li>Bring your <a href=\"{url:harok}\">character sheet</a>, a pencil and dice.</li>\n<li>Play the character, not the numbers. A bad roll can lead to the best scene of the night.</li>\n<li>Leave room for others. DnD is a team game.</li>\n</ul>"
+  ],
+  "faq": [
+   {
+    "q": [
+     "Koľko hráčov treba na DnD?",
+     "How many players do you need for DnD?"
+    ],
+    "a": [
+     "Ideálne tri až päť hráčov a jeden DM. Hrať sa dá aj vo dvojici, jeden hráč a DM, alebo vo väčšej skupine, ale pri viac ako šiestich hráčoch sa na každého dostane menej času.",
+     "Ideally three to five players and one DM. You can also play as a pair, one player and a DM, or in a bigger group, but with more than six players everyone gets less time in the spotlight."
+    ]
+   },
+   {
+    "q": [
+     "Ako dlho trvá jedna hra?",
+     "How long does a game take?"
+    ],
+    "a": [
+     "Jedno sedenie trvá zvyčajne tri až štyri hodiny. Jednorazová hra (one-shot) sa skončí za jeden večer. Kampaň pokračuje každý týždeň alebo dva a môže trvať mesiace až roky.",
+     "One session usually lasts three to four hours. A one-shot ends in a single evening. A campaign continues every week or two and can run for months or even years."
+    ]
+   },
+   {
+    "q": [
+     "Potrebujem na DnD knihy?",
+     "Do I need books to play DnD?"
+    ],
+    "a": [
+     "Nepotrebuješ. Základné pravidlá piatej edície sú zadarmo ako SRD 5.2 a hráčovi stačí poznať svoju postavu. Knihy ako Príručka hráča (Player's Handbook) ponúkajú viac možností a hodia sa najmä DM.",
+     "No. The core fifth edition rules are free as the SRD 5.2, and a player only needs to know their character. Books such as the Player's Handbook offer more options and are most useful for the DM."
+    ]
+   },
+   {
+    "q": [
+     "Čo robí Dungeon Master?",
+     "What does the Dungeon Master do?"
+    ],
+    "a": [
+     "DM pripraví dobrodružstvo, opisuje svet, hrá všetky postavy okrem hráčskych a rozhoduje o pravidlách. Nie je protivník hráčov. Jeho úlohou je, aby sa celý stôl bavil a príbeh šiel ďalej.",
+     "The DM prepares the adventure, describes the world, plays every character except the players' and makes rules calls. They are not the players' opponent. Their job is to keep the whole table having fun and the story moving."
+    ]
+   },
+   {
+    "q": [
+     "Dá sa DnD hrať online?",
+     "Can you play DnD online?"
+    ],
+    "a": [
+     "Áno. Stačí videohovor a online kocky, mapy a hárky sa dajú zdieľať cez obrazovku alebo virtuálny stôl. Na tejto stránke nájdeš kocky, hárok postavy aj tracker súboja, ktoré fungujú v prehliadači.",
+     "Yes. A video call and online dice are enough, and maps and sheets can be shared on screen or on a virtual tabletop. This site has dice, a character sheet and a combat tracker that all run in the browser."
+    ]
+   }
+  ]
+ }
+}
