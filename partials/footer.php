@@ -33,11 +33,6 @@
   </div>
 </dialog>
 
-<div class="cookie" id="cookie" role="region" aria-label="<?= attr('ck.aria') ?>" hidden>
-  <p><?= t('ck.text') ?></p>
-  <div class="cookie-act"><a href="<?= url('sukromie') ?>"><?= t('ck.more') ?></a><button class="btn ghost" type="button" id="ck-ok"><?= t('ck.ok') ?></button></div>
-</div>
-
 
 <footer>
   <div class="wrap">

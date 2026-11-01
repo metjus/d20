@@ -27,7 +27,11 @@
       <svg class="chart" id="chart" viewBox="0 0 1000 560" role="img" aria-label="<?= attr('map.aria') ?>"></svg>
       <div class="vignette"></div>
     </div>
-    <div class="map-legend" id="map-legend"></div>
+    <nav class="map-legend" id="map-legend" aria-label="<?= attr('map.kicker') ?>">
+<?php foreach (['navody', 'pribeh', 'postava', 'kocky', 'nastroje'] as $p): ?>
+      <a href="<?= url($p) ?>"><b><?= t("map.$p") ?></b><span><?= t("nav.$p") ?></span></a>
+<?php endforeach; ?>
+    </nav>
   </div>
 
   <div class="section-title far">
@@ -66,7 +70,7 @@
     <article class="gcard"><div class="gcard-in parchment">
       <div class="gtype"><span><?= t('cards.hero') ?></span><svg class="gem"><use href="#d20s"/></svg></div>
       <div class="gart" id="art-hero"></div>
-      <h3 class="gname" id="hc-name"></h3>
+      <h3 class="gname" id="hc-name"><?= t('cards.hero') ?></h3>
       <p class="gmeta" id="hc-meta"></p>
       <div class="taper"></div>
       <div class="sb"><p id="hc-hp"></p><p id="hc-init"></p></div>
