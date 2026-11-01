@@ -33,11 +33,6 @@
   </div>
 </dialog>
 
-<div class="cookie" id="cookie" role="region" aria-label="<?= attr('ck.aria') ?>" hidden>
-  <p><?= t('ck.text') ?></p>
-  <div class="cookie-act"><a href="<?= url('sukromie') ?>"><?= t('ck.more') ?></a><button class="btn ghost" type="button" id="ck-ok"><?= t('ck.ok') ?></button></div>
-</div>
-
 
 <footer>
   <div class="wrap">
@@ -59,7 +54,7 @@
 <?php endforeach; ?>
     </nav>
     <div class="foot-base">
-      <span>&copy; <span id="yr">2026</span> d20.sk · <a href="<?= url('sukromie') ?>"><?= t('pv.link') ?></a></span>
+      <span>&copy; <span id="yr">2026</span> d20.sk · <a href="<?= url('projekt') ?>"><?= t('nav.projekt') ?></a> · <a href="<?= url('sukromie') ?>"><?= t('pv.link') ?></a></span>
       <p><?= t('foot') ?></p>
     </div>
   </div>

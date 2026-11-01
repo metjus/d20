@@ -51,16 +51,18 @@ js/home.js, guides.js, character.js, story.js, dice.js   logika jednotlivých st
 js/board.js                 nástenka s lístkami a zámkami (Príbeh, NPC, Krčma); prvý hod robí PHP, tabuľky číta zo stránky
 js/npc.js, tavern.js, loot.js, sheet.js   generátory NPC, krčmy a pokladu, výpočty na hárku postavy
 js/combat.js                tracker súboja: poradie, životy, stavy, záchrany proti smrti; súboj sa ukladá v localStorage (d20-combat)
-js/site.js                  animácie, prechody, kontaktný formulár, cookie lišta
+js/site.js                  animácie, prechody, kontaktný formulár (web nepoužíva cookies, preto nemá cookie lištu)
 js/data.js                  herné dáta: rasy, povolania, mená, mapa
 js/dice3d.js, js/vendor/    3D kocky, three.js r128 (MIT); dice.js ich načíta až po prvom scrollovaní alebo dotyku
 php/contact.php, config.php kontaktný formulár
 img/                        logo (WebP), favicon, náhľady pre sociálne siete (og-sk.jpg, og-en.jpg)
 fonts/                      písma (SIL Open Font License), orezané na znaky angličtiny, slovenčiny a češtiny
-sitemap.xml, robots.txt
+sitemap.php                 /sitemap.xml (prepis v .htaccess): všetky stránky z data/site.json s hreflang; lastmod = "updated" stránky, rovnaký dátum ide do dateModified v JSON-LD
+partials/related.php        blok „Môže sa ti hodiť“ pod nástrojmi, odkazy podľa "related" v data/site.json
+robots.txt
 ```
 
-Nová stránka: pridať záznam do `data/site.json`, obsah do `pages/`, vstupné súbory pre obe adresy, texty `nav.<stránka>` a `seo.<stránka>.title/desc` do `data/texts.json`, odkaz do pätičky (`partials/footer.php`) a obe adresy do `sitemap.xml`.
+Nová stránka: pridať záznam do `data/site.json`, obsah do `pages/`, vstupné súbory pre obe adresy, texty `nav.<stránka>` a `seo.<stránka>.title/desc` do `data/texts.json`, odkaz do pätičky (`partials/footer.php`). Do sitemapy sa stránka dostane sama; pri väčšej zmene obsahu treba posunúť jej `updated` v `data/site.json`.
 
 ## Nasadenie
 

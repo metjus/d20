@@ -7,6 +7,9 @@ $title    = $plain("seo.$PAGE.title");
 $desc     = $plain("seo.$PAGE.desc");
 $indexed  = $cfg['type'] !== 'error';
 $here     = abs_url($PAGE);
+// The page's own name for search engines, without the "| d20.sk" every title ends with.
+$name     = preg_replace('/\s*\|\s*d20\.sk$/', '', $title);
+$updated  = $cfg['updated'] ?? null;
 
 $graph = [];
 if ($cfg['type'] === 'home') {
@@ -22,11 +25,16 @@ if ($cfg['type'] === 'home') {
         fn ($i, $c) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $c[0], 'item' => $c[1]],
         array_keys($trail), $trail
     )];
-    $graph[] = $cfg['type'] === 'app'
-        ? ['@type' => 'WebApplication', 'name' => $title, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
+    $node = $cfg['type'] === 'app'
+        ? ['@type' => 'WebApplication', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
-        : ['@type' => 'WebPage', 'name' => $title, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+    if ($updated) {
+        // The same date as <lastmod> in the sitemap (sitemap.php), both from data/site.json.
+        $node['dateModified'] = $updated;
+    }
+    $graph[] = $node;
     if ($PAGE === 'slovnik') {
         $graph[] = ['@type' => 'DefinedTermSet', 'name' => $plain('gl.h1'), 'url' => $here, 'inLanguage' => $LANG,
                     'hasDefinedTerm' => array_map(fn ($g) => ['@type' => 'DefinedTerm', 'name' => pair($g['term']),
@@ -110,6 +118,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 
   <main>
 <?php require __DIR__ . '/../pages/' . $PAGE . '.php'; ?>
+<?php require __DIR__ . '/related.php'; ?>
   </main>
 
 <?php require __DIR__ . '/footer.php'; ?>

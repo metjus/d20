@@ -44,7 +44,7 @@ $choices = function (string $box, string $data, array $order, string $chosen): v
     <article class="sheet parchment" aria-live="polite">
       <svg class="brass tl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
       <svg class="seal-big"><use href="#seal"/></svg>
-      <h2 class="nm" id="s-name"></h2>
+      <h2 class="nm" id="s-name"><?= t('cards.hero') ?></h2>
       <p class="sub" id="s-sub"></p>
       <div class="taper"></div>
       <div class="sb"><p id="s-hp"></p><p id="s-hd"></p><p id="s-init"></p></div>

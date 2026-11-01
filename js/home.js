@@ -81,13 +81,12 @@ function drawMap() {
     s += '<a href="' + url(k) + '" class="loc"><g transform="translate(' + m.x + ' ' + m.y + ')">';
     s += '<circle class="ring" r="58"/>' + ICONS[k];
     s += '<ellipse class="fog" cx="0" cy="-4" rx="66" ry="46" fill="#f2e9d2" opacity=".55" filter="url(#fz)"/>';
-    s += '<text class="lbl" y="50" text-anchor="middle">' + esc(L(m.n)) + '</text>';
+    s += '<text class="lbl" y="50" text-anchor="middle">' + esc(t(m.n)) + '</text>';
     s += '<text class="sub" y="70" text-anchor="middle">' + esc(t(m.s)) + '</text>';
     s += '</g></a>';
   });
   $("chart").innerHTML = s;
-  var lg = $("map-legend"); lg.innerHTML = "";
-  Object.keys(MAP).forEach(function (k) { var a = el("a", "", "<b>" + esc(L(MAP[k].n)) + "</b><span>" + esc(t(MAP[k].s)) + "</span>"); a.href = url(k); lg.appendChild(a); });
+  // The phone legend under the map comes with the page (pages/domov.php), so its links work without scripts.
 }
 
 // ---------- Card art ----------

@@ -1,5 +1,5 @@
 "use strict";
-// Every page: reveal animations, page transitions, contact form, cookie notice and embers.
+// Every page: reveal animations, page transitions, contact form and embers.
 // ---------- Reveal on load and scroll ----------
 var RV_SEL = ".page > :not(.hero), .page .hero-copy > *, .page .cards > *, .page .chap, footer .fleuron, footer .foot > *";
 var rvObs = null;
@@ -84,7 +84,8 @@ function reveal() {
     $("ct-email").value ? $("ct-msg").focus() : $("ct-name").focus();
   }
   function close() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
-  $("ct-open").addEventListener("click", open);
+  // The footer button, plus any button marked data-ct-open (the About page has one).
+  document.querySelectorAll("#ct-open, [data-ct-open]").forEach(function (b) { b.addEventListener("click", open); });
   $("ct-close").addEventListener("click", close);
   $("ct-again").addEventListener("click", close);
   dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
@@ -111,17 +112,8 @@ function reveal() {
   });
 })();
 
-// ---------- Cookie notice ----------
-(function cookieNotice() {
-  var seen = false;
-  try { seen = localStorage.getItem("d20-cookie-ok") === "1"; } catch (e) {}
-  if (seen) return;
-  $("cookie").hidden = false;
-  $("ck-ok").addEventListener("click", function () {
-    $("cookie").hidden = true;
-    try { localStorage.setItem("d20-cookie-ok", "1"); } catch (e) {}
-  });
-})();
+// The site sets no cookies, so it shows no cookie notice. Clear the flag the old notice left behind.
+try { localStorage.removeItem("d20-cookie-ok"); } catch (e) {}
 
 // ---------- Embers ----------
 (function embers() {

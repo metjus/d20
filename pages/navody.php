@@ -8,6 +8,7 @@
     <div class="folio parchment">
       <p class="intro illum"><?= t('g.intro') ?></p>
       <div class="fleuron"><svg><use href="#fleuron"/></svg></div>
+      <h2 class="h2 rubric"><?= t('g.stepsH') ?></h2>
       <ol class="chapters">
         <li class="chap"><div><h3><?= t('g.s1') ?></h3><p><?= t('g.s1p') ?></p></div></li>
         <li class="chap"><div><h3><?= t('g.s2') ?></h3><p><?= t('g.s2p') ?></p><p><a href="<?= url('postava') ?>"><?= t('g.s2a') ?></a></p></div></li>

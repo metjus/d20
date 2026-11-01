@@ -79,7 +79,7 @@ output.hs-num { padding: 4px 0; min-height: 30px; color: var(--ink); }
   @page { margin: 9mm; }
   html, body { background: #fff !important; }
   body { font-size: 8.5pt; }
-  .sky, .candle, #embers, .boot, .warp, header.top, footer, .cookie, .head, .hs-bar, .hs-how, .brass, datalist { display: none !important; }
+  .sky, .candle, #embers, .boot, .warp, header.top, footer, .head, .hs-bar, .hs-how, .brass, datalist { display: none !important; }
   .page { padding: 0; }
   .wrap { max-width: none; padding: 0; }
   .page > * { content-visibility: visible; }
