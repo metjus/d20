@@ -14,3 +14,5 @@ $("t-roll").addEventListener("click", function () {
   tale.roll();
   var s = talePhrase(); $("t-sum").textContent = s.charAt(0).toUpperCase() + s.slice(1);
 });
+// The copied text is the whole plot hook first, then each note on its own line.
+copyButton("t-copy", function () { return t("t.wanted") + "\n" + $("t-sum").textContent + "\n\n" + tale.text(); });

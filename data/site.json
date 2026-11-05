@@ -78,7 +78,7 @@
         "krcma",
         "poklad"
       ],
-      "updated": "2026-11-01"
+      "updated": "2026-11-05"
     },
     "kocky": {
       "url": {
@@ -104,7 +104,7 @@
       },
       "type": "page",
       "scripts": [],
-      "updated": "2026-11-01"
+      "updated": "2026-11-05"
     },
     "projekt": {
       "url": {
@@ -237,7 +237,7 @@
         "kocky",
         "suboj"
       ],
-      "updated": "2026-11-01"
+      "updated": "2026-11-05"
     },
     "suboj": {
       "url": {
