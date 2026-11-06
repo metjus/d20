@@ -36,7 +36,7 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
   </div>
   <div class="hs-bar">
     <button class="btn" type="button" id="hs-print"><svg class="seal"><use href="#seal"/></svg><span><?= t('hs.print') ?></span></button>
-    <a class="btn ghost" href="<?= url('harok') ?>"><?= t('hs.clear') ?></a>
+    <a class="btn ghost" id="hs-clear" href="<?= url('harok') ?>"><?= t('hs.clear') ?></a>
     <a class="btn ghost" href="<?= url('postava') ?>"><?= t('hs.make') ?></a>
     <p class="note"><?= t($filled ? 'hs.from' : 'hs.tip') ?></p>
   </div>

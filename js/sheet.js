@@ -25,3 +25,40 @@ $("hs-print").addEventListener("click", function () { window.print(); });
 // Print shows the name as plain text, which wraps; an input would cut a long name off.
 $("hs-n").addEventListener("input", function (e) { $("hs-n-print").textContent = e.target.value; });
 $("hs-n-print").textContent = $("hs-n").value;
+
+// ---------- Saving ----------
+// Everything typed on the sheet is kept in this browser (localStorage), so closing or refreshing the page loses nothing.
+// The fields are stored in page order; a sheet saved with a different set of fields is ignored rather than misplaced.
+var SHEET_KEY = "d20-sheet";
+function fields() { return [].slice.call(document.querySelectorAll("#hs input, #hs textarea")); }
+function readSaved() { try { return JSON.parse(localStorage.getItem(SHEET_KEY)); } catch (e) { return null; } }
+var saveTimer = null;
+function writeSheet() {
+  var f = fields().map(function (x) { return x.type === "checkbox" ? x.checked : x.value; });
+  try { localStorage.setItem(SHEET_KEY, JSON.stringify({ n: f.length, f: f })); } catch (e) {}
+}
+function saveSheet() { clearTimeout(saveTimer); saveTimer = setTimeout(writeSheet, 300); }
+function restoreSheet(saved) {
+  var list = fields();
+  if (!saved || saved.n !== list.length || !Array.isArray(saved.f)) return;
+  list.forEach(function (x, i) { if (x.type === "checkbox") x.checked = saved.f[i] === true; else x.value = saved.f[i] == null ? "" : String(saved.f[i]); });
+  $("hs-n-print").textContent = $("hs-n").value;
+  recalc();
+}
+$("hs").addEventListener("input", saveSheet);
+$("hs").addEventListener("change", saveSheet);
+// A hero sent from the character builder starts a new sheet; the address is then cleaned, so a refresh keeps the edits.
+if (/[?&](n|sp|cl|s)=/.test(location.search)) {
+  writeSheet();
+  if (history.replaceState) history.replaceState(null, "", location.pathname);
+} else restoreSheet(readSaved());
+// "Blank sheet" forgets the saved sheet, so it asks first, then loads the page afresh.
+// It reloads by itself: the site's page transition (js/site.js) ignores a link to the page you are on.
+$("hs-clear").addEventListener("click", function (e) {
+  e.preventDefault();
+  var filled = fields().some(function (x) { return x.type === "checkbox" ? x.checked : x.value.trim() !== ""; });
+  if (filled && !confirm(t("hs.clearAsk"))) return;
+  clearTimeout(saveTimer);
+  try { localStorage.removeItem(SHEET_KEY); } catch (err) {}
+  location.replace(location.pathname);
+});

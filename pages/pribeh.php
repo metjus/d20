@@ -26,6 +26,7 @@ $sum       = cap($LANG === 'en'
         <p class="q" id="t-sum"><?= e($sum) ?></p>
       </div>
       <button class="btn wide" type="button" id="t-roll"><svg class="seal"><use href="#i-dice"/></svg><span id="t-roll-l"><?= t('t.roll') ?></span></button>
+      <button class="btn ghost wide" type="button" id="t-copy"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('b.copy') ?></span></button>
       <p class="note"><?= t('t.note') ?></p>
       <p class="note"><?= t('t.more') ?></p>
     </div>
