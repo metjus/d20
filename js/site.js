@@ -158,4 +158,19 @@ try { localStorage.removeItem("d20-cookie-ok"); } catch (e) {}
   else window.addEventListener("load", function () { setTimeout(start, wait); });
 })();
 
+// "Send the link to your party" under the tools: the phone's share sheet, or the address copied on a computer.
+(function () {
+  var b = $("share");
+  if (!b) return;
+  var label = b.querySelector("span"), was = label.textContent, link = location.origin + location.pathname;
+  b.addEventListener("click", function () {
+    if (navigator.share) { navigator.share({ title: b.dataset.title, url: link }).catch(function () {}); return; }
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(link).then(function () {
+      label.textContent = b.dataset.done;
+      setTimeout(function () { label.textContent = was; }, 1800);
+    });
+  });
+})();
+
 reveal();

@@ -10,6 +10,8 @@ $here     = abs_url($PAGE);
 // The page's own name for search engines, without the "| d20.sk" every title ends with.
 $name     = preg_replace('/\s*\|\s*d20\.sk$/', '', $title);
 $updated  = $cfg['updated'] ?? null;
+// Each page's own sharing preview (made by build/og.js), or the general one with the logo.
+$og       = is_file(__DIR__ . "/../img/og/$PAGE-$LANG.jpg") ? "/img/og/$PAGE-$LANG.jpg" : "/img/og-$LANG.jpg";
 
 $graph = [];
 if ($cfg['type'] === 'home') {
@@ -84,12 +86,12 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <meta property="og:title" content="<?= e($title) ?>">
 <meta property="og:description" content="<?= e($desc) ?>">
 <meta property="og:url" content="<?= e($here) ?>">
-<meta property="og:image" content="<?= e(site()['url']) ?>/img/og-<?= $LANG ?>.jpg">
+<meta property="og:image" content="<?= e(site()['url'] . $og) ?>">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="<?= $LANG === 'sk' ? 'sk_SK' : 'en_US' ?>">
 <meta property="og:locale:alternate" content="<?= $LANG === 'sk' ? 'en_US' : 'sk_SK' ?>">
-<meta property="og:image:alt" content="d20.sk">
+<meta property="og:image:alt" content="<?= e($name) ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0d0918">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
