@@ -55,7 +55,9 @@ js/site.js                  animácie, prechody, kontaktný formulár (web nepou
 js/data.js                  herné dáta: rasy, povolania, mená, mapa
 js/dice3d.js, js/vendor/    3D kocky, three.js r128 (MIT); dice.js ich načíta až po prvom scrollovaní alebo dotyku
 php/contact.php, config.php kontaktný formulár
-img/                        logo (WebP), favicon, náhľady pre sociálne siete (og-sk.jpg, og-en.jpg)
+img/                        logo (WebP), favicon, náhľad domovskej stránky pre sociálne siete (og-sk.jpg, og-en.jpg)
+img/og/                     náhľad každej stránky pre Facebook, Discord a Reddit (<stránka>-<jazyk>.jpg); bez neho stránka použije img/og-<jazyk>.jpg
+build/og.js                 vyrobí img/og/ z názvov a popisov v data/texts.json: `node build/og.js` (Playwright s Chromiom); na webe je /build/ zakázaný
 fonts/                      písma (SIL Open Font License), orezané na znaky angličtiny, slovenčiny a češtiny
 sitemap.php                 /sitemap.xml (prepis v .htaccess): všetky stránky z data/site.json s hreflang; lastmod = "updated" stránky, rovnaký dátum ide do dateModified v JSON-LD
 partials/related.php        blok „Môže sa ti hodiť“ pod nástrojmi, odkazy podľa "related" v data/site.json
@@ -63,7 +65,7 @@ data/articles.json          návod a časté otázky pod nástrojmi (partials/ar
 robots.txt
 ```
 
-Nová stránka: pridať záznam do `data/site.json`, obsah do `pages/`, vstupné súbory pre obe adresy, texty `nav.<stránka>` a `seo.<stránka>.title/desc` do `data/texts.json`, odkaz do pätičky (`partials/footer.php`). Do sitemapy sa stránka dostane sama; pri väčšej zmene obsahu treba posunúť jej `updated` v `data/site.json`.
+Nová stránka: pridať záznam do `data/site.json`, obsah do `pages/`, vstupné súbory pre obe adresy, texty `nav.<stránka>` a `seo.<stránka>.title/desc` do `data/texts.json`, odkaz do pätičky (`partials/footer.php`). Náhľad pre sociálne siete vyrobí `node build/og.js`. Do sitemapy sa stránka dostane sama; pri väčšej zmene obsahu treba posunúť jej `updated` v `data/site.json`.
 
 ## Nasadenie
 

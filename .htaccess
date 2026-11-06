@@ -23,6 +23,7 @@ RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Repository files that are not part of the site.
 RewriteRule ^(README\.md|\.cpanel\.yml)$ - [F,L]
+RewriteRule ^build/ - [F,L]
 
 AddType application/manifest+json .webmanifest
 AddType image/x-icon .ico

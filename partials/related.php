@@ -15,6 +15,7 @@ if (!$related) {
         <li><a href="<?= url($p) ?>"><b><?= isset(texts()["tool.$p.h"]) ? t("tool.$p.h") : t("nav.$p") ?></b><span><?= isset(texts()["tool.$p"]) ? t("tool.$p") : t("lib.$p") ?></span><em><?= t('to.open') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
+      <p class="share-row"><button class="btn ghost" type="button" id="share" data-done="<?= attr('rel.shared') ?>" data-title="<?= attr("seo.$PAGE.title") ?>"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('rel.share') ?></span></button></p>
     </div>
   </div>
 </section>

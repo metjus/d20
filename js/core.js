@@ -36,11 +36,12 @@ function pool6() { return [0, 0, 0, 0, 0, 0].map(roll4d6).sort(function (a, b) {
 function assign(cl, pool) { var sc = [0, 0, 0, 0, 0, 0]; cl.o.forEach(function (ab, rank) { sc[ab] = pool[rank]; }); return sc; }
 
 // A button that copies text and says so for a moment.
+// The copied text ends with the page's address, so whoever reads it in the group chat can roll their own.
 function copyButton(id, text) {
   var b = $(id), label = b.querySelector("span"), was = label.textContent;
   b.addEventListener("click", function () {
     if (!navigator.clipboard) return;
-    navigator.clipboard.writeText(text()).then(function () {
+    navigator.clipboard.writeText(text() + "\n\n" + t("b.via") + " " + location.origin + location.pathname).then(function () {
       label.textContent = t("b.copied");
       setTimeout(function () { label.textContent = was; }, 1800);
     });
