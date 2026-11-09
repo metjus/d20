@@ -35,6 +35,7 @@ function renderSheet() {
   sheetLink(sc);
 }
 // The printable sheet (pages/harok.php) fills itself in from the address.
+// The link is rel="nofollow" (pages/postava.php): each roll makes a new address, and search engines only need /harok-postavy/ itself.
 function sheetLink(sc) {
   $("c-sheet").href = url("harok") + "?n=" + encodeURIComponent(C.name) + "&sp=" + C.species + "&cl=" + C.cls + "&s=" + sc.join(",");
 }

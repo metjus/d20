@@ -39,7 +39,7 @@ $choices = function (string $box, string $data, array $order, string $chosen): v
         <p class="note tight"><?= t('c.mnote') ?></p>
       </div>
       <button class="btn wide" type="button" id="c-roll"><svg class="seal"><use href="#seal"/></svg><span><?= t('c.reroll') ?></span></button>
-      <a class="btn ghost wide" id="c-sheet" href="<?= url('harok') ?>"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('c.sheet') ?></span></a>
+      <a class="btn ghost wide" id="c-sheet" href="<?= url('harok') ?>" rel="nofollow"><svg width="18" height="18" aria-hidden="true"><use href="#i-quill"/></svg><span><?= t('c.sheet') ?></span></a>
     </div>
     <article class="sheet parchment" aria-live="polite">
       <svg class="brass tl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
