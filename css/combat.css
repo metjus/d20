@@ -146,7 +146,9 @@
 .cb-die { position: relative; width: 118px; height: 118px; padding: 0; border: 0; background: none; display: grid; place-items: center;
   color: var(--gold); filter: drop-shadow(0 6px 14px rgba(0,0,0,.6)); border-radius: 50%; }
 .cb-die svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cb-die span { position: relative; margin-top: 8px; font: 800 2.4rem/1 var(--font-display); color: var(--gold-hi); font-variant-numeric: tabular-nums; }
+.cb-die span { position: relative; margin-top: 20px; font: 800 2.1rem/1 var(--font-display); color: var(--gold-hi); font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 2px #120c22, 0 0 6px #120c22; }
+.cb-die span.long { font-size: 1.5rem; }
 .cb-die.rolling { animation: cb-tumble .65s cubic-bezier(.3,.7,.4,1); }
 @keyframes cb-tumble { 0% { transform: rotate(0) scale(.75); } 40% { transform: rotate(250deg) scale(1.1); } 70% { transform: rotate(340deg) scale(.96); } 100% { transform: rotate(360deg) scale(1); } }
 .cb-die.crit { color: #ffd76a; filter: drop-shadow(0 0 18px rgba(255,215,106,.8)); }
