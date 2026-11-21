@@ -42,7 +42,7 @@ unset($npc['tables']);
     </div>
     <div class="board leather" id="npc">
       <div class="who parchment" aria-live="polite">
-        <div class="who-top"><h2 class="nm" id="n-name"><?= e($name) ?></h2>
+        <div class="who-top"><p class="nm" id="n-name"><?= e($name) ?></p>
           <button class="icon-btn" type="button" id="n-name-roll" aria-label="<?= attr('npc.nameRoll') ?>"><svg><use href="#i-dice"/></svg></button></div>
         <p class="sub" id="n-sub" data-sp="<?= $sp ?>" data-g="<?= $g ?>"><?= e($sub) ?></p>
       </div>

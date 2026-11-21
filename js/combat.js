@@ -287,10 +287,12 @@ function rollTray() {
   die.classList.remove("rolling", "crit", "fumble");
   void die.offsetWidth;
   if (!calm) die.classList.add("rolling");
-  var spin = calm ? null : setInterval(function () { face.textContent = rnd(tray.s); }, 70);
+  // Three digits (d100) need a smaller number to fit inside the die's face.
+  var show = function (n) { face.textContent = n; face.classList.toggle("long", n > 99); };
+  var spin = calm ? null : setInterval(function () { show(rnd(tray.s)); }, 70);
   setTimeout(function () {
     clearInterval(spin); rolling = false;
-    face.textContent = nat;
+    show(nat);
     var extra = "";
     if (tray.s === 20 && nat === 20) { die.classList.add("crit"); extra = " · <strong>" + t("cb.crit") + "</strong>"; }
     if (tray.s === 20 && nat === 1) { die.classList.add("fumble"); extra = " · <strong>" + t("cb.fumble") + "</strong>"; }

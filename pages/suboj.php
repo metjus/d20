@@ -48,7 +48,7 @@ $data = [
         <section class="cb-tray" id="cb-tray" aria-labelledby="cb-tray-h">
           <div class="cb-title"><h2 id="cb-tray-h"><?= t('cb.trayH') ?></h2><span class="cb-hint"><?= t('cb.trayHint') ?></span></div>
           <div class="cb-stage">
-            <button class="cb-die" type="button" id="cb-die" aria-label="<?= attr('cb.rollAria') ?>"><svg aria-hidden="true"><use href="#d20s"/></svg><span id="cb-face">20</span></button>
+            <button class="cb-die" type="button" id="cb-die" aria-label="<?= attr('cb.rollAria') ?>"><svg aria-hidden="true"><use href="#d20t"/></svg><span id="cb-face">20</span></button>
             <p class="cb-result" id="cb-result"><?= t('cb.trayStart') ?></p>
           </div>
           <div class="cb-dpick" id="cb-dpick">

@@ -36,6 +36,7 @@ $abil = fn (int $i): string => '<span class="ab">' . t("ab.$i") . ($LANG === 'sk
         <p><b><?= t('cl.diff') ?>:</b> <span class="pips" aria-hidden="true"><?= str_repeat('●', $c['diff']) . str_repeat('○', 3 - $c['diff']) ?></span> <?= t('cl.d' . $c['diff']) ?></p>
       </div>
       <p class="gfit"><b><?= t('cl.fit') ?></b> <?= e(pair($c['fit'])) ?></p>
+      <p class="gtry"><a href="<?= url('postava') ?>#<?= $c['id'] ?>"><?= t('lib.try') ?>: <?= e(pair($c['name'])) ?></a></p>
     </div></article>
 <?php endforeach; ?>
   </div>
