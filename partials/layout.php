@@ -35,6 +35,12 @@ if ($cfg['type'] === 'home') {
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
         : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+    // A screenshot of the tool for search results (data/shots.json); it shows the Slovak interface.
+    $shot = $LANG === 'sk' ? (content('shots')[$PAGE] ?? null) : null;
+    if ($shot && $cfg['type'] === 'app') {
+        $node['screenshot'] = ['@type' => 'ImageObject', 'url' => site()['url'] . "/img/seo/{$shot['file']}.webp",
+                               'width' => $shot['w'], 'height' => $shot['h'], 'caption' => $shot['alt']];
+    }
     if ($updated) {
         // The same date as <lastmod> in the sitemap (sitemap.php), both from data/site.json.
         $node['dateModified'] = $updated;
