@@ -1,3 +1,7 @@
+<?php
+// Screenshots of each tool (data/shots.json). They show the Slovak interface, so only the Slovak hub has them.
+$shots = content('shots');
+?>
 <section class="page wrap" data-page="nastroje">
   <div class="head">
     <h1 class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= t('to.eyebrow') ?></span></h1>
@@ -11,7 +15,7 @@
       <h2 class="h2 rubric"><?= t("to.$group") ?></h2>
       <ul class="shelf tools">
 <?php foreach ($pages as $p): ?>
-        <li><a href="<?= url($p) ?>"><b><?= isset(texts()["tool.$p.h"]) ? t("tool.$p.h") : t("nav.$p") ?></b><span><?= t("tool.$p") ?></span><em><?= t('to.open') ?> ›</em></a></li>
+        <li><a href="<?= url($p) ?>"><?php if ($LANG === 'sk' && isset($shots[$p])): ?><img src="/img/seo/sm/<?= $shots[$p]['file'] ?>.webp" width="480" height="300" alt="<?= e($shots[$p]['alt']) ?>" loading="lazy" decoding="async"><?php endif; ?><b><?= isset(texts()["tool.$p.h"]) ? t("tool.$p.h") : t("nav.$p") ?></b><span><?= t("tool.$p") ?></span><em><?= t('to.open') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
 <?php endforeach; ?>

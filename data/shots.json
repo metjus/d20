@@ -1,0 +1,50 @@
+{
+ "kocky": {
+  "file": "dnd-kocky-online-3d",
+  "w": 1196,
+  "h": 687,
+  "alt": "3D hádzanie kockou d20 online na d20.sk s výhodou, nevýhodou a bonusom"
+ },
+ "postava": {
+  "file": "tvorba-postavy-dnd-generator",
+  "w": 1196,
+  "h": 760,
+  "alt": "Generátor postáv do DnD: výber rasy, povolania a hod vlastností 4d6"
+ },
+ "harok": {
+  "file": "harok-postavy-dnd-5e",
+  "w": 1196,
+  "h": 780,
+  "alt": "Vyplnený slovenský hárok postavy DnD 5e pre trpasličieho paladina"
+ },
+ "suboj": {
+  "file": "tracker-suboja-dnd",
+  "w": 1196,
+  "h": 760,
+  "alt": "Tracker súboja do DnD: poradie iniciatívy, životy, obranné číslo a stavy"
+ },
+ "npc": {
+  "file": "generator-npc-dnd",
+  "w": 1196,
+  "h": 760,
+  "alt": "Generátor NPC do DnD: náhodné meno, druh, vzhľad, povaha a tajomstvo"
+ },
+ "krcma": {
+  "file": "generator-krcmy-dnd",
+  "w": 1196,
+  "h": 758,
+  "alt": "Generátor krčmy do DnD: názov, krčmár, jedlá s cenami a klebety"
+ },
+ "poklad": {
+  "file": "generator-pokladu-dnd",
+  "w": 1196,
+  "h": 635,
+  "alt": "Generátor pokladu do DnD: mince, drahokamy a magické predmety podľa úrovne"
+ },
+ "pribeh": {
+  "file": "generator-zapletiek-dnd",
+  "w": 1196,
+  "h": 541,
+  "alt": "Generátor zápletiek do DnD: zadávateľ, úloha, miesto, zvrat a odmena"
+ }
+}

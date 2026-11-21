@@ -436,6 +436,11 @@ select.input { width: 100%; min-height: 48px; cursor: pointer; appearance: none;
 .h2.rubric { color: var(--rubric); }
 .shelf.tools { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .shelf.tools a { grid-template-rows: auto 1fr auto; }
+.shelf.tools a:has(img) { grid-template-rows: auto auto 1fr auto; }
+.shelf.tools img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border: 1px solid rgba(93,71,51,.4); margin-bottom: 6px; }
+.legal figure { margin: 20px 0 24px; }
+.legal figure img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(93,71,51,.45); }
+.legal figcaption { margin-top: 8px; font-size: .9rem; font-style: italic; color: var(--ink-soft); }
 .page.related, .page.article { padding-top: 0; }
 .note.tight { margin-top: 8px; }
 @media (max-width: 920px) { .tool.inn .tale-side { order: -1; } }
