@@ -40,7 +40,7 @@ $data = ['adj' => $inn['adj'], 'noun' => $inn['noun'], 'species' => $npc['specie
       <div class="wanted sign parchment" aria-live="polite"><span class="nail"></span>
         <button class="icon-btn" type="button" id="k-name-roll" aria-label="<?= attr('tv.nameRoll') ?>"><svg><use href="#i-dice"/></svg></button>
         <p class="kind"><?= t('tv.kind') ?></p>
-        <h2 class="t" id="k-name"><?= e($name) ?></h2>
+        <p class="t" id="k-name"><?= e($name) ?></p>
         <div class="fleuron"><svg><use href="#fleuron"/></svg></div>
         <p class="q" id="k-host"><?= e($host) ?></p>
       </div>

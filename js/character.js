@@ -48,6 +48,10 @@ document.querySelectorAll("#c-method .opt").forEach(function (b) { b.addEventLis
 $("c-roll").addEventListener("click", function () { newPool(); renderSheet(); });
 
 // ---------- Init ----------
+// A link from the class or species pages (#paladin, #elf) starts the builder with that choice.
+var pre = location.hash.slice(1);
+if (findBy(CLASSES, pre)) C.cls = pre;
+if (findBy(SPECIES, pre)) C.species = pre;
 newPool();
 C.n1 = "Mirael"; C.epi = 0; syncName();
 renderCharOpts();

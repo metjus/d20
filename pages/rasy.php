@@ -32,6 +32,7 @@ $speed = fn (int $ft): string => $LANG === 'sk'
         <div><dt><?= e($LANG === 'en' ? $tr[1] : $tr[0]) ?><?php if ($LANG === 'sk'): ?> <small lang="en"><?= e($tr[1]) ?></small><?php endif; ?></dt><dd><?= e($LANG === 'en' ? $tr[3] : $tr[2]) ?></dd></div>
 <?php endforeach; ?>
       </dl>
+      <p class="gtry"><a href="<?= url('postava') ?>#<?= $s['id'] ?>"><?= t('lib.try') ?>: <?= e(pair($s['name'])) ?></a></p>
     </div></article>
 <?php endforeach; ?>
   </div>

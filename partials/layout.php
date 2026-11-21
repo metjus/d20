@@ -16,7 +16,10 @@ $og       = is_file(__DIR__ . "/../img/og/$PAGE-$LANG.jpg") ? "/img/og/$PAGE-$LA
 $graph = [];
 if ($cfg['type'] === 'home') {
     $graph[] = ['@type' => 'WebSite', 'name' => site()['name'], 'url' => $here, 'inLanguage' => $LANG, 'description' => $desc,
-                'publisher' => ['@type' => 'Person', 'name' => site()['operator']]];
+                'publisher' => ['@id' => site()['url'] . '/#org']];
+    // Who runs the site, with the logo search results can show next to it.
+    $graph[] = ['@type' => 'Organization', '@id' => site()['url'] . '/#org', 'name' => site()['name'], 'url' => site()['url'] . '/',
+                'logo' => site()['url'] . '/img/icon-512.png', 'email' => 'hello@d20.sk', 'founder' => ['@type' => 'Person', 'name' => site()['operator']]];
 } elseif ($indexed) {
     $trail = [[$plain('crumb.home'), abs_url('domov')]];
     if (isset($cfg['parent'])) {
@@ -77,7 +80,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="canonical" href="<?= e($here) ?>">
 <link rel="alternate" hreflang="sk" href="<?= e(abs_url($PAGE, 'sk')) ?>">
 <link rel="alternate" hreflang="en" href="<?= e(abs_url($PAGE, 'en')) ?>">
-<link rel="alternate" hreflang="x-default" href="<?= e(abs_url($PAGE, 'sk')) ?>">
+<link rel="alternate" hreflang="x-default" href="<?= e(abs_url($PAGE, 'en')) ?>">
 <?php else: ?>
 <meta name="robots" content="noindex">
 <?php endif; ?>

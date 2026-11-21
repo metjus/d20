@@ -298,6 +298,8 @@ a.chipbtn { text-decoration: none; }
 .pips { color: var(--rubric); letter-spacing: 2px; }
 .gfit { margin: 0; font-family: var(--font-book); font-style: italic; color: var(--ink-soft); line-height: 1.45; }
 .gfit b { font-style: normal; color: var(--rubric); }
+.gtry { margin: 12px 0 0; font-family: var(--font-sc); font-weight: 700; font-size: var(--s--1); letter-spacing: .06em; }
+.gtry a { color: var(--rubric); }
 .traits { margin: 0; display: grid; gap: 8px; }
 .traits dt { font-family: var(--font-book); font-weight: 700; color: var(--rubric); line-height: 1.2; }
 .traits dt small { font-family: var(--font-sc); font-weight: 500; font-size: .72rem; letter-spacing: .08em; color: var(--ink-soft); }
@@ -377,7 +379,7 @@ a.chipbtn { text-decoration: none; }
 .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
 .wanted { padding: clamp(26px, 4vw, 40px); display: grid; gap: 16px; text-align: center; justify-items: center; }
 .wanted .nail { position: absolute; top: 12px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d9dde6, #6b7385 60%, #2a2f3b); box-shadow: 0 2px 3px rgba(0,0,0,.5); }
-.wanted .t { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: .95; color: var(--rubric); }
+.wanted .t { text-wrap: balance; font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: .95; color: var(--rubric); }
 .wanted .q { font-family: var(--font-book); font-size: 1.25rem; line-height: 1.5; color: var(--ink); max-width: 44ch; }
 .wanted .seal-big { width: 90px; height: 90px; filter: drop-shadow(0 6px 8px rgba(0,0,0,.4)); }
 @media (max-width: 520px) { .note-row { grid-template-columns: 44px 1fr; gap: 6px 10px; } .note-row .lock { grid-column: 2; justify-self: start; } .note-row .d { width: 42px; height: 42px; } .board { padding: 16px; } }
@@ -392,7 +394,7 @@ select.input { width: 100%; min-height: 48px; cursor: pointer; appearance: none;
 .ctrl .btn.wide + .btn.wide { margin-top: -10px; }
 .who { padding: 18px 20px; display: grid; gap: 6px; margin-bottom: 4px; }
 .who-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.who .nm { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 2.7rem); line-height: 1; color: var(--rubric); overflow-wrap: anywhere; }
+.who .nm { text-wrap: balance; font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 2.7rem); line-height: 1; color: var(--rubric); overflow-wrap: anywhere; }
 .who .sub { font-family: var(--font-book); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); }
 .who .icon-btn, .sign .icon-btn { width: 44px; height: 44px; color: var(--rubric); background: rgba(255,255,255,.3); border-color: rgba(125,32,21,.5); }
 .who .icon-btn:hover, .sign .icon-btn:hover { background: rgba(255,255,255,.55); border-color: var(--rubric); }
@@ -475,7 +477,7 @@ select.input { width: 100%; min-height: 48px; cursor: pointer; appearance: none;
 /* Footer */
 footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .foot { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px 40px; color: var(--muted); padding-top: 32px; }
-.foot h2 { font-family: var(--font-sc); font-weight: 700; font-size: var(--s--1); letter-spacing: .14em; color: var(--gold); margin-bottom: 10px; }
+.foot .foot-h { font-family: var(--font-sc); font-weight: 700; font-size: var(--s--1); letter-spacing: .14em; color: var(--gold); margin-bottom: 10px; }
 .foot p { margin: 12px 0 0; max-width: 52ch; }
 .foot .idea p { margin: 0 0 16px; }
 .foot .idea .btn { font-size: var(--s--1); }

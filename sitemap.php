@@ -13,7 +13,7 @@ foreach (site()['pages'] as $page => $cfg) {
     foreach (['sk', 'en'] as $lang) {
         echo "  <url>\n";
         echo '    <loc>', e(abs_url($page, $lang)), "</loc>\n";
-        foreach (['sk' => 'sk', 'en' => 'en', 'x-default' => 'sk'] as $hreflang => $target) {
+        foreach (['sk' => 'sk', 'en' => 'en', 'x-default' => 'en'] as $hreflang => $target) {
             echo '    <xhtml:link rel="alternate" hreflang="', $hreflang, '" href="', e(abs_url($page, $target)), "\"/>\n";
         }
         if (isset($cfg['updated'])) {

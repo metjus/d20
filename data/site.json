@@ -43,7 +43,7 @@
       "scripts": [
         "guides"
       ],
-      "updated": "2026-11-01"
+      "updated": "2026-11-21"
     },
     "postava": {
       "url": {
@@ -61,7 +61,7 @@
         "harok",
         "npc"
       ],
-      "updated": "2026-11-01"
+      "updated": "2026-11-21"
     },
     "pribeh": {
       "url": {
@@ -95,7 +95,7 @@
         "suboj",
         "navody"
       ],
-      "updated": "2026-11-01"
+      "updated": "2026-11-21"
     },
     "sukromie": {
       "url": {
@@ -123,7 +123,7 @@
       "type": "article",
       "parent": "navody",
       "scripts": [],
-      "updated": "2026-10-26"
+      "updated": "2026-11-21"
     },
     "rasy": {
       "url": {
@@ -133,7 +133,7 @@
       "type": "article",
       "parent": "navody",
       "scripts": [],
-      "updated": "2026-10-26"
+      "updated": "2026-11-21"
     },
     "slovnik": {
       "url": {
