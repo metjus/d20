@@ -541,6 +541,8 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .legal li + li { margin-top: 6px; }
 .foot-base a { color: var(--muted); }
 .foot-base a:hover { color: var(--gold-hi); }
+.foot-consent { padding: 0; border: 0; background: none; font: inherit; color: var(--muted); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.foot-consent:hover { color: var(--gold-hi); }
 
 /* Load + scroll animations */
 @keyframes drop-in { from { opacity: 0; translate: 0 -24px; } to { opacity: 1; translate: 0 0; } }

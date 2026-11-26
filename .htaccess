@@ -21,6 +21,9 @@ RewriteRule ^ / [R=301,L]
 # The sitemap is built from data/site.json, so a new page appears in it on its own.
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
+# ads.txt comes from the AdSense ID in data/site.json (ads.php); without an ID it is a 404.
+RewriteRule ^ads\.txt$ ads.php [L]
+
 # Repository files that are not part of the site.
 RewriteRule ^(README\.md|\.cpanel\.yml)$ - [F,L]
 RewriteRule ^build/ - [F,L]

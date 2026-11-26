@@ -5,6 +5,7 @@
   </div>
   <div class="leather book">
     <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
-    <div class="folio parchment legal"><?= t('pv.body') ?></div>
+    <?php // With ads on (adsense() in inc/bootstrap.php) the policy says which cookies Google sets and how to refuse them. ?>
+    <div class="folio parchment legal"><?= strtr(t('pv.body'), ['{cookies}' => t(adsense() ? 'pv.cookies.on' : 'pv.cookies.off'), '{ads}' => adsense() ? t('pv.ads') : '']) ?></div>
   </div>
 </section>

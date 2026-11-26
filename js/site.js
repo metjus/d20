@@ -112,8 +112,20 @@ function reveal() {
   });
 })();
 
-// The site sets no cookies, so it shows no cookie notice. Clear the flag the old notice left behind.
+// The site itself sets no cookies, so it has no cookie notice of its own. Clear the flag the old notice left behind.
 try { localStorage.removeItem("d20-cookie-ok"); } catch (e) {}
+
+// With ads on, the consent message comes from Google (Privacy & messaging in AdSense).
+// "Privacy settings" in the footer opens it again, so a visitor can change or withdraw consent.
+(function consent() {
+  var b = $("pv-consent");
+  if (!b) return;
+  b.addEventListener("click", function () {
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push(function () { window.googlefc.showRevocationMessage(); });
+  });
+})();
 
 // ---------- Embers ----------
 (function embers() {
