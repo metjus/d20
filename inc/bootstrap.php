@@ -26,6 +26,12 @@ function content(string $name): array
     return $cache[$name] ??= json_decode((string) file_get_contents(__DIR__ . "/../data/$name.json"), true);
 }
 
+// How many words a piece of HTML has (for an article's reading time and its search-engine data).
+function words(string $html): int
+{
+    return count(preg_split('/\s+/u', trim(html_entity_decode(strip_tags($html), ENT_QUOTES, 'UTF-8')), -1, PREG_SPLIT_NO_EMPTY));
+}
+
 // One random entry of a list.
 function pick(array $list)
 {
@@ -99,6 +105,14 @@ function url(string $page, ?string $lang = null): string
 {
     global $LANG;
     return site()['pages'][$page]['url'][$lang ?? $LANG];
+}
+
+// The articles (data/posts.json), newest first.
+function posts(): array
+{
+    $all = content('posts');
+    uasort($all, fn ($a, $b) => strcmp($b['date'], $a['date']));
+    return $all;
 }
 
 function abs_url(string $page, ?string $lang = null): string

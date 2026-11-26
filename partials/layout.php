@@ -30,11 +30,18 @@ if ($cfg['type'] === 'home') {
         fn ($i, $c) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $c[0], 'item' => $c[1]],
         array_keys($trail), $trail
     )];
-    $node = $cfg['type'] === 'app'
+    $post = $cfg['type'] === 'post' ? content('posts')[$PAGE] : null;
+    $node = $post
+        ? ['@type' => 'Article', 'headline' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
+           'datePublished' => $post['date'], 'wordCount' => words(pair($post['body'])),
+           'author' => ['@type' => 'Person', 'name' => site()['operator'], 'url' => abs_url('projekt')],
+           'publisher' => ['@type' => 'Organization', 'name' => site()['name'], 'url' => site()['url'] . '/', 'logo' => site()['url'] . '/img/icon-512.png'],
+           'image' => site()['url'] . $og, 'mainEntityOfPage' => $here]
+        : ($cfg['type'] === 'app'
         ? ['@type' => 'WebApplication', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
-        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG]);
     // A screenshot of the tool for search results (data/shots.json); it shows the Slovak interface.
     $shot = $LANG === 'sk' ? (content('shots')[$PAGE] ?? null) : null;
     if ($shot && $cfg['type'] === 'app') {
@@ -141,7 +148,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <?php require __DIR__ . '/header.php'; ?>
 
   <main>
-<?php require __DIR__ . '/../pages/' . $PAGE . '.php'; ?>
+<?php require __DIR__ . '/../pages/' . ($cfg['type'] === 'post' ? 'clanok' : $PAGE) . '.php'; ?>
 <?php require __DIR__ . '/article.php'; ?>
 <?php require __DIR__ . '/related.php'; ?>
   </main>

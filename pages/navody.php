@@ -23,6 +23,16 @@
         <li><a href="<?= url($p) ?>"><b><?= t("nav.$p") ?></b><span><?= t("lib.$p") ?></span><em><?= t('lib.more') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
+<?php // The longer articles (data/posts.json).
+if ($posts = posts()): ?>
+      <div class="fleuron"><svg><use href="#fleuron"/></svg></div>
+      <h2 class="h2 rubric"><?= t('post.h') ?></h2>
+      <ul class="shelf">
+<?php foreach ($posts as $k => $o): ?>
+        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e(pair($o['teaser'])) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
+<?php endforeach; ?>
+      </ul>
+<?php endif; ?>
     </div>
   </div>
 </section>
