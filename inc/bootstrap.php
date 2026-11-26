@@ -106,6 +106,15 @@ function abs_url(string $page, ?string $lang = null): string
     return site()['url'] . url($page, $lang);
 }
 
+// The AdSense publisher ID from data/site.json ("ca-pub-" and 16 digits), or "" while the site shows no ads.
+// One switch: it turns on the AdSense tag, /ads.txt, the advertising part of the privacy policy
+// and the "Privacy settings" link in the footer.
+function adsense(): string
+{
+    $id = trim((string) (site()['adsense'] ?? ''));
+    return preg_match('/^ca-pub-\d{16}$/', $id) ? $id : '';
+}
+
 function render_page(string $page, string $lang, int $status = 200): void
 {
     global $LANG, $PAGE;

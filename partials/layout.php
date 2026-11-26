@@ -118,6 +118,11 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <link rel="stylesheet" href="<?= asset("/css/$style.css") ?>">
 <?php endforeach; ?>
 <script src="<?= asset('/js/boot.js') ?>"></script>
+<?php if (adsense() && $indexed): ?>
+<meta name="google-adsense-account" content="<?= e(adsense()) ?>">
+<?php // Auto ads; the consent message for EU visitors (Privacy & messaging in AdSense) comes with this tag. ?>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<?= e(adsense()) ?>" crossorigin="anonymous"></script>
+<?php endif; ?>
 <?php if ($graph): ?>
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => $graph], $json) ?></script>
 <?php endif; ?>

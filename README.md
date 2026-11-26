@@ -59,6 +59,7 @@ img/                        logo (WebP), favicon, náhľad domovskej stránky pr
 img/og/                     náhľad každej stránky pre Facebook, Discord a Reddit (<stránka>-<jazyk>.jpg); bez neho stránka použije img/og-<jazyk>.jpg
 build/og.js                 vyrobí img/og/ z názvov a popisov v data/texts.json: `node build/og.js` (Playwright s Chromiom); na webe je /build/ zakázaný
 fonts/                      písma (SIL Open Font License), orezané na znaky angličtiny, slovenčiny a češtiny
+ads.php                     /ads.txt (prepis v .htaccess) z "adsense" v data/site.json; kým je prázdne, je to 404
 sitemap.php                 /sitemap.xml (prepis v .htaccess): všetky stránky z data/site.json s hreflang; lastmod = "updated" stránky, rovnaký dátum ide do dateModified v JSON-LD
 partials/related.php        blok „Môže sa ti hodiť“ pod nástrojmi, odkazy podľa "related" v data/site.json
 data/articles.json          návod a časté otázky pod nástrojmi (partials/article.php); otázky idú aj do JSON-LD ako FAQPage
@@ -74,3 +75,5 @@ Hosting Hostcreators nasadzuje automaticky: každý push do vetvy `main` sa nahr
 Potrebné je PHP 7.4+ s mbstring a Apache s `.htaccess` (mod_rewrite, mod_expires). Priečinky `inc/`, `partials/`, `pages/` a `data/` nie sú zvonku dostupné.
 
 Formulár posiela správy z hello@d20.sk na hello@d20.sk; „Odpovedať“ v pošte ide priamo návštevníkovi (Reply-To).
+
+Reklama: do `"adsense"` v `data/site.json` vložiť ID vydavateľa (`ca-pub-` + 16 číslic). Tým sa zapne kód AdSense v hlavičke (nie na 404), `/ads.txt`, časť Reklama v ochrane osobných údajov a odkaz „Nastavenia súkromia“ v pätičke. Okno so súhlasom pre EÚ sa nastavuje v AdSense (Súkromie a správy), nie v kóde.
