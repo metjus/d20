@@ -7,21 +7,21 @@ $others = array_slice(array_diff_key(posts(), [$PAGE => 1]), 0, 3, true);
 <section class="page wrap" data-page="clanok">
   <div class="head">
     <?php require __DIR__ . '/../partials/crumbs.php'; ?>
-    <p class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= e($post['kicker']) ?></span></p>
-    <h1 class="h1 gild"><?= e($post['h1']) ?></h1>
-    <p class="lede"><?= $post['lede'] ?></p>
-    <p class="byline"><?= t('post.by') ?> · <time datetime="<?= e($post['date']) ?>"><?= e(date('j. n. Y', strtotime($post['date']))) ?></time> · <?= e(sprintf(t('post.min'), max(1, (int) round(words($post['body']) / 200)))) ?></p>
+    <p class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= e(pair($post['kicker'])) ?></span></p>
+    <h1 class="h1 gild"><?= e(pair($post['h1'])) ?></h1>
+    <p class="lede"><?= pair($post['lede']) ?></p>
+    <p class="byline"><?= t('post.by') ?> · <time datetime="<?= e($post['date']) ?>"><?= e(date($LANG === 'en' ? 'j F Y' : 'j. n. Y', strtotime($post['date']))) ?></time> · <?= e(sprintf(t('post.min'), max(1, (int) round(words(pair($post['body'])) / 200)))) ?></p>
   </div>
   <div class="leather book">
     <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
     <div class="folio parchment legal">
-<?= links($post['body']) ?>
+<?= links(pair($post['body'])) ?>
 
 <?php if (!empty($post['faq'])): ?>
       <h2><?= t('faq.h') ?></h2>
 <?php foreach ($post['faq'] as $f): ?>
-      <h3><?= e($f['q']) ?></h3>
-      <p><?= links($f['a']) ?></p>
+      <h3><?= e(pair($f['q'])) ?></h3>
+      <p><?= links(pair($f['a'])) ?></p>
 <?php endforeach; ?>
 <?php endif; ?>
     </div>
@@ -35,7 +35,7 @@ $others = array_slice(array_diff_key(posts(), [$PAGE => 1]), 0, 3, true);
       <h2 class="h2 rubric" id="more-h"><?= t('post.more') ?></h2>
       <ul class="shelf">
 <?php foreach ($others as $k => $o): ?>
-        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e($o['teaser']) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
+        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e(pair($o['teaser'])) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
     </div>

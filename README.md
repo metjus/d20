@@ -23,7 +23,7 @@ Každá podstránka má vlastnú adresu v slovenčine aj angličtine (kvôli vyh
 | rasy | `/rasy/` | `/en/species/` |
 | slovník | `/slovnik/` | `/en/glossary/` |
 | ochrana údajov | `/ochrana-osobnych-udajov/` | `/en/privacy/` |
-| články (len SK) | `/navody/pravidla-dnd/`, `/navody/kuzla-dnd/`, `/navody/ako-viest-prve-sedenie/`, `/navody/baldurs-gate-3-a-dnd/`, `/navody/jeskyne-a-draci/`, `/navody/kde-hrat-dnd-na-slovensku/` | (nemajú) |
+| články | `/navody/pravidla-dnd/`, `/navody/kuzla-dnd/`, `/navody/ako-viest-prve-sedenie/`, `/navody/baldurs-gate-3-a-dnd/`, `/navody/jeskyne-a-draci/`, `/navody/kde-hrat-dnd-na-slovensku/` | `/en/guides/dnd-rules-explained/`, `/en/guides/dnd-spells-explained/`, `/en/guides/run-your-first-dnd-session/`, `/en/guides/baldurs-gate-3-to-dnd/`, `/en/guides/dnd-in-czech-and-slovak/`, `/en/guides/find-a-dnd-group/` |
 
 Staré odkazy typu `/#kocky` presmeruje `js/boot.js` na novú adresu.
 
@@ -39,9 +39,9 @@ data/site.json              zoznam stránok, ich adresy, skripty, štýly a skup
 data/texts.json             všetky texty SK/EN vrátane titulkov a popisov pre Google
 data/classes.json, species.json, glossary.json   obsah stránok Povolania, Rasy a Slovník
 data/articles.json          text a časté otázky pod stránkou (domov, nástroje, návody, kocky, tvorba postavy)
-data/posts.json             články, len po slovensky: nadpis, úvod, text, otázky. Stránka článku má v site.json typ „post“,
-                            adresu len „sk“ a rodiča „navody“; šablóna je pages/clanok.php. Prepínač EN vedie na anglické Návody.
-                            Nový článok: záznam v posts.json, stránka v site.json, nav/seo texty v texts.json a navody/<adresa>/index.php
+data/posts.json             články SK/EN: nadpis, úvod, text, otázky ako dvojice [SK, EN]. Stránka článku má v site.json typ „post“
+                            a rodiča „navody“; šablóna je pages/clanok.php. Nový článok: záznam v posts.json, stránka v site.json,
+                            nav/seo texty v texts.json, navody/<adresa>/index.php a en/guides/<adresa>/index.php
 data/presets.json, tale.json  časté hody na Kockách, lístky na nástenke Príbehu
 data/npc.json, tavern.json   mená a tabuľky generátora NPC a krčmy (krčmár berie mená a povahy z npc.json)
 data/loot.json              poklady podľa úrovne, drahokamy, umelecké predmety, kuriozity a 79 magických predmetov zo SRD 5.1

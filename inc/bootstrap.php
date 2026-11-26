@@ -101,27 +101,16 @@ function e(string $s): string
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
-// A page's address. A page written in one language only (the Slovak articles) leads, in the other language,
-// to its parent page there, so the SK/EN switch never points nowhere.
 function url(string $page, ?string $lang = null): string
 {
     global $LANG;
-    $cfg = site()['pages'][$page];
-    $lang ??= $LANG;
-    return $cfg['url'][$lang] ?? url($cfg['parent'] ?? 'domov', $lang);
+    return site()['pages'][$page]['url'][$lang ?? $LANG];
 }
 
-// The languages a page is written in: ['sk', 'en'] for most, ['sk'] for the Slovak articles.
-function langs(string $page): array
-{
-    return array_keys(site()['pages'][$page]['url']);
-}
-
-// The articles (data/posts.json) written in the current language, newest first.
+// The articles (data/posts.json), newest first.
 function posts(): array
 {
-    global $LANG;
-    $all = array_filter(content('posts'), fn (string $k): bool => in_array($LANG, langs($k), true), ARRAY_FILTER_USE_KEY);
+    $all = content('posts');
     uasort($all, fn ($a, $b) => strcmp($b['date'], $a['date']));
     return $all;
 }

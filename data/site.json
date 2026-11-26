@@ -264,7 +264,8 @@
     },
     "pravidla": {
       "url": {
-        "sk": "/navody/pravidla-dnd/"
+        "sk": "/navody/pravidla-dnd/",
+        "en": "/en/guides/dnd-rules-explained/"
       },
       "type": "post",
       "parent": "navody",
@@ -278,7 +279,8 @@
     },
     "kuzla": {
       "url": {
-        "sk": "/navody/kuzla-dnd/"
+        "sk": "/navody/kuzla-dnd/",
+        "en": "/en/guides/dnd-spells-explained/"
       },
       "type": "post",
       "parent": "navody",
@@ -292,7 +294,8 @@
     },
     "dm": {
       "url": {
-        "sk": "/navody/ako-viest-prve-sedenie/"
+        "sk": "/navody/ako-viest-prve-sedenie/",
+        "en": "/en/guides/run-your-first-dnd-session/"
       },
       "type": "post",
       "parent": "navody",
@@ -306,7 +309,8 @@
     },
     "bg3": {
       "url": {
-        "sk": "/navody/baldurs-gate-3-a-dnd/"
+        "sk": "/navody/baldurs-gate-3-a-dnd/",
+        "en": "/en/guides/baldurs-gate-3-to-dnd/"
       },
       "type": "post",
       "parent": "navody",
@@ -320,7 +324,8 @@
     },
     "jeskyne": {
       "url": {
-        "sk": "/navody/jeskyne-a-draci/"
+        "sk": "/navody/jeskyne-a-draci/",
+        "en": "/en/guides/dnd-in-czech-and-slovak/"
       },
       "type": "post",
       "parent": "navody",
@@ -334,7 +339,8 @@
     },
     "kdehrat": {
       "url": {
-        "sk": "/navody/kde-hrat-dnd-na-slovensku/"
+        "sk": "/navody/kde-hrat-dnd-na-slovensku/",
+        "en": "/en/guides/find-a-dnd-group/"
       },
       "type": "post",
       "parent": "navody",

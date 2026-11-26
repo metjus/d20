@@ -92,7 +92,7 @@
     <div class="folio parchment">
       <ul class="shelf">
 <?php foreach ($posts as $k => $o): ?>
-        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e($o['teaser']) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
+        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e(pair($o['teaser'])) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
 <?php endforeach; ?>
       </ul>
     </div>
