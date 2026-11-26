@@ -81,4 +81,21 @@
       <div class="groll"><button class="chipbtn" type="button" id="hc-new"><?= t('hc.new') ?></button><a class="chipbtn" href="<?= url('postava') ?>"><?= t('hc.open') ?></a></div>
     </div></article>
   </div>
+<?php if ($posts = array_slice(posts(), 0, 6, true)): ?>
+
+  <div class="section-title far">
+    <p class="kicker"><svg class="sg"><use href="#sigil"/></svg><span><?= t('post.kicker') ?></span></p>
+    <h2 class="h2"><?= t('post.h') ?></h2>
+  </div>
+  <div class="leather book">
+    <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
+    <div class="folio parchment">
+      <ul class="shelf">
+<?php foreach ($posts as $k => $o): ?>
+        <li><a href="<?= url($k) ?>"><b><?= t("nav.$k") ?></b><span><?= e($o['teaser']) ?></span><em><?= t('lib.more') ?> ›</em></a></li>
+<?php endforeach; ?>
+      </ul>
+    </div>
+  </div>
+<?php endif; ?>
 </section>

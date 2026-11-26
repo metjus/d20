@@ -10,10 +10,12 @@ foreach (site()['pages'] as $page => $cfg) {
     if ($cfg['type'] === 'error') {
         continue;
     }
-    foreach (['sk', 'en'] as $lang) {
+    $langs = langs($page);
+    foreach ($langs as $lang) {
         echo "  <url>\n";
         echo '    <loc>', e(abs_url($page, $lang)), "</loc>\n";
-        foreach (['sk' => 'sk', 'en' => 'en', 'x-default' => 'en'] as $hreflang => $target) {
+        // Alternates only for pages in both languages; a Slovak-only article has none.
+        foreach (count($langs) > 1 ? ['sk' => 'sk', 'en' => 'en', 'x-default' => 'en'] : [] as $hreflang => $target) {
             echo '    <xhtml:link rel="alternate" hreflang="', $hreflang, '" href="', e(abs_url($page, $target)), "\"/>\n";
         }
         if (isset($cfg['updated'])) {

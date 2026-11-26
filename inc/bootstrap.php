@@ -26,6 +26,12 @@ function content(string $name): array
     return $cache[$name] ??= json_decode((string) file_get_contents(__DIR__ . "/../data/$name.json"), true);
 }
 
+// How many words a piece of HTML has (for an article's reading time and its search-engine data).
+function words(string $html): int
+{
+    return count(preg_split('/\s+/u', trim(html_entity_decode(strip_tags($html), ENT_QUOTES, 'UTF-8')), -1, PREG_SPLIT_NO_EMPTY));
+}
+
 // One random entry of a list.
 function pick(array $list)
 {
@@ -95,10 +101,29 @@ function e(string $s): string
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
+// A page's address. A page written in one language only (the Slovak articles) leads, in the other language,
+// to its parent page there, so the SK/EN switch never points nowhere.
 function url(string $page, ?string $lang = null): string
 {
     global $LANG;
-    return site()['pages'][$page]['url'][$lang ?? $LANG];
+    $cfg = site()['pages'][$page];
+    $lang ??= $LANG;
+    return $cfg['url'][$lang] ?? url($cfg['parent'] ?? 'domov', $lang);
+}
+
+// The languages a page is written in: ['sk', 'en'] for most, ['sk'] for the Slovak articles.
+function langs(string $page): array
+{
+    return array_keys(site()['pages'][$page]['url']);
+}
+
+// The articles (data/posts.json) written in the current language, newest first.
+function posts(): array
+{
+    global $LANG;
+    $all = array_filter(content('posts'), fn (string $k): bool => in_array($LANG, langs($k), true), ARRAY_FILTER_USE_KEY);
+    uasort($all, fn ($a, $b) => strcmp($b['date'], $a['date']));
+    return $all;
 }
 
 function abs_url(string $page, ?string $lang = null): string

@@ -29,7 +29,7 @@
         "data",
         "home"
       ],
-      "updated": "2026-11-01",
+      "updated": "2026-11-26",
       "texts": [
         "map"
       ]
@@ -43,7 +43,7 @@
       "scripts": [
         "guides"
       ],
-      "updated": "2026-11-21"
+      "updated": "2026-11-26"
     },
     "postava": {
       "url": {
@@ -152,7 +152,7 @@
       },
       "type": "article",
       "scripts": [],
-      "updated": "2026-11-21"
+      "updated": "2026-11-26"
     },
     "npc": {
       "url": {
@@ -261,6 +261,90 @@
         "npc"
       ],
       "updated": "2026-11-01"
+    },
+    "pravidla": {
+      "url": {
+        "sk": "/navody/pravidla-dnd/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "kocky",
+        "harok",
+        "suboj"
+      ],
+      "updated": "2026-11-26"
+    },
+    "kuzla": {
+      "url": {
+        "sk": "/navody/kuzla-dnd/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "povolania",
+        "harok",
+        "kocky"
+      ],
+      "updated": "2026-11-26"
+    },
+    "dm": {
+      "url": {
+        "sk": "/navody/ako-viest-prve-sedenie/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "pribeh",
+        "npc",
+        "suboj"
+      ],
+      "updated": "2026-11-26"
+    },
+    "bg3": {
+      "url": {
+        "sk": "/navody/baldurs-gate-3-a-dnd/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "postava",
+        "povolania",
+        "kocky"
+      ],
+      "updated": "2026-11-26"
+    },
+    "jeskyne": {
+      "url": {
+        "sk": "/navody/jeskyne-a-draci/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "slovnik",
+        "povolania",
+        "kocky"
+      ],
+      "updated": "2026-11-26"
+    },
+    "kdehrat": {
+      "url": {
+        "sk": "/navody/kde-hrat-dnd-na-slovensku/"
+      },
+      "type": "post",
+      "parent": "navody",
+      "scripts": [],
+      "related": [
+        "navody",
+        "postava",
+        "kocky"
+      ],
+      "updated": "2026-11-26"
     }
   },
   "library": [

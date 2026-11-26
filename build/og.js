@@ -51,6 +51,7 @@ p{font:500 33px/1.3 Sans;color:#cfc2e6;text-wrap:pretty}
   for (const key of Object.keys(site.pages)) {
     if (skip.has(key)) continue;
     for (const [i, lang] of ["sk", "en"].entries()) {
+      if (!site.pages[key].url[lang]) continue; // the Slovak articles have no English page
       const title = key === "navody" ? text("seo.navody.title", i).split(":")[0] : text(`tool.${key}.h`, i) || text(`nav.${key}`, i);
       const sub = text(`tool.${key}`, i) || text(`lib.${key}`, i) || text(`seo.${key}.desc`, i);
       await tab.setContent(page(title, sub, lang), { waitUntil: "load" });

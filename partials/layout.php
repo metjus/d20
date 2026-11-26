@@ -30,11 +30,18 @@ if ($cfg['type'] === 'home') {
         fn ($i, $c) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $c[0], 'item' => $c[1]],
         array_keys($trail), $trail
     )];
-    $node = $cfg['type'] === 'app'
+    $post = $cfg['type'] === 'post' ? content('posts')[$PAGE] : null;
+    $node = $post
+        ? ['@type' => 'Article', 'headline' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
+           'datePublished' => $post['date'], 'wordCount' => words($post['body']),
+           'author' => ['@type' => 'Person', 'name' => site()['operator'], 'url' => abs_url('projekt')],
+           'publisher' => ['@type' => 'Organization', 'name' => site()['name'], 'url' => site()['url'] . '/', 'logo' => site()['url'] . '/img/icon-512.png'],
+           'image' => site()['url'] . $og, 'mainEntityOfPage' => $here]
+        : ($cfg['type'] === 'app'
         ? ['@type' => 'WebApplication', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG,
            'applicationCategory' => 'GameApplication', 'operatingSystem' => 'Any', 'browserRequirements' => 'Requires JavaScript',
            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR']]
-        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG];
+        : ['@type' => $cfg['type'] === 'about' ? 'AboutPage' : 'WebPage', 'name' => $name, 'url' => $here, 'description' => $desc, 'inLanguage' => $LANG]);
     // A screenshot of the tool for search results (data/shots.json); it shows the Slovak interface.
     $shot = $LANG === 'sk' ? (content('shots')[$PAGE] ?? null) : null;
     if ($shot && $cfg['type'] === 'app') {
@@ -64,7 +71,7 @@ if ($cfg['type'] === 'home') {
 // What the page scripts need: language, page, addresses in this language and the texts.
 $boot = ['lang' => $LANG, 'page' => $PAGE, 'urls' => [], 'I' => []];
 foreach (site()['pages'] as $key => $p) {
-    $boot['urls'][$key] = $p['url'][$LANG];
+    $boot['urls'][$key] = url($key);
 }
 // Only the text groups the scripts use; the rest is already in the HTML. Pages can add their own groups in data/site.json.
 $groups = array_merge(['b', 'c', 'ct', 'd', 'hc', 'nav', 't'], $cfg['texts'] ?? []);
@@ -84,9 +91,11 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <meta name="description" content="<?= e($desc) ?>">
 <?php if ($indexed): ?>
 <link rel="canonical" href="<?= e($here) ?>">
+<?php if (count(langs($PAGE)) > 1): ?>
 <link rel="alternate" hreflang="sk" href="<?= e(abs_url($PAGE, 'sk')) ?>">
 <link rel="alternate" hreflang="en" href="<?= e(abs_url($PAGE, 'en')) ?>">
 <link rel="alternate" hreflang="x-default" href="<?= e(abs_url($PAGE, 'en')) ?>">
+<?php endif; ?>
 <?php else: ?>
 <meta name="robots" content="noindex">
 <?php endif; ?>
@@ -136,7 +145,7 @@ $json = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HE
 <?php require __DIR__ . '/header.php'; ?>
 
   <main>
-<?php require __DIR__ . '/../pages/' . $PAGE . '.php'; ?>
+<?php require __DIR__ . '/../pages/' . ($cfg['type'] === 'post' ? 'clanok' : $PAGE) . '.php'; ?>
 <?php require __DIR__ . '/article.php'; ?>
 <?php require __DIR__ . '/related.php'; ?>
   </main>

@@ -539,6 +539,9 @@ footer { position: relative; z-index: 1; padding-block: 0 40px; }
 .legal ul, .legal ol { padding-left: 1.2em; }
 .legal h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); margin: 8px 0 -16px; }
 .legal li + li { margin-top: 6px; }
+.legal h2 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+/* Articles (pages/clanok.php) */
+.head .byline { margin: 0; color: var(--muted); font-size: var(--s--1); }
 .foot-base a { color: var(--muted); }
 .foot-base a:hover { color: var(--gold-hi); }
 
