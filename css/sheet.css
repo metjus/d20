@@ -74,12 +74,47 @@ output.hs-num { padding: 4px 0; min-height: 30px; color: var(--ink); }
   .hs-bar .btn { flex: 1 1 auto; justify-content: center; }
 }
 
+/* Level up dialog (js/levelup.js) */
+.lu-done { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: -14px 0 24px; padding: 10px 14px; border-radius: 6px;
+  border: 1px solid rgba(216,180,106,.5); background: rgba(23,17,43,.7); color: var(--gold-hi); }
+.lu-done[hidden] { display: none; }
+.lu-undo, .lu-btn { font: 600 .95rem/1 var(--font-ui); color: inherit; cursor: pointer; padding: 9px 14px; border-radius: 4px; border: 1px solid currentColor; background: transparent; }
+.lu { width: min(620px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 0; background: transparent; color: var(--ink); overflow: visible; }
+.lu::backdrop { background: radial-gradient(circle at 50% 40%, rgba(58,39,112,.55), rgba(8,6,15,.88)); }
+.lu form { color-scheme: light; display: grid; gap: 14px; padding: 22px; max-height: calc(100dvh - 32px); overflow-y: auto; }
+.lu h2 { font: 800 1.8rem/1.1 var(--font-display); color: var(--rubric); }
+.lu h3 { margin-bottom: 6px; font: 700 .82rem/1.3 var(--font-sc); letter-spacing: .1em; text-transform: uppercase; color: var(--rubric); }
+.lu-top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 10px; }
+.lu-top label, .lu-sub { display: grid; gap: 3px; font-size: .86rem; color: var(--ink-soft); min-width: 0; }
+.lu input:not([type]), .lu input[type="number"], .lu select { width: 100%; min-width: 0; padding: 7px 9px; border-radius: 4px; border: 1px solid var(--ink-soft);
+  background: #fffaf0; color: var(--ink); font: 500 1rem/1.2 var(--font-ui); }
+.lu input[type="radio"] { accent-color: var(--rubric); width: 17px; height: 17px; flex: none; }
+.lu-sec { padding-top: 12px; border-top: 1px solid rgba(93,71,51,.3); }
+.lu-pick { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.lu-pick label, .lu-asi > label { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; font: 500 1rem/1.3 var(--font-book); }
+.lu-asi { display: grid; grid-template-columns: minmax(170px, 1fr) minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 6px 8px; margin-bottom: 6px; }
+.lu-asi #lu-a2, .lu-asi #lu-feat { grid-column: span 2; }
+.lu-note { font-size: .9rem; line-height: 1.45; color: var(--ink-soft); }
+.lu-feats { display: grid; gap: 8px; padding-left: 1.1em; font: 400 1rem/1.45 var(--font-book); }
+.lu-feats b { color: var(--ink); }
+.lu-sub { margin-top: 6px; }
+.lu-more { display: grid; gap: 4px; margin-bottom: 8px; }
+.lu-more div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 4px 8px; border-radius: 4px; font: 400 .98rem/1.3 var(--font-book); }
+.lu-more dt { color: var(--ink-soft); }
+.lu-more dd { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lu-more .up { background: rgba(216,180,106,.22); }
+.lu-more .up dd::after { content: " ▲"; color: var(--rubric); font-size: .75em; }
+.lu-acts { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 8px; }
+.lu-acts .btn { height: 46px; padding: 0 22px; }
+.lu-acts .btn[hidden] { display: none; }
+@media (max-width: 520px) { .lu-asi { grid-template-columns: 1fr 1fr; } .lu-asi > label { grid-column: 1 / -1; } .lu-top { grid-template-columns: 1fr; } }
+
 /* Print: only the sheet, black ink on white, on one page. */
 @media print {
   @page { margin: 9mm; }
   html, body { background: #fff !important; }
   body { font-size: 8.5pt; }
-  .sky, .candle, #embers, .boot, .warp, header.top, footer, .head, .hs-bar, .hs-how, .brass, datalist { display: none !important; }
+  .sky, .candle, #embers, .boot, .warp, header.top, footer, .head, .hs-bar, .lu-done, .lu, .hs-how, .brass, datalist { display: none !important; }
   .page { padding: 0; }
   .wrap { max-width: none; padding: 0; }
   .page > * { content-visibility: visible; }

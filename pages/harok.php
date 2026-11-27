@@ -19,9 +19,40 @@ $saves = $cl['saves'] ?? [];
 $bonus = fn (int $ab, bool $prof_in) => $scores ? $mod($ab) + ($prof_in ? $prof : 0) : null;
 $skills = content('skills');
 $perception = $scores ? 10 + $mod(4) : null;
-$hp      = $cl && $scores ? max(1, $cl['hd'] + $mod(2)) : null;
+// Dwarves get 1 extra hit point per level (Dwarven Toughness).
+$hp      = $cl && $scores ? max(1, $cl['hd'] + $mod(2)) + (($sp['id'] ?? '') === 'dwarf' ? 1 : 0) : null;
 $speed   = $sp ? ($LANG === 'en' ? "{$sp['speed']} ft" : str_replace('.', ',', (string) round($sp['speed'] * 0.3, 1)) . ' m') : '';
 $feats   = $sp ? implode("\n", array_map(fn ($tr) => ($LANG === 'en' ? $tr[1] . '. ' . $tr[3] : $tr[0] . ' (' . $tr[1] . '). ' . $tr[2]), $sp['traits'])) : '';
+
+// Levels 1–20 of each class (data/levels.json): features, spell slots and the numbers that grow. js/levelup.js uses them
+// for the "Level up" dialog; here they add the class's level 1 features and spellcasting to a hero from the builder.
+$levels  = content('levels');
+$lvClass = $cl ? $levels['classes'][$cl['id']] : null;
+$bi      = fn (array $f): string => $LANG === 'en' || $f[0] === $f[1] ? pair($f) : "$f[0] ($f[1])";
+if ($lvClass) {
+    $line  = str_replace('{n}', '1', t('lu.line')) . ' · ' . pair($cl['name']) . ': ' . implode(', ', array_map(fn ($f) => $bi($f), $lvClass['f']['1']));
+    $feats = trim($feats . "\n" . $line);
+}
+$cast = $lvClass['cast'] ?? null;
+$spellAb = $spellDc = $spellAtk = $spellNote = '';
+if ($cast && $scores) {
+    $am       = $mod($lvClass['ab']);
+    $spellAb  = $ABBR[$lvClass['ab']];
+    $spellDc  = (string) (8 + $prof + $am);
+    $spellAtk = $sgn($prof + $am);
+    $slots    = $cast === 'pact'
+        ? strtr(t('lu.pact'), ['{c}' => $levels['pact']['count'][0], '{n}' => $levels['pact']['level'][0]])
+        : str_replace('{s}', strtr(t('lu.slot'), ['{n}' => 1, '{c}' => $levels['full'][0][0]]), t('lu.slots'));
+    $known    = isset($lvClass['cantrips'])
+        ? strtr(t('lu.known'), ['{c}' => $lvClass['cantrips'][0], '{p}' => $lvClass['prep'][0]])
+        : str_replace('{p}', (string) $lvClass['prep'][0], t('lu.prepOnly'));
+    $spellNote = "$slots\n$known";
+}
+// The dialog needs each class's name, Hit Die and main ability next to its levels.
+$lvData = $levels;
+foreach ($classes as $id => $c) {
+    $lvData['classes'][$id] += ['name' => $c['name'], 'hd' => $c['hd'], 'primary' => $c['primary']];
+}
 
 // A labelled box: [label key, input]. Small helper for the many plain fields.
 $field = fn (string $cls, string $key, string $input): string => '<label class="hs-f ' . $cls . '"><span>' . t($key) . '</span>' . $input . '</label>';
@@ -36,10 +67,12 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
   </div>
   <div class="hs-bar">
     <button class="btn" type="button" id="hs-print"><svg class="seal"><use href="#seal"/></svg><span><?= t('hs.print') ?></span></button>
+    <button class="btn ghost" type="button" id="lu-open"><svg width="18" height="18" aria-hidden="true"><use href="#i-dice"/></svg><span><?= t('lu.btn') ?></span></button>
     <a class="btn ghost" id="hs-clear" href="<?= url('harok') ?>"><?= t('hs.clear') ?></a>
     <a class="btn ghost" href="<?= url('postava') ?>"><?= t('hs.make') ?></a>
     <p class="note"><?= t($filled ? 'hs.from' : 'hs.tip') ?></p>
   </div>
+  <p class="lu-done" id="lu-done" role="status" hidden><span id="lu-done-t"></span> <button class="lu-undo" type="button" id="lu-undo"><?= t('lu.undo') ?></button></p>
 
   <form class="hs parchment" id="hs" autocomplete="off">
     <svg class="brass tl"><use href="#brass"/></svg><svg class="brass tr"><use href="#brass"/></svg><svg class="brass bl"><use href="#brass"/></svg><svg class="brass br"><use href="#brass"/></svg>
@@ -116,14 +149,14 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
 
       <div class="hs-col">
         <fieldset class="hs-box"><legend><?= t('hs.person') ?></legend><textarea class="hs-ta" rows="6" aria-label="<?= attr('hs.person') ?>"></textarea></fieldset>
-        <fieldset class="hs-box hs-grow"><legend><?= t('hs.feats') ?></legend><textarea class="hs-ta" rows="12" aria-label="<?= attr('hs.feats') ?>"><?= e($feats) ?></textarea></fieldset>
+        <fieldset class="hs-box hs-grow"><legend><?= t('hs.feats') ?></legend><textarea class="hs-ta" id="hs-feats" rows="12" aria-label="<?= attr('hs.feats') ?>"><?= e($feats) ?></textarea></fieldset>
         <fieldset class="hs-box"><legend><?= t('hs.spell') ?></legend>
           <div class="hs-trio">
-            <?= $field('hs-stat', 'hs.spellAb', $text('hs-sab', '', ' maxlength="6"')) ?>
-            <?= $field('hs-stat', 'hs.spellDc', $text('hs-sdc', '', ' inputmode="numeric" maxlength="3"')) ?>
-            <?= $field('hs-stat', 'hs.spellAtk', $text('hs-sat', '', ' maxlength="4"')) ?>
+            <?= $field('hs-stat', 'hs.spellAb', $text('hs-sab', $spellAb, ' maxlength="6"')) ?>
+            <?= $field('hs-stat', 'hs.spellDc', $text('hs-sdc', $spellDc, ' inputmode="numeric" maxlength="3"')) ?>
+            <?= $field('hs-stat', 'hs.spellAtk', $text('hs-sat', $spellAtk, ' maxlength="4"')) ?>
           </div>
-          <textarea class="hs-ta" rows="4" aria-label="<?= attr('hs.spell') ?>"></textarea>
+          <textarea class="hs-ta" id="hs-spells" rows="4" aria-label="<?= attr('hs.spell') ?>"><?= e($spellNote) ?></textarea>
         </fieldset>
         <fieldset class="hs-box"><legend><?= t('hs.profs') ?></legend><textarea class="hs-ta" rows="5" aria-label="<?= attr('hs.profs') ?>"></textarea></fieldset>
       </div>
@@ -138,10 +171,27 @@ $text  = fn (string $id, string $value = '', string $extra = ''): string => '<in
     <div class="folio parchment">
       <h2 class="h2"><?= t('hs.howH') ?></h2>
       <ol class="chapters">
-<?php foreach (range(1, 6) as $i): ?>
+<?php foreach (range(1, 7) as $i): ?>
         <li class="chap"><div><h3><?= t("hs.how$i") ?></h3><p><?= t("hs.how{$i}p") ?></p></div></li>
 <?php endforeach; ?>
       </ol>
     </div>
   </div>
 </section>
+
+<dialog class="lu" id="lu" aria-labelledby="lu-h">
+  <form class="parchment" id="lu-form" method="dialog">
+    <h2 id="lu-h"><?= t('lu.btn') ?></h2>
+    <div class="lu-top">
+      <label for="lu-class"><?= t('lu.class') ?>
+        <select id="lu-class"><option value=""></option><?php foreach ($classes as $id => $c): ?><option value="<?= $id ?>"><?= e($bi($c['name'])) ?></option><?php endforeach; ?></select></label>
+      <label for="lu-from"><?= t('lu.now') ?><input id="lu-from" type="number" min="1" max="20" inputmode="numeric"></label>
+    </div>
+    <div id="lu-body"></div>
+    <div class="lu-acts">
+      <button class="lu-btn" type="button" data-close><?= t('lu.cancel') ?></button>
+      <button class="btn" type="submit" id="lu-ok"><span><?= t('lu.btn') ?></span></button>
+    </div>
+  </form>
+</dialog>
+<script id="lu-data" type="application/json"><?= json_encode($lvData, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?></script>
