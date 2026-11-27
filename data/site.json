@@ -225,20 +225,22 @@
       "type": "app",
       "parent": "nastroje",
       "scripts": [
-        "sheet"
+        "sheet",
+        "levelup"
       ],
       "styles": [
         "sheet"
       ],
       "texts": [
-        "hs"
+        "hs",
+        "lu"
       ],
       "related": [
         "postava",
         "kocky",
         "suboj"
       ],
-      "updated": "2026-11-05"
+      "updated": "2026-11-27"
     },
     "suboj": {
       "url": {

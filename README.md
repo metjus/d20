@@ -46,6 +46,7 @@ data/presets.json, tale.json  časté hody na Kockách, lístky na nástenke Pr�
 data/npc.json, tavern.json   mená a tabuľky generátora NPC a krčmy (krčmár berie mená a povahy z npc.json)
 data/loot.json              poklady podľa úrovne, drahokamy, umelecké predmety, kuriozity a 79 magických predmetov zo SRD 5.1
 data/skills.json            zručnosti na hárku postavy
+data/levels.json            postup na úrovne 1–20 pre 12 povolaní (SRD 5.2): schopnosti, podpovolania zo SRD, rastúce čísla, miesta pre kúzla, skúsenosti
 data/combat.json            stavy (conditions) zo SRD 5.2 s vysvetlením a ukážkový súboj pre tracker
 css/style.css, css/fonts.css
 css/sheet.css               hárok postavy na obrazovke aj pre tlač (načíta ho len stránka hárku)
@@ -55,6 +56,7 @@ js/core.js                  spoločné pomôcky, texty z PHP
 js/home.js, guides.js, character.js, story.js, dice.js   logika jednotlivých stránok
 js/board.js                 nástenka s lístkami a zámkami (Príbeh, NPC, Krčma); prvý hod robí PHP, tabuľky číta zo stránky
 js/npc.js, tavern.js, loot.js, sheet.js   generátory NPC, krčmy a pokladu, výpočty na hárku postavy
+js/levelup.js               okno „Postúpiť na vyššiu úroveň“ na hárku: životy, zvýšenie vlastností, schopnosti, kúzla; zapíše ich do hárku
 js/combat.js                tracker súboja: poradie, životy, stavy, záchrany proti smrti; súboj sa ukladá v localStorage (d20-combat)
 js/site.js                  animácie, prechody, kontaktný formulár (web nepoužíva cookies, preto nemá cookie lištu)
 js/data.js                  herné dáta: rasy, povolania, mená, mapa
